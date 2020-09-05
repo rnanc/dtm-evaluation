@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
+*{
+	margin: 0;
+	padding: 0;
+}
+header{
+	background-color: #6b7adb;
+	padding: 32px;
+}
+body{
+	background-color: #96a4ff;
+}
+.header-content{
+	margin: 0;
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+	align-items: center;
+}
+.logo{
+	color: #fff;
+	font-family: "Roboto";
+}
+.logo div:nth-child(1){
+	font-size: 37px;
+	font-weight: bold;
+}
+.logo div:nth-child(2){
+	font-size: 15px;
+	margin-left: 70px;
+}
+.links a{
+	font-size: 20px;
+	color: white;
+	text-decoration: none;
+}
+.links a:hover{
+	transition: 0.2s;
+	color: #333;
+	font-size: 21px;
+	text-decoration: underline;
+}
+.links a + a{
+	margin-left: 25px;
+}
+
+.card{
+    border: 1px solid white;
+    background-color: white;
+    width: 470px;
+    height: 560px;
+    margin-left: 700px;
+    border-radius: 15px;
+}
+h2{
+    font-family: "Roboto";
+    margin-left: 700px;
+    margin-top: 50px;
+    margin-bottom: 10px;
+}
+.card p{
+    margin-left: 78px;
+    margin-top: 30px;
+    font-family: "Roboto";
+    margin-bottom: 10px;
+}
+.card input[type="text"]{
+    width: 65%;
+}
+.card input[type="text"]{
+    border: none;
+    border-bottom: 1px solid black;
+    outline: none;
+    height: none;
+    color: #3e414f;
+    font-size: 15px;
+    margin-left: 78px;
+}
+.checkbox{
+    display: none;
+}
+.checkbox + label:before{
+    content: '';
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    border-radius: 3px;
+    margin-right: 5px;
+    border: 2px solid gray;
+    margin-left: 90px;
+}
+.checkbox :checked + label:before{
+    background: #96a4ff;
+}
+.checkbox :checked + label{
+    text-transform: uppercase;
+    font-family: "Roboto", "sans-serif";
+}
+.card input[type="submit"]{
+    outline: none;
+    width: 68%;
+    margin-left: 70px;
+    font-family: "Roboto";
+    text-transform: uppercase;
+    border-radius: 20px;
+    height: 30px;
+    border: none;
+    color: white;
+    background-color: #6b7adb;
+}
+.card input[type="submit"]:hover{
+    font-size: 17px;
+}
