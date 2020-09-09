@@ -1,66 +1,66 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-    <head>
-        <meta charset="utf-8">
-        <title>Patient list</title>
-        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    </head>
-    <body>
-        <header>
-            <div class="header-area">
-                <div class="logo">
-                    <div>DTM</div>
-                    <div>evaluation</div>
-                </div>
-                <div class="links">
-                    <a href="/" class="active">Pacientes</a>
-                    <a href="#">Cadastrar Pacientes</a>
-                    <a href="#">Sair</a>
-                </div>
-            </div>
-        </header>
+	<head>
+		<meta charset="utf-8">
+		<title>Patient list</title>
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	</head>
+  <body>
+		<header>
+			<div class="header-area">
+				<div class="logo">
+					<div>DTM</div>
+					<div>evaluation</div>
+				</div>
+				<div class="links">
+					<a href="/" class="active">Pacientes</a>
+					<a href="#">Cadastrar Pacientes</a>
+					<a href="#">Sair</a>
+				</div>
+			</div>
+		</header>
 
 		<div class="table-container">
 			<div class="table-header">
-					<h2>Lista de Pacientes</h2>
-					<div class="search-box">
-								<input type="text" placeholder="Nome do paciente ou data do exame">
-								<button><span class="material-icons">search</span></button>
-					</div>
+				<h2>Lista de Pacientes</h2>
+				<div class="search-box">
+					<input type="text" placeholder="Nome do paciente ou data do exame">
+					<button><span class="material-icons">search</span></button>
+				</div>
 			</div>
 			<div class="table-area">
-					<table>
-								<thead>
-										<tr>
-												<th>Nome</th>
-												<th>Fisioterapeuta</th>
-													<th>Dia do exame</th>
-													<th>Medição</th>
-										</tr>
-								</thead>
-								<tbody>
-										{% for item in data %}
-													<tr>
-															<td>{{ item.name }}</td>
-															<td>{{ item.doctor }}</td>
-															<td>{{ item.exam }}</td>
-															<td>{{ item.measurement }}</td>
-													</tr>
-										{% endfor %}
-								</tbody>
-					</table>
+				<table>
+					<thead>
+						<tr>
+							<th>Nome</th>
+							<th>Fisioterapeuta</th>
+							<th>Dia do exame</th>
+							<th>Medição</th>
+						</tr>
+					</thead>
+					<tbody>
+						{% for item in data %}
+							<tr>
+								<td>{{ item.name }}</td>
+								<td>{{ item.doctor }}</td>
+								<td>{{ item.exam }}</td>
+								<td>{{ item.measurement }}</td>
+							</tr>
+						{% endfor %}
+					</tbody>
+				</table>
 			</div>
 		</div>
         
-        <script>
-            let rows = document.querySelectorAll('tbody tr');
+		<script>
+			let rows = document.querySelectorAll('tbody tr');
 
-            for (let row of rows) {
-                row.addEventListener('click', function () {
-                    window.location.href = '/details'
-                });
-            }
-        </script>
-    </body>
+			for (let row of rows) {
+				row.addEventListener('click', function () {
+						window.location.href = '/details'
+				});
+			}
+		</script>
+  </body>
 </html>
