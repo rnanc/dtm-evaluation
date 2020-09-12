@@ -3,26 +3,31 @@
     box-sizing: border-box;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
+
 body{
    background-position: center;
    background-repeat: no-repeat;
    background-size: 100%;
 }
+
 #menu{
     background-color: #6C7ADB;
     color: white;
     height: 90px;
     padding-top: 20px;
 }
+
 .menu1{
     padding-left: 30px;
 
 }
+
 .menu2{
     padding-left: 70px;
 
 
 }
+
 #logincabeca{
     background-color: #6C7ADB;
     color: white;
@@ -37,6 +42,7 @@ body{
     padding: auto;
     justify-content: space-evenly;
 }
+
 #txtinicil{
     margin-top: 50px;
     width: 500px;
@@ -44,14 +50,17 @@ body{
     color: white;
 
 }
+
 .txtprincipal{
     font-size: 36px;
     padding-bottom: 40px;
 }
+
 article{
   font-size: 20px;
   /* aumentar o espaço das linhas*/
 }
+
 #login{
     margin-top: 50px;
     width: 500px;
@@ -59,6 +68,7 @@ article{
     background-color: white;
     border-radius: 13px;
 }
+
 #newlogin{
     margin-top: 50px;
     width: 500px;
@@ -67,6 +77,7 @@ article{
     border-radius: 15px;
 
 }
+
 .telaprincipal{
     display: flex;
     align-items: center;
@@ -81,15 +92,18 @@ form{
     padding-left: 3px;
     padding-top: 30px;
 }
+
 .btn{
     display: flex;
     align-items: center;
     justify-content: center;
 }
+
 .btn2{
     display: flex;
     padding-left: 100px;
 }
+
 .link{
    padding-left: 40px;
 
@@ -135,6 +149,7 @@ a:hover{
 
 
 }
+
 input 				{
   font-size:18px;
   padding:10px 10px 10px 5px;
@@ -143,6 +158,7 @@ input 				{
   border:none;
   border-bottom:1px solid #757575;
 }
+
 input:focus 		{ outline:none; }
 
 /* LABEL ======================================= */
@@ -179,9 +195,11 @@ input:focus ~ label, input:valid ~ label 		{
   -moz-transition:0.2s ease all;
   -webkit-transition:0.2s ease all;
 }
+
 .bar:before {
   left:50%;
 }
+
 .bar:after {
   right:50%;
 }
@@ -214,10 +232,12 @@ input:focus ~ .highlight {
 	from { background:#5264AE; }
   to 	{ width:0; background:transparent; }
 }
+
 @-moz-keyframes inputHighlighter {
 	from { background:#5264AE; }
   to 	{ width:0; background:transparent; }
 }
+
 @keyframes inputHighlighter {
 	from { background:#5264AE; }
   to 	{ width:0; background:transparent; }
@@ -237,10 +257,12 @@ input:focus ~ .highlight {
   transition: opacity 400ms ease-in;
   pointer-events: none;
 }
+
 .modal:target {
   opacity: 1;
   pointer-events: auto;
 }
+
 .modal > div {
   margin-top: 50px;
   width: 500px;
@@ -254,6 +276,7 @@ input:focus ~ .highlight {
   padding-left: 40px;
   padding-top: 50px;
 }
+
 .fechar {
   position: absolute;
   width: 30px;
