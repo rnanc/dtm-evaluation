@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="/static/css/signIn.css">
+  <title>DTM Evolution</title>
+</head>
+
+<body style="background-image: url('/static/images/background-signIn.jpg');">
+  <header id="menu">
+    <h1 class="menu1">DTM</h1>
+    <p class="menu2">evolution</p>
+  </header>
+  <section id="paginicial">
+    <div id="txtinicil">
+      <header>
+        <h2 class="txtprincipal">Conheça mais sobre<br>
+          o projeto DTM</h2>
+        </header>
+        <article>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur eos quisquam ea delectus illum
+            quibusdam
+            officia minus voluptatibus vero odit. Ad minus laudantium veniam eveniet dicta temporibus
+            consequuntur
+            minima! Quis?
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur eos quisquam ea delectus illum
+            quibusdam
+            officia minus voluptatibus vero odit. Ad minus laudantium veniam eveniet dicta temporibus
+            consequuntur
+            minima! Quis?
+          </p>
+        </article>
+      </div>
+
+      <div id="login">
+        <header id="logincabeca">
+          <h2>ENTRE COM SUA CONTA</h2>
+        </header>
+
+        <div class="container">
+           <form action="/login" method="post">
+          <div class="group">
+            <input type="email" name="email" style="width: 300px;" required>
+            <span class="highlight"></span>
+            <span class="bar"></span>
+            <label>Email</label>
+          </div>
+
+          <div class="group">
+            <input type="password" name="password" required style="width: 300px;">
+            <span class="highlight"></span>
+            <span class="bar"></span>
+            <label>Senha</label>
+          </div>
+          <div class="buttons-login">
+            <button class="button-login" type="submit">Entrar</button>
+            <a href="#abrirModal">Cadastre-se</a>
+          </div>
+
+          <div id="abrirModal" class="modal">
+
+           </form>
+          <!-- conteúdo do modal aqui -->
+
+          <div id="login">
+            <a href="#fechar" title="Fechar" class="fechar">x</a>
+            <header id="logincabeca">
+              <h2>CADASTRO</h2>
+            </header>
+            <div class="container">
+              <form action="/signUp" method="post">
+                <div class="group">
+                  <input type="text" name="name" style="width: 300px;" required>
+                  <span class="highlight"></span>
+                  <span class="bar"></span>
+                  <label>Nome</label>
+                </div>
+                <div class="group">
+                  <input type="text" name="registered_number" style="width: 300px;" required>
+                  <span class="highlight"></span>
+                  <span class="bar"></span>
+                  <label>Matrícula</label>
+                </div>
+                <div class="group">
+                  <input type="email" name="email" style="width: 300px;" required>
+                  <span class="highlight"></span>
+                  <span class="bar"></span>
+                  <label>Email</label>
+                </div>
+                <div class="group">
+                  <input type="password" name="password" required style="width: 300px;">
+                  <span class="highlight"></span>
+                  <span class="bar"></span>
+                  <label>Senha</label>
+                </div>
+                <div class="buttons-login">
+                  <button class="button-login" type="submit">Cadastrar</button>
+                </div>
+              </form>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+
+
+
+    </section>
+
+  </body>
+
+  </html>

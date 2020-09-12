@@ -4,8 +4,6 @@
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 body{
-   background-color: rgb(0, 0, 0);
-   background-image: url('../images/back.jpg');
    background-position: center;
    background-repeat: no-repeat;
    background-size: 100%;
@@ -23,12 +21,11 @@ body{
 .menu2{
     padding-left: 70px;
 
-    
+
 }
 #logincabeca{
     background-color: #6C7ADB;
     color: white;
-    margin-bottom: 20px;
     border-radius:  15px 15px 0px 0px;
     height: 60px;
     padding-top: 20px;
@@ -37,7 +34,7 @@ body{
 
 #paginicial{
     display: flex;
-    padding: auto;   
+    padding: auto;
     justify-content: space-evenly;
 }
 #txtinicil{
@@ -60,7 +57,7 @@ article{
     width: 500px;
     height: 450px;
     background-color: white;
-    border-radius: 15px;
+    border-radius: 13px;
 }
 #newlogin{
     margin-top: 50px;
@@ -81,15 +78,13 @@ form{
     display: flex;
     align-items: left;
     flex-direction: column;
-    padding-left: 45px;
-    padding-top: 45px;
+    padding-left: 3px;
+    padding-top: 30px;
 }
 .btn{
     display: flex;
     align-items: center;
-    justify-content: space-around;
-    
- 
+    justify-content: center;
 }
 .btn2{
     display: flex;
@@ -97,18 +92,25 @@ form{
 }
 .link{
    padding-left: 40px;
-   
+
 }
+
 a{
     text-decoration: none;
     color: black;
     padding-bottom: 2px;
-}
+    width: 18%;
+    text-align: center;
+    transition: all .4s;
+    margin-top: 30px;
+  }
 
 a:hover{
-    text-decoration: underline;
-    padding-bottom: 2px;
+  opacity: .6;
+  padding-bottom: 2px;
+  transform: translateY(-5px);
 }
+
 #btn{
     font-weight: 900;
     width: 155px;
@@ -116,21 +118,21 @@ a:hover{
     border-radius: 15px;
     color: white;
     background-color: #6C7ADB;
+    transition: all 0.5s;
 }
+
 #btn:hover{
     width: 156px;
     height: 40px;
     background-color: #8795eb;
     box-shadow: blueviolet 2px 2px 2px 2px;
-
-
-
 }
 
 /* form starting stylings ------------------------------- */
-.group 			  { 
-  position:relative; 
+.group 			  {
+  position:relative;
   margin-bottom:45px;
+
 
 }
 input 				{
@@ -145,15 +147,15 @@ input:focus 		{ outline:none; }
 
 /* LABEL ======================================= */
 label 				 {
-  color:#999; 
+  color:#999;
   font-size:18px;
   font-weight:normal;
   position:absolute;
   pointer-events:none;
   left:5px;
   top:10px;
-  transition:0.2s ease all; 
-  -moz-transition:0.2s ease all; 
+  transition:0.2s ease all;
+  -moz-transition:0.2s ease all;
   -webkit-transition:0.2s ease all;
 }
 
@@ -168,20 +170,20 @@ input:focus ~ label, input:valid ~ label 		{
 .bar 	{ position:relative; display:block; width:300px; }
 .bar:before, .bar:after 	{
   content:'';
-  height:2px; 
+  height:2px;
   width:0;
-  bottom:1px; 
+  bottom:1px;
   position:absolute;
-  background:#5264AE; 
-  transition:0.2s ease all; 
-  -moz-transition:0.2s ease all; 
+  background:#5264AE;
+  transition:0.2s ease all;
+  -moz-transition:0.2s ease all;
   -webkit-transition:0.2s ease all;
 }
 .bar:before {
   left:50%;
 }
 .bar:after {
-  right:50%; 
+  right:50%;
 }
 
 /* active state */
@@ -192,9 +194,9 @@ input:focus ~ .bar:before, input:focus ~ .bar:after {
 /* HIGHLIGHTER ================================== */
 .highlight {
   position:absolute;
-  height:60%; 
-  width:100px; 
-  top:25%; 
+  height:60%;
+  width:100px;
+  top:25%;
   left:0;
   pointer-events:none;
   opacity:0.5;
@@ -244,19 +246,19 @@ input:focus ~ .highlight {
   width: 500px;
   height: 450px;
   position: relative;
-  margin: 10% auto;  
+  margin: 10% auto;
   background: #fff;
 }
 
-.modal .container{
+.modal {
   padding-left: 40px;
   padding-top: 50px;
 }
 .fechar {
   position: absolute;
   width: 30px;
-  right: 500px;
-  top: 39px;
+  right: -10px;
+  top: -15px;
   text-align: center;
   line-height: 30px;
   margin-top: 5px;
@@ -265,4 +267,34 @@ input:focus ~ .highlight {
   font-size: 16px;
   color: #8d0000;
   z-index: 1;
+}
+
+.container{
+  padding-left: 3px;
+  margin-left: 3px;
+}
+
+.buttons-login{
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+
+.button-login{
+  flex: 1;
+  max-width: 50%;
+  border:0;
+  height: 30px;
+  background-color: #6C7ADB;
+  padding: 10px;
+  border-radius: 15px;
+  font-size: 20px;
+
+  color: #fff;
+  transition: all .4s;
+}
+
+.button-login:hover{
+opacity: .8;
+transform: translateY(-5px);
 }
