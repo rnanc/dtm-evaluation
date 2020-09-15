@@ -29,10 +29,10 @@ def login_user():
     if user_query:
         access_token = create_access_token(identity=user_query.id)
         refresh_token = create_refresh_token(identity=user_query.id)
-        response = "loguei"
-        # response.set_cookie('access_token_cookie', acess_token)
-        # response.set_cookie('username', user_query.username)
-        # response.set_cookie('user_id', str(user_query.id))
+        response = make_response("loguei")
+        response.set_cookie('access_token_cookie', access_token)
+        response.set_cookie('username', user_query.name)
+        response.set_cookie('user_id', str(user_query.id))
         print (access_token)
         return response
     # return redirect(url_for("home.home"))
