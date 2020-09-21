@@ -7,6 +7,8 @@ from config.serializer import configure as se_config
 from config.jwt import configure as jwt_config
 
 from controller.SignInController import home_blueprint
+from controller.patientsController import patients_blueprint
+from controller.detailsController import details_blueprint
 
 app = Flask(__name__)
 
@@ -23,6 +25,8 @@ se_config(app)
 Migrate(app, app.db)
 
 app.register_blueprint(home_blueprint)
+app.register_blueprint(patients_blueprint)
+app.register_blueprint(details_blueprint)
 
 jwt_config(app)
 
