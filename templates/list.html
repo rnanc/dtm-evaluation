@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="utf-8">
 		<title>Patient list</title>
-		<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/details.css') }}">
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	</head>
   <body>
@@ -40,27 +40,17 @@
 						</tr>
 					</thead>
 					<tbody>
-						{% for item in data %}
 							<tr>
-								<td>{{ item.name }}</td>
-								<td>{{ item.doctor }}</td>
-								<td>{{ item.exam }}</td>
-								<td>{{ item.measurement }}</td>
+								<td>Nome teste</td>
+								<td>Dr. sem nome</td>
+								<td>11/11/1111</td>
+								<td>300mm</td>
 							</tr>
-						{% endfor %}
 					</tbody>
 				</table>
 			</div>
 		</div>
-        
-		<script>
-			let rows = document.querySelectorAll('tbody tr');
 
-			for (let row of rows) {
-				row.addEventListener('click', function () {
-						window.location.href = '/details'
-				});
-			}
-		</script>
+		<script src="{{ url_for('static', filename='scripts/scripts.js') }}"></script>
   </body>
 </html>
