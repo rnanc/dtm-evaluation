@@ -12,8 +12,8 @@ from controller.detailsController import details_blueprint
 
 app = Flask(__name__)
 
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:227zckk2001@localhost/DTM'
-app.config['SECRET_KEY'] = 'e7c0596d00d6d1d17e64d6547cd732cf'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:12131415@localhost/postgres'
+app.config['SECRET_KEY'] = '12131415'
 app.config['JWT_SECRET_KEY'] = "1cca2a86e499bc8f16a75000cea3fbc5"
 app.config['JWT_TOKEN_LOCATION'] = "cookies"
 app.config['JWT_COOKIE_CSRF_PROTECT'] = False
@@ -29,18 +29,6 @@ app.register_blueprint(patients_blueprint)
 app.register_blueprint(details_blueprint)
 
 jwt_config(app)
-
-@app.route("/")
-def inicio():
-    return render_template("public/primeiratela.html")
-
-@app.route("/segunda")
-def segunda():
-    return render_template("public/segundatela.html")
-
-@app.route("/final")
-def final():
-    return render_template("public/final.html")
 
 if __name__ == '__main__':
     db.create_all()

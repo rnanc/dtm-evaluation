@@ -62,7 +62,7 @@ h2{
 	margin-top: 50px;
 	font-family: "Roboto";
 }
-.btn{
+.button{
 	outline: none;
 	margin-left: 90px;
 	margin-right: 40px;
@@ -85,7 +85,7 @@ h4{
 	text-align: center;
 	font-family: "Roboto";
 }
-.btn2{
+.submit{
 	outline: none;
 	margin-top: 50px;
 	width: 270px;
@@ -103,7 +103,7 @@ h4{
 	font-size: 17px;
 	transition: 0.2s;
 }
-.resultado{
+.result_measurement_open_mouth{
 	font-family: "Roboto";
 	position: relative;
 	top: -5.8%;
