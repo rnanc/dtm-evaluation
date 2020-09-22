@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Patient details</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/details.css') }}">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    </head>
+    <body>
+        <header>
+            <div class="header-area">
+                <div class="logo">
+                    <div>DTM</div>
+                    <div>evaluation</div>
+                </div>
+                <div class="links">
+                    <a href="/" class="active">Pacientes</a>
+                    <a href="#">Cadastrar Pacientes</a>
+                    <a href="#">Sair</a>
+                </div>
+            </div>
+        </header>
+
+        <div class="patient-container">
+            <div class="details">
+                <div class="details-header">
+                    <h2>Perfil do Paciente</h2>
+                </div>
+                <div class="card-details">
+                    <div class="item">
+                        <div>Nome</div>
+                        <div>Rodrigo Silva</div>
+                    </div>
+                    <div class="item">
+                        <div>Idade</div>
+                        <div>18</div>
+                    </div>
+                    <div class="item">
+                        <div>Gênero</div>
+                        <div class="gender">masculino</div>
+                    </div>
+                    <div class="item">
+                        <div>E-mail</div>
+                        <div>rodrigo.silva123@gmail.com</div>
+                    </div>
+                    <div class="item">
+                        <div>Telefone</div>
+                        <div>(91)1234-5678</div>
+                    </div>
+                    <div class="item">
+                        <div>Sente dor?</div>
+                        <div>Sim</div>
+                    </div>
+                    <div class="item">
+                        <a href="#" class="button">editar</a>
+                    </div>
+                </div>
+            </div>
+            <div class="exams">
+                <div class="exams-header">
+                    <h2>Exames Realizados e Gráfico</h2>
+                    <a href="#" class="button">Novo Exame</a>
+                </div>
+                <div class="table-area">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Fisioterapeuta</th>
+                                <th>Dia do exame</th>
+                                <th>Medição</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr id="patient-result">
+                                <td>Dr. John Doe</td>
+                                <td>22/10/2021</td>
+                                <td>300mm</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="graph"></div>
+            </div>
+        </div>
+    </body>
+</html>
