@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
+*{
+	margin: 0;
+	padding: 0;
+}
+header{
+	background-color: #6b7adb;
+	padding: 32px;
+}
+body{
+	background-color: #96a4ff;
+}
+.header-content{
+	margin: 0;
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+	align-items: center;
+}
+.logo{
+	color: #fff;
+	font-family: "Roboto";
+}
+.logo div:nth-child(1){
+	font-size: 37px;
+	font-weight: bold;
+}
+.logo div:nth-child(2){
+	font-size: 15px;
+	margin-left: 70px;
+}
+.links a{
+	font-size: 20px;
+	color: white;
+	text-decoration: none;
+}
+.links a:hover{
+	transition: 0.2s;
+	color: #333;
+	font-size: 21px;
+	text-decoration: underline;
+}
+.links a + a{
+	margin-left: 25px;
+}
+.card{
+	border: 1px solid white;
+	background-color: white;
+	width: 400px;
+	margin-left: 780px;
+	border-radius: 10px;
+	height: 550px;
+}
+h2{
+	margin-left: 780px;
+	margin-top: 50px;
+	margin-bottom: 20px;
+	font-family: "Roboto";
+}
+.card p{
+	margin-left: 90px;
+	margin-top: 50px;
+	font-family: "Roboto";
+}
+.button{
+	outline: none;
+	margin-left: 90px;
+	margin-right: 40px;
+	margin-top: 20px;
+	border: none;
+	height: 30px;
+	width: 90px;
+	background-color: #96a4ff;
+	border-radius: 10px;
+	font-family: "Roboto";
+	color: white;
+	box-shadow: 1px 1px 2px #333;
+	transition: 0.2s;
+}
+.btn:hover{
+	font-size: 15px;
+}
+h4{
+	margin-top: 50px;
+	text-align: center;
+	font-family: "Roboto";
+}
+.submit{
+	outline: none;
+	margin-top: 50px;
+	width: 270px;
+	margin-left: 70px;
+	border: none;
+	border-radius: 10px;
+	height: 40px;
+	background-color: #96a4ff;
+	color: white;
+	font-family: "Roboto";
+	font-size: 15px;
+	box-shadow: 1px 1px 2px #333;
+}
+.btn2:hover{
+	font-size: 17px;
+	transition: 0.2s;
+}
+.result_measurement_open_mouth{
+	font-family: "Roboto";
+	position: relative;
+	top: -5.8%;
+	left: 55%;
+
+	border: 1px solid #6b7adb;
+	height: 30px;
+	width: 90px;
+	text-align: center;
+	border-radius: 20px;
+}
+.resultado2{
+	font-family: "Roboto";
+	position: relative;
+	left: 35%;
+	top: 5%;
+	border: 1px solid #6b7adb;
+	border-radius: 10px;
+	height: 30px;
+	width: 120px;
+	text-align: center;
+}

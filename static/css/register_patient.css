@@ -43,71 +43,70 @@ body{
 .links a + a{
 	margin-left: 25px;
 }
-
 .card{
-    border: 1px solid white;
-    background-color: white;
-    width: 470px;
-    height: 560px;
-    margin-left: 700px;
-    border-radius: 15px;
+	border: 1px solid white;
+	background-color: white;
+	width: 470px;
+	height: 560px;
+	margin-left: 700px;
+	border-radius: 15px;
 }
 h2{
-    font-family: "Roboto";
-    margin-left: 700px;
-    margin-top: 50px;
-    margin-bottom: 10px;
+	font-family: "Roboto";
+	margin-left: 700px;
+	margin-top: 50px;
+	margin-bottom: 10px;
 }
 .card p{
-    margin-left: 78px;
-    margin-top: 30px;
-    font-family: "Roboto";
-    margin-bottom: 10px;
+	margin-left: 78px;
+	margin-top: 30px;
+	font-family: "Roboto";
+	margin-bottom: 10px;
 }
 .card input[type="text"]{
-    width: 65%;
+	width: 65%;
 }
 .card input[type="text"]{
-    border: none;
-    border-bottom: 1px solid black;
-    outline: none;
-    height: none;
-    color: #3e414f;
-    font-size: 15px;
-    margin-left: 78px;
+	border: none;
+	border-bottom: 1px solid black;
+	outline: none;
+	height: none;
+	color: #3e414f;
+	font-size: 15px;
+	margin-left: 78px;
 }
 .checkbox{
-    display: none;
+	display: none;
 }
 .checkbox + label:before{
-    content: '';
-    display: inline-block;
-    width: 1em;
-    height: 1em;
-    border-radius: 3px;
-    margin-right: 5px;
-    border: 2px solid gray;
-    margin-left: 90px;
+	content: "";
+	display: inline-block;
+	width: 1em;
+	height: 1em;
+	border-radius: 3px;
+	margin-right: 5px;
+	border: 2px solid gray;
+	margin-left: 90px;
 }
-.checkbox :checked + label:before{
-    background: #96a4ff;
+.checkbox:checked + label:before{
+	background: #96a4ff;
 }
-.checkbox :checked + label{
-    text-transform: uppercase;
-    font-family: "Roboto", "sans-serif";
+.checkbox:checked + label {
+	text-transform: uppercase;
+	font-family: "Roboto", "sans-serif";
 }
 .card input[type="submit"]{
-    outline: none;
-    width: 68%;
-    margin-left: 70px;
-    font-family: "Roboto";
-    text-transform: uppercase;
-    border-radius: 20px;
-    height: 30px;
-    border: none;
-    color: white;
-    background-color: #6b7adb;
+	outline: none;
+	width: 68%;
+	margin-left: 70px;
+	font-family: "Roboto";
+	text-transform: uppercase;
+	border-radius: 20px;
+	height: 30px;
+	border: none;
+	color: white;
+	background-color: #6b7adb;
 }
 .card input[type="submit"]:hover{
-    font-size: 17px;
+	font-size: 17px;
 }
