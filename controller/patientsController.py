@@ -4,4 +4,4 @@ patients_blueprint = Blueprint('patients', __name__, template_folder='templates'
 
 @patients_blueprint.route('/patients')
 def patientsPage():
-  return render_template('list.html')
+  return render_template('patientList.html')
