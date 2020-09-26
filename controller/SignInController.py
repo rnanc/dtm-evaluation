@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, url_for, request,current_app, redirect, make_response
+from flask import Blueprint, render_template, url_for, request,current_app, redirect, make_response, flash
 from flask_jwt_extended import create_access_token, create_refresh_token, jwt_required, set_access_cookies, jwt_optional
 
 from model.User import User
@@ -17,10 +17,19 @@ def signUp():
     us = UserSchema()
     user_info = request.form.to_dict()
     user = us.load(user_info)
+    users = User.query.all();
+    for u in users:
+      if u.email == user.email:
+        flash("Email já cadastrado ! Tente novamente.", "danger")
+        return redirect(url_for("home.home"))
+    if not "@cesupa.br" in user.email:
+      flash("Email precisa ser do domínio CESUPA ! Tente novamente cadastrando seu email do CESUPA. ", "danger")
+      return redirect(url_for("home.home"))
     user.gen_hash()
     current_app.db.session.add(user)
     current_app.db.session.commit()
-  return "cadastrou"
+    flash("Cadastro realizado com sucesso !", "success")
+  return redirect(url_for("home.home"))
 
 @home_blueprint.route('/login', methods=["POST"])
 def login_user():
