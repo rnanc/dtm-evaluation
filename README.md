@@ -42,7 +42,7 @@ Comando 2:
 
 Comando 3:
 
-`flask db upgrade
+`flask db upgrade`
 
 4 - Depois de criar o banco, execute o comando `flask run`
 
