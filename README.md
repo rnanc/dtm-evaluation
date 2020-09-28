@@ -16,7 +16,7 @@ O projeto foi desenvolvido utilizando:
 <img src="./readme-imgs/new-patient.png" width="45%">
 <img src="./readme-imgs/patient-list.png" width="45%">
 
-##Requisitos
+## Requisitos
 
 - Python 3.6 ou maior
 - PostgresSQL
