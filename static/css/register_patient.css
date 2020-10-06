@@ -1,48 +1,88 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
-*{
-	margin: 0;
-	padding: 0;
+* {
+    padding: 0;
+    margin: 0;
+    border: none;
+    box-sizing: border-box;
 }
-header{
-	background-color: #6b7adb;
-	padding: 32px;
+
+:root {
+    --primary-color: #6B7ADB;
+    --secondary-color: #96a4ff;
+    --font-color: #3E414F;
 }
-body{
-	background-color: #96a4ff;
+
+html, body {
+    height: 100%;
 }
-.header-content{
-	margin: 0;
-	display: flex;
-	justify-content: space-between;
-	width: 100%;
-	align-items: center;
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--secondary-color);
 }
-.logo{
-	color: #fff;
-	font-family: "Roboto";
+
+header {
+    background-color: var(--primary-color);
+    padding: 28px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
-.logo div:nth-child(1){
-	font-size: 37px;
-	font-weight: bold;
+
+.header-area {
+    max-width: 95%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
 }
-.logo div:nth-child(2){
-	font-size: 15px;
-	margin-left: 70px;
+
+.header-area .logo div {
+    line-height: 0.75em;
+    color: #fff;
 }
-.links a{
-	font-size: 20px;
-	color: white;
-	text-decoration: none;
+
+.header-area .logo div:nth-child(1) {
+    font-size: 40px;
+    font-weight: bold;
 }
-.links a:hover{
-	transition: 0.2s;
-	color: #333;
-	font-size: 21px;
-	text-decoration: underline;
+
+.header-area .logo div:nth-child(2) {
+    font-size: 14px;
+    font-weight: normal;
+    margin-left: 40px;
 }
-.links a + a{
-	margin-left: 25px;
+
+.header-area .links a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 16px;
+    position: relative;
 }
+
+.header-area .links a::after {
+    content: "";
+    width: 0;
+    height: 2px;
+    position: absolute;
+    background-color: #fff;
+    left: 0;
+    bottom: -2px;
+    transition: all 250ms ease-in-out;
+}
+
+.header-area .links a:hover::after {
+    width: 100%;
+    transition: all 250ms ease-in-out;
+}
+
+.header-area .links a.active {
+    font-weight: bold;
+}
+
+.header-area .links a + a {
+    margin-left: 28px;
+}
+
 .card{
 	border: 1px solid white;
 	background-color: white;
@@ -51,21 +91,29 @@ body{
 	margin-left: 700px;
 	border-radius: 15px;
 }
+
 h2{
 	font-family: "Roboto";
 	margin-left: 700px;
 	margin-top: 50px;
 	margin-bottom: 10px;
 }
+
 .card p{
 	margin-left: 78px;
 	margin-top: 30px;
 	font-family: "Roboto";
 	margin-bottom: 10px;
 }
+
+.card input[type="date"]{
+	margin-left: 78px;
+}
+
 .card input[type="text"]{
 	width: 65%;
 }
+
 .card input[type="text"]{
 	border: none;
 	border-bottom: 1px solid black;
@@ -75,9 +123,11 @@ h2{
 	font-size: 15px;
 	margin-left: 78px;
 }
+
 .checkbox{
 	display: none;
 }
+
 .checkbox + label:before{
 	content: "";
 	display: inline-block;
@@ -88,13 +138,16 @@ h2{
 	border: 2px solid gray;
 	margin-left: 90px;
 }
+
 .checkbox:checked + label:before{
 	background: #96a4ff;
 }
+
 .checkbox:checked + label {
 	text-transform: uppercase;
 	font-family: "Roboto", "sans-serif";
 }
+
 .card input[type="submit"]{
 	outline: none;
 	width: 68%;
@@ -107,6 +160,7 @@ h2{
 	color: white;
 	background-color: #6b7adb;
 }
+
 .card input[type="submit"]:hover{
 	font-size: 17px;
 }
