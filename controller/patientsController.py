@@ -7,3 +7,7 @@ patients_blueprint = Blueprint('patients', __name__, template_folder='templates'
 @jwt_required
 def patientsPage():
   return render_template('patientList.html')
+
+@patients_blueprint.route('/register')
+def detailsPage():
+  return render_template('register_patient.html')
