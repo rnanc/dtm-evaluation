@@ -7,9 +7,9 @@ from config.serializer import configure as se_config
 from config.jwt import configure as jwt_config
 
 from controller.SignInController import home_blueprint
-from controller.patientsController import patients_blueprint
-from controller.detailsController import details_blueprint
-from controller.examController import exam_blueprint
+from controller.PatientsController import patients_blueprint
+from controller.DetailsController import details_blueprint
+from controller.ExamController import exam_blueprint
 
 app = Flask(__name__)
 

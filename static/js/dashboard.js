@@ -5,3 +5,4 @@ for (let row of rows) {
       window.location.href = '/details'
   });
 }
+

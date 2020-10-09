@@ -2,7 +2,7 @@
 <html lang="pt-br">
 	<head>
 		<meta charset="utf-8">
-		<title>Patient list</title>
+		<title>Dashboard</title>
 		<link rel="stylesheet" href="{{ url_for('static', filename='css/details.css') }}">
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	</head>
@@ -14,9 +14,9 @@
 					<div>evaluation</div>
 				</div>
 				<div class="links">
-					<a href="/patients" class="active">Pacientes</a>
-					<a href="/register">Cadastrar Pacientes</a>
-					<a href="/">Sair</a>
+					<a href="/dashboard" class="active">Pacientes</a>
+					<a href="/register_patient">Cadastrar Pacientes</a>
+					<label onclick="logout()">Sair</label>
 				</div>
 			</div>
 		</header>
@@ -26,7 +26,7 @@
 				<h2>Lista de Pacientes</h2>
 				<div class="search-box">
 					<input type="text" placeholder="Nome do paciente ou data do exame">
-					<button><span class="material-icons">search</span></button>
+					<button><span class="material-icons">Pesquisar</span></button>
 				</div>
 			</div>
 			<div class="table-area">
@@ -51,6 +51,7 @@
 			</div>
 		</div>
 
-		<script src="{{ url_for('static', filename='scripts/scripts.js') }}"></script>
+		<script src="{{ url_for('static', filename='js/dashboard.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/navbar.js') }}"></script>
   </body>
 </html>
