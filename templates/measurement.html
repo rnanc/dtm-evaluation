@@ -1,41 +1,47 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/static/css/measurement.css">
-    <title>Medição</title>
+	<title>Measurement</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="/static/css/measurement.css">
 </head>
 <body>
-    <header>
-        <div class="header-content">
+	<header>
+        <div class="header">
             <div class="logo">
                 <div>DTM</div>
-                <div>Evaluation</div>
+                <div>evaluation</div>
             </div>
             <div class="links">
-                <a href="/patients">Pacientes</a>
-                <a href="/register">Adicionar Pacientes</a>
-                <a href="/">Sair</a>
+                <a href="/dashboard" class="active">Pacientes</a>
+                <a href="/register_patient">Cadastrar Pacientes</a>
+                <a onclick="logout()">Sair</a>
             </div>
         </div>
     </header>
+
     <main>
-    <h2>Exame</h2>
-    <form action="final">
-	    <div class="card">
-		    <p>Medição com Boca Aberta</p>
-		    <button class="button">Iniciar</button>
-		    <div class="result_measurement_open_mouth"></div>
-		    <p>Medição com Boca Fechada</p>
-		    <button class="button">Iniciar</button>
-		    <div class="result_measurement_open_mouth"></div>
-		    <h4>Resultado</h4>
-		    <div class="result_measurement_mouth_shut"></div>
-		    <br>
-		    <button class="submit">FINALIZAR</button>
-	    </div>
-</form>
+    	<h2>Exame</h2>
+    	<form action="final">
+	    	<div class="card">
+		    	<p>Medição com Boca Aberta</p>
+			    <button class="btn">INICIAR</button>
+		    	<div class="open_mouth"></div>
+
+		    	<div class="line"></div>
+
+			    <p>Medição com Boca Fechada</p>
+		    	<button class="btn">INICIAR</button>
+			    <div class="closed_mouth"></div>
+
+			    <div class="line"></div>
+
+		    	<h4>Resultado</h4>
+			    <div class="result"></div>
+		    	<br>
+			    <button class="submit">FINALIZAR</button>
+	    	</div>
+		</form>
     </main>
 </body>
 </html>

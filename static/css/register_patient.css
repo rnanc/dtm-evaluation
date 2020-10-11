@@ -129,7 +129,7 @@ h2{
     background-color: #6B7ADB;
     color: white;
     font-family: 'Roboto', sans-serif;
-    box-shadow: 3px 3px 0 black;
+    box-shadow: 5px 5px 5px rgba(50, 50, 50, 0.77);
 }
 .intern input[type="submit"]:hover{
     font-size: 17px;
