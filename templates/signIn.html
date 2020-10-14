@@ -8,10 +8,10 @@
   <title>DTM Evolution</title>
 </head>
 
-<body style="background-image: url('/static/images/background-signIn.jpg');">
+<body style="background-image: url('/static/images/background-signIn2.png');">
 <header id="menu">
   <h1 class="menu1">DTM</h1>
-  <p class="menu2">evolution</p>
+  <p class="menu2">evaluation</p>
 </header>
 <section id="paginicial">
   <div id="txtinicil">
@@ -42,27 +42,27 @@
     <div class="container">
       <form action="/login" method="post">
         <div class="group">
-          <input type="email" name="email" style="width: 300px;" required>
+          <input type="email" name="email" style="width: 100%;" required>
           <span class="highlight"></span>
           <span class="bar"></span>
           <label>Email</label>
         </div>
 
         <div class="group">
-          <input type="password" name="password" required style="width: 300px;">
+          <input type="password" name="password" required style="width: 100%;">
           <span class="highlight"></span>
           <span class="bar"></span>
           <label>Senha</label>
         </div>
         <div class="buttons-login">
           <button class="button-login" type="submit">Entrar</button>
-          <a href="#abrirModal">Cadastre-se</a>
+          <a href="#abrirModal">Não tenho uma conta</a>
         </div>
 
         {% with messages = get_flashed_messages(category_filter=['danger']) %}
           {% if messages %}
             {% for message in messages %}
-              <p  style="color:red">{{ message }}</p>
+              <p  style="color:red; margin: 15px 0 -25px 0">{{ message }}</p>
             {% endfor %}
           {% endif %}
         {% endwith %}
@@ -70,7 +70,7 @@
         {% with messages = get_flashed_messages(category_filter=['success']) %}
           {% if messages %}
             {% for message in messages %}
-              <p style="color:green">{{ message }}</p>
+              <p style="color:green; margin: 15px 0 -25px 0">{{ message }}</p>
             {% endfor %}
           {% endif %}
         {% endwith %}
@@ -88,30 +88,30 @@
         <div class="container">
           <form action="/signUp" method="post">
             <div class="group">
-              <input type="text" name="name" style="width: 300px;" required>
+              <input type="text" name="name" style="width: 100%;" required>
               <span class="highlight"></span>
               <span class="bar"></span>
               <label>Nome</label>
             </div>
             <div class="group">
-              <input type="text" name="registered_number" style="width: 300px;" required>
+              <input type="text" name="registered_number" style="width: 100%;" required>
               <span class="highlight"></span>
               <span class="bar"></span>
               <label>Matrícula</label>
             </div>
             <div class="group">
-              <input type="email" name="email" style="width: 300px;" required>
+              <input type="email" name="email" style="width: 100%;" required>
               <span class="highlight"></span>
               <span class="bar"></span>
               <label>Email</label>
             </div>
             <div class="group">
-              <input type="password" name="password" required style="width: 300px;">
+              <input type="password" name="password" required style="width: 100%;">
               <span class="highlight"></span>
               <span class="bar"></span>
               <label>Senha</label>
             </div>
-            <div class="buttons-login">
+            <div class="buttons-register">
               <button class="button-login" type="submit">Cadastrar</button>
             </div>
           </form>

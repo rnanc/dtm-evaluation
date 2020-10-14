@@ -5,26 +5,29 @@
 }
 
 body{
-   background-position: center;
+   background-position: center center;
    background-repeat: no-repeat;
-   background-size: 100%;
+   background-attachment: fixed;
+   background-size: cover;
 }
 
 #menu{
     background-color: #6C7ADB;
     color: white;
     height: 90px;
-    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+
 }
 
 .menu1{
     padding-left: 30px;
-
 }
 
 .menu2{
     padding-left: 70px;
-
+    margin-top: -10px
 
 }
 
@@ -33,7 +36,7 @@ body{
     color: white;
     border-radius:  15px 15px 0px 0px;
     height: 60px;
-    padding-top: 20px;
+    padding: 20px 0 50px 0;
     text-align: center;
 }
 
@@ -58,16 +61,18 @@ body{
 
 article{
   font-size: 20px;
-  /* aumentar o espaço das linhas*/
+  line-height:1.2
 }
 
 #login{
     margin-top: 50px;
     width: 500px;
-    height: 450px;
+    height: fit-content;
     background-color: white;
-    border-radius: 13px;
+    border-radius: 16px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
+
 
 #newlogin{
     margin-top: 50px;
@@ -87,9 +92,8 @@ article{
 
 form{
     display: flex;
-    align-items: left;
+    align-items: center;
     flex-direction: column;
-    padding-left: 3px;
     padding-top: 30px;
 }
 
@@ -113,10 +117,8 @@ a{
     text-decoration: none;
     color: black;
     padding-bottom: 2px;
-    width: 18%;
     text-align: center;
     transition: all .4s;
-    margin-top: 30px;
   }
 
 a:hover{
@@ -146,6 +148,7 @@ a:hover{
 .group 			  {
   position:relative;
   margin-bottom:45px;
+  width: 100%;
 
 
 }
@@ -183,7 +186,7 @@ input:focus ~ label, input:valid ~ label 		{
 }
 
 /* BOTTOM BARS ================================= */
-.bar 	{ position:relative; display:block; width:300px; }
+.bar 	{ position:relative; display:block; }
 .bar:before, .bar:after 	{
   content:'';
   height:2px;
@@ -293,21 +296,32 @@ input:focus ~ .highlight {
 }
 
 .container{
-  padding-left: 3px;
-  margin-left: 3px;
+  padding: 10px 60px 40px 60px;
 }
 
 .buttons-login{
   display: flex;
-  justify-content: flex-start;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width:100%
+}
+
+.buttons-register{
+  display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items:center;
+  width:100%
+}
+
+.buttons-login a {
+  text-decoration: underline;
 }
 
 .button-login{
-  flex: 1;
-  max-width: 50%;
+  width: 40%;
   border:0;
-  height: 30px;
   background-color: #6C7ADB;
   padding: 10px;
   border-radius: 15px;
@@ -315,6 +329,10 @@ input:focus ~ .highlight {
 
   color: #fff;
   transition: all .4s;
+}
+
+.button-login:active{
+  outline: none;
 }
 
 .button-login:hover{
