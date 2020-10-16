@@ -51,6 +51,21 @@
 			</div>
 		</div>
 
+		<table>
+			<tbody>
+				{% for e in pacientes %}
+				<tr>
+					<td>{{e.nome}}</td>
+					<td>{{e.idade}}</td>
+					<td>
+						<a href="/edit/{{e.id}}">Editar</a>
+						<a href="/delete/{{e.id}}">Excluir</a>
+					</td>
+				</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+
 		<script src="{{ url_for('static', filename='js/dashboard.js') }}"></script>
   <script src="{{ url_for('static', filename='js/navbar.js') }}"></script>
   </body>

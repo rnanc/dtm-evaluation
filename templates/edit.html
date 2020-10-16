@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD Pacientes</title>
+</head>
+<body>
+    <h1>Editar {{paciente.nome}}</h1>
+    <form action="/edit/{{paciente.id}}" method="PUT">
+        <input type="text" name="nome" id="nome" placeholder="nome" value="{{patient.nome}}">
+        <input type="email" name="email" id="email" placeholder="idade" value="{{patient.email}}">
+        <input type="number" name="phone" id="phone" placeholder="phone" value="{{patient.phone}}">
+        <input type="number" name="telefone" id="telefone" placeholder="telefone" value="{{patient.birth_date}}">
+        <button type="submit">Adicionar</button>
+    </form>
+</body>
+</html>
