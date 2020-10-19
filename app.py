@@ -16,7 +16,7 @@ from controller.ExamController import exam_blueprint
 
 app = Flask(__name__)
 
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:jose131997@localhost/DTM'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql+psycopg2://postgres:jose131997@localhost/DTM'
 app.config['SECRET_KEY'] = 'e7c0596d00d6d1d17e64d6547cd732cf'
 app.config['JWT_SECRET_KEY'] = "1cca2a86e499bc8f16a75000cea3fbc5"
 app.config['JWT_TOKEN_LOCATION'] = "cookies"
