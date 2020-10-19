@@ -1,66 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Novo Paciente</title>
     <!-- <link rel="stylesheet" href="{{ url_for('static', filename='css/register_patients.css') }}"> -->
-    <link rel="stylesheet" href="/static/css/register_patient.css">
-</head>
-<body>
+    <link rel="stylesheet" href="/static/css/register_patient.css" />
+  </head>
+  <body>
     <header>
-        <div class="header-area">
-				<div class="logo">
-					<h1 class="menu1">DTM</h1>
-					<p class="menu2">evaluation</p>
-				</div>
-				<div class="links">
-					<a href="/dashboard" class="active">Pacientes</a>
-					<a href="/register_patient">Cadastrar Pacientes</a>
-					<label onclick="logout()">Sair</label>
-				</div>
-			</div>
+      <div class="header-area">
+        <div class="logo">
+          <h1 class="logo_top">DTM</h1>
+          <p class="logo_bottom">evaluation</p>
+        </div>
+        <div class="links">
+          <a href="/dashboard" class="active">Pacientes</a>
+          <a href="/register_patient">Cadastrar Pacientes</a>
+          <label onclick="logout()">Sair</label>
+        </div>
+      </div>
     </header>
     <main>
-        <div>
-          <h2>Novo Paciente</h2>
-          <div class="card">
-            <form>
-              <div class="card_name">
-                <p>Nome</p>
-                <input type="text" name="Nome" placeholder="Nome e Sobrenome" id="nome">
-              </div>
-              <div class="card_date">
-                <p>Data de Nascimento</p>
-                <input type="date" id="idade" name="idade">
-              </div>
-              <div class="card_gender">
-                <p>Gênero</p>
-                <input type="radio" name="gender" class="checkbox" id="checkbox3">
-                <label for="checkbox3">Masculino</label>
-                <input type="radio" name="gender" class="checkbox" id="checkbox4">
-                <label for="checkbox4">Feminino</label>
-              </div>
-              <div class="card_mail">
-                <p>Email</p>
-                <input type="text" placeholder="exemplo@gmail.com">
-              </div>
-              <div class="card_tel">
-                <p>Telefone</p>
-                <input type="text" placeholder="(xx) xxxx-xxxx">
-              </div>
-              <div class="card_pain">
-                <p>Sente Dor ?</p>
-                  <input type="radio" name="pain" id="checkbox1" class="checkbox" >
-                        <label for="checkbox1">Sim</label>
-                  <input type="radio" name="pain" id="checkbox2" class="checkbox" >
-                        <label for="checkbox2">Não</label>
-              </div>
-                    <input type="submit" name="" value="Salvar">
-            </form>
-          </div>
+      <div>
+        <h2>Novo Paciente</h2>
+        <div class="card">
+          <form>
+            <div class="card_name">
+              <p>Nome</p>
+              <input
+                type="text"
+                name="Nome"
+                placeholder="Nome e Sobrenome"
+                id="nome"
+              />
+            </div>
+            <div class="card_date">
+              <p>Data de Nascimento</p>
+              <input type="date" id="idade" name="idade" />
+            </div>
+            <div class="card_gender">
+              <p>Gênero</p>
+              <input
+                type="radio"
+                name="gender"
+                class="checkbox"
+                id="checkbox3"
+              />
+              <label for="checkbox3">Masculino</label>
+              <input
+                type="radio"
+                name="gender"
+                class="checkbox"
+                id="checkbox4"
+              />
+              <label for="checkbox4">Feminino</label>
+            </div>
+            <div class="card_mail">
+              <p>Email</p>
+              <input type="email" placeholder="exemplo@gmail.com" />
+            </div>
+            <div class="card_tel">
+              <p>Telefone</p>
+              <input id="card_tel" type="text" placeholder="(xx) xxxx-xxxx" />
+            </div>
+            <div class="card_pain">
+              <p>Sente Dor ?</p>
+              <input type="radio" name="pain" id="checkbox1" class="checkbox" />
+              <label for="checkbox1">Sim</label>
+              <input type="radio" name="pain" id="checkbox2" class="checkbox" />
+              <label for="checkbox2">Não</label>
+            </div>
+            <input type="submit" name="" value="Salvar" />
+          </form>
         </div>
-
+      </div>
     </main>
-</body>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.maskedinput/1.4.1/jquery.maskedinput.min.js"></script>
+    <script src="../static/js/phone-mask.js"></script>
+  </body>
 </html>
