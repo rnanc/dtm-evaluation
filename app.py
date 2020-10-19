@@ -2,7 +2,7 @@ from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 
-from model.User import configure as db_config
+from model.Model import configure as db_config
 from config.serializer import configure as se_config
 from config.jwt import configure as jwt_config
 

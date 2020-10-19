@@ -1,5 +1,5 @@
 from flask_marshmallow import Marshmallow
-from model.User import User
+from model.Model import User
 from model.Patient import Patient
 
 ma = Marshmallow()

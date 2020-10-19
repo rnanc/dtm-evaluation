@@ -3,7 +3,7 @@ import datetime
 from flask import Blueprint, render_template, url_for, request, current_app, redirect, make_response, flash
 from flask_jwt_extended import create_access_token, create_refresh_token, jwt_required, set_access_cookies, jwt_optional
 
-from model.User import User
+from model.Model import User
 from config.serializer import UserSchema
 
 home_blueprint = Blueprint('home', __name__, template_folder='templates', static_folder="static")
