@@ -235,3 +235,24 @@ th {
 td {
   color: var(--font-color);
 }
+
+@media (max-width: 800px) {
+  .table-container {
+    max-width: 90%;
+    width: 100%;
+    margin: 60px auto;
+    display: block;
+  }
+
+  .table-container .table-header {
+    flex-direction: column;
+  }
+
+  th {
+    font-size: 18px;
+  }
+
+  td {
+    font-size: 14px;
+  }
+}

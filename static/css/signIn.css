@@ -21,8 +21,10 @@ body {
   justify-content: center;
   padding-left: 30px;
 }
+
 .logo_top {
 }
+
 .logo_bottom {
   padding-left: 40px;
   margin-top: -10px;
@@ -39,15 +41,15 @@ body {
 
 #paginicial {
   display: flex;
-  padding: auto;
+  flex-direction: row;
   justify-content: space-evenly;
 }
 
 #txtinicil {
   margin-top: 50px;
   width: 500px;
-  height: 300px;
   color: white;
+  transition: ease-in-out all 0.4s;
 }
 
 .txtprincipal {
@@ -350,7 +352,7 @@ input:focus ~ .highlight {
   padding: 10px;
   border-radius: 15px;
   font-size: 20px;
-
+  cursor: pointer;
   color: #fff;
   transition: all 0.4s;
 }
@@ -362,4 +364,25 @@ input:focus ~ .highlight {
 .button-login:hover {
   opacity: 0.8;
   transform: translateY(-5px);
+}
+
+@media (max-width: 1080px) {
+  #paginicial {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+
+  #login {
+    width: 460px;
+  }
+
+  #txtinicil {
+    display: none;
+  }
+
+  .container {
+    padding: 10px 40px 40px 40px;
+  }
 }

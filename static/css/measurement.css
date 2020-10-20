@@ -137,6 +137,7 @@ main {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  margin-bottom: 50px;
 }
 
 .card_content {
@@ -147,7 +148,7 @@ main {
 
 h2 {
   font-weight: bold;
-  font-size: 35px;
+  font-size: 30px;
   line-height: 41px;
   margin-top: 50px;
   margin-bottom: 20px;
@@ -190,11 +191,12 @@ h2 {
   border: none;
   width: 140px;
   height: 43px;
-  background-color: #96a4ff;
+  background-color: #6b7adb;
   border-radius: 16px;
   font-family: "Roboto";
   color: white;
-  transition: backgroud-color 250ms ease-in-out;
+  transition: background-color 250ms ease-in-out;
+  cursor: pointer;
 }
 
 .button:hover {
@@ -215,11 +217,12 @@ h4 {
   border: none;
   border-radius: 16px;
   height: 40px;
-  background-color: #96a4ff;
+  background-color: #6b7adb;
   color: white;
   font-family: "Roboto";
   font-size: 15px;
-  transition: backgroud-color 250ms ease-in-out;
+  transition: background-color 250ms ease-in-out;
+  cursor: pointer;
 }
 
 .submit:hover {
