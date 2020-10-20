@@ -13,4 +13,7 @@ def dashboard():
 def register_patient():
   return render_template('register_patient.html')
 
-
+@patients_blueprint.route('/edit_patient')
+@jwt_required
+def edit_patient():
+  return render_template('edit_patient.html')

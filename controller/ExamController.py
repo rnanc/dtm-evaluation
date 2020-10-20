@@ -7,3 +7,8 @@ exam_blueprint = Blueprint('exam', __name__, template_folder='templates', static
 @jwt_required
 def detailsPage():
   return render_template('measurement.html')
+
+@exam_blueprint.route('/exam_data')
+@jwt_required
+def examData():
+  return render_template('exam_data.html')
