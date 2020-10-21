@@ -23,15 +23,15 @@ def signUp():
     users = User.query.all();
     for u in users:
       if u.email == user.email:
-        flash("Email já cadastrado ! Tente novamente.", "danger")
+        flash("Email já cadastrado! Tente novamente.", "danger")
         return redirect(url_for("home.home"))
     if "@aluno.cesupa.br" not in user.email and "@prof.cesupa.br" not in user.email:
-      flash("Email precisa ser do domínio CESUPA ! Tente novamente cadastrando seu email do CESUPA. ", "danger")
+      flash("Email precisa ser do domínio CESUPA! Tente novamente cadastrando seu email do CESUPA. ", "danger")
       return render_template("signIn.html"), 400
     user.gen_hash()
     current_app.db.session.add(user)
     current_app.db.session.commit()
-    flash("Cadastro realizado com sucesso !", "success")
+    flash("Cadastro realizado com sucesso!", "success")
   return redirect(url_for("home.home"))
 
 

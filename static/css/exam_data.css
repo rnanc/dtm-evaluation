@@ -124,11 +124,16 @@ main {
   align-items: center;
 }
 
+.card_overlay{
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
 .card {
   border: 1px solid white;
   background-color: white;
-  width: 470px;
-  border-radius: 15px;
+  width: 100%;
+  border-radius: 16px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   margin-bottom: 50px;
 }
@@ -140,11 +145,6 @@ form {
   padding: 40px 60px 30px 60px;
 }
 
-form div {
-  margin-bottom: 20px;
-  width: 100%;
-}
-
 h2 {
   font-family: "Roboto";
   color: white;
@@ -154,117 +154,55 @@ h2 {
 }
 
 .card p {
+  font-style: normal;
+  font-weight: normal;
+  margin-bottom: 8px;
+}
+
+.card span {
   font-family: "Roboto";
-  margin-bottom: 10px;
-}
-
-.card input[type="date"] {
-  padding: 0 1px;
-  border: none;
-  border-bottom: 1px solid black;
-  outline: none;
-  height: none;
-  color: #3e414f;
-  font-size: 15px;
-  padding-bottom: 5px;
-  width: 100%;
-}
-
-.card input[type="text"] {
-  padding: 0 1px;
-  border: none;
-  border-bottom: 1px solid black;
-  outline: none;
-  height: none;
-  color: #3e414f;
-  font-size: 15px;
-  padding-bottom: 5px;
-  width: 100%;
-}
-
-.card_gender {
-  border-bottom: 1px solid black;
-  padding-bottom: 15px;
-}
-
-.card_pain {
-  border-bottom: 1px solid black;
-  padding-bottom: 15px;
-}
-
-.card input[type="email"] {
-  width: 100%;
-  padding: 0 1px;
-  border: none;
-  border-bottom: 1px solid black;
-  outline: none;
-  height: none;
-  color: #3e414f;
-  font-size: 15px;
-  padding-bottom: 5px;
-}
-
-.card_gender p {
-  margin-bottom: 15px;
-}
-
-.card_pain p {
-  margin-bottom: 15px;
-}
-
-.checkbox {
-  display: none;
-}
-
-.checkbox + label:before {
-  content: "";
-  display: inline-block;
-  width: 0.6em;
-  height: 0.6em;
-  border-radius: 100%;
-  margin-right: 5px;
-  background-color: white;
-  margin-bottom: -2px;
-  border: 0.2em solid white;
-}
-
-main label {
-  font-size: 14px;
+  font-style: normal;
   font-weight: bold;
-  background-color: var(--primary-color);
-  color: #ffffff;
-  padding: 6px 14px 8px 14px;
-  border-radius: 50px;
-  text-transform: uppercase;
-  margin: 10px 10px 0 0;
-  transition: background-color 250ms ease-in-out;
-  cursor: pointer;
+  font-size: 27px;
 }
 
-.checkbox:checked + label:before {
-  background: grey;
-}
-
-main label:hover {
-  background-color: #5366e0;
-}
-
-.card input[type="submit"] {
-  outline: none;
+.card_name {
   width: 100%;
-  font-family: "Roboto";
-  text-transform: uppercase;
-  border-radius: 15px;
-  height: 30px;
-  border: none;
-  color: white;
-  background-color: #6b7adb;
-  margin-top: 15px;
-  height: 40px;
-  transition: background-color 250ms ease-in-out;
-  cursor: pointer;
+  margin-bottom: 15px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  padding-bottom: 8px;
 }
 
-.card input[type="submit"]:hover {
-  background-color: #5366e0;
+.card_doctor {
+  width: 100%;
+  margin-bottom: 15px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  padding-bottom: 8px;
+}
+
+.card_measurement {
+  width: 100%;
+  margin-bottom: 15px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  padding-bottom: 8px;
+}
+
+.card_data {
+  width: 100%;
+  margin-bottom: 15px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  padding-bottom: 8px;
+}
+
+.card_measurement div {
+  background-color: #6b7adb;
+  border-radius: 16px;
+  border: none;
+  padding: 8px 35px 8px 35px;
+  width: fit-content;
+  color: #ffffff;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
 }
