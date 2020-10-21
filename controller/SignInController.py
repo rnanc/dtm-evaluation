@@ -3,7 +3,7 @@ import datetime
 from flask import Blueprint, render_template, url_for, request, current_app, redirect, make_response, flash
 from flask_jwt_extended import create_access_token, create_refresh_token, jwt_required, set_access_cookies, jwt_optional
 
-from model.Model import User
+from model.Model import Users
 from config.serializer import UserSchema
 
 home_blueprint = Blueprint('home', __name__, template_folder='templates', static_folder="static")
@@ -20,7 +20,7 @@ def signUp():
     us = UserSchema()
     user_info = request.form.to_dict()
     user = us.load(user_info)
-    users = User.query.all();
+    users = Users.query.all()
     for u in users:
       if u.email == user.email:
         flash("Email já cadastrado ! Tente novamente.", "danger")
@@ -39,10 +39,10 @@ def signUp():
 def login_user():
   user = request.form.to_dict()
   print(user)
-  user_query = User.query.filter_by(email=user["email"]).first()
+  user_query = Users.query.filter_by(email=user["email"]).first()
   if user_query != None:
-    user_query.verify_password(user['password'])
-  if user_query != None:
+    verify = user_query.verify_password(user['password'])
+  if user_query != None and verify:
     access_token = create_access_token(identity=user_query.id, expires_delta=datetime.timedelta(hours=12))
     # refresh_token = create_refresh_token(identity=user_query.id)
     response = make_response(redirect(url_for('patients.dashboard')))
@@ -51,4 +51,6 @@ def login_user():
     response.set_cookie('user_id', str(user_query.id))
     print(access_token)
     return response
+  else:
+    flash("Senha ou email erradas!", "danger")
   return redirect(url_for("home.home"))

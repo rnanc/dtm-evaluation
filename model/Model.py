@@ -1,17 +1,21 @@
 from flask_sqlalchemy import SQLAlchemy
 from passlib.hash import pbkdf2_sha512
+
 db = SQLAlchemy()
 
 def configure(app):
     db.init_app(app)
     app.db = db
 
-class User(db.Model):
+class Users(db.Model):
+  __name__ = "users"
   id = db.Column(db.Integer, primary_key=True)
   name = db.Column(db.String(150))
   email = db.Column(db.String(150))
   registered_number = db.Column(db.String(150))
   password = db.Column(db.String(150))
+  exams = db.relationship("Exam", backref="users", lazy="select")
+  patients = db.relationship("Patient", backref="users", lazy="select")
 
   def gen_hash(self):
       self.password = pbkdf2_sha512.hash(self.password)
@@ -25,19 +29,38 @@ class User(db.Model):
     self.email = email
     self.password = password
 
-  class Patient(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String(100))
-    email = db.Column(db.String(100))
-    phone = db.Column(db.String(100))
-    birth_date = db.Column(db.String(100))
-    gender = db.Column(db.String(100))
-    pain_choice = db.Column(db.Boolean)
+class Patient(db.Model):
+  __name__ = "patient"
+  id = db.Column(db.Integer, primary_key=True)
+  name = db.Column(db.String(100))
+  email = db.Column(db.String(100))
+  phone = db.Column(db.String(100))
+  age = db.Column(db.String(100))
+  gender = db.Column(db.String(100))
+  pain_choice = db.Column(db.String(100))
+  exams = db.relationship("Exam", backref="patient", lazy="select")
+  user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
 
-    def __init__(self, name, email, phone, birth_date, gender, pain_choice):
-      self.name = name
-      self.email = email
-      self.phone = phone
-      self.birth_date = birth_date
-      self.gender = gender
-      self.pain_choice = pain_choice
+  def __init__(self, name, email, phone, age, gender, pain_choice):
+    self.name = name
+    self.email = email
+    self.phone = phone
+    self.age = age
+    self.gender = gender
+    self.pain_choice = pain_choice
+
+class Exam(db.Model):
+  __name__ = "exam"
+  id = db.Column(db.Integer, primary_key=True)
+  date = db.Column(db.Integer, nullable=False)
+  initial_measurement = db.Column(db.Float, nullable=False)
+  final_measurement = db.Column(db.Float, nullable=False)
+  result = db.Column(db.Float, nullable=False)
+  user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
+  patient_id = db.Column(db.Integer, db.ForeignKey('patient.id'))
+
+  def __init__(self, date, initial_measurement, final_measurement, result):
+    self.date = date
+    self.initial_measurement = initial_measurement
+    self.final_measurement = final_measurement
+    self.result = result

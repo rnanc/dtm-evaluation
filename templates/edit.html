@@ -6,12 +6,12 @@
     <title>CRUD Pacientes</title>
 </head>
 <body>
-    <h1>Editar {{paciente.nome}}</h1>
-    <form action="/edit/{{paciente.id}}" method="PUT">
-        <input type="text" name="nome" id="nome" placeholder="nome" value="{{patient.nome}}">
+    <h1>Editar {{paciente.name}}</h1>
+    <form action="/edit/{{patient.id}}" method="POST">
+        <input type="text" name="name" id="name" placeholder="nome" value="{{patient.name}}">
+        <input type="number" name="age" id="age" placeholder="idade" value="{{patient.age}}">
         <input type="email" name="email" id="email" placeholder="idade" value="{{patient.email}}">
-        <input type="number" name="phone" id="phone" placeholder="phone" value="{{patient.phone}}">
-        <input type="number" name="telefone" id="telefone" placeholder="telefone" value="{{patient.birth_date}}">
+        <input type="number" name="phone" id="phone" placeholder="idade" value="{{patient.phone}}">
         <button type="submit">Adicionar</button>
     </form>
 </body>

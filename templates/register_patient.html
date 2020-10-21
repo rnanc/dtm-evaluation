@@ -24,30 +24,30 @@
     <main>
         <h2>Novo Paciente</h2>
 	    <div class="card">
-		    <form method="POST" action="dashboard">
+		    <form method="POST" action="/register_patient">
                 <div class="intern">
                     <p>Nome</p>
-                    <input type="text" name="nome" placeholder="Nome e Sobrenome" class="nome">
+                    <input type="text" name="name" placeholder="Nome e Sobrenome" class="nome">
 
                     <p>Data de Nascimento</p>
-                    <input type="date" id="idade" name="idade">
+                    <input type="number" id="age" name="age">
 
     		        <p>Gênero</p>
-                    <input type="checkbox" name="check" onclick="Checked_Masc(this)" value="masculino">
+                    <input type="checkbox" name="gender" onclick="Checked1(this)" value="masculino">
                     <label for="masculino" id="chckMas">Masculino</label>
-        			<input type="checkbox" name="check2" onclick="Checked_Fem(this)" value="femenino">
+        			<input type="checkbox" name="gender" onclick="Checked1(this)" value="femenino">
                     <label for="femenino" id="chckFem">Femenino</label>
 
                     <p>Email</p>
                     <input type="email" placeholder="exemplo@gmail.com" name="email">
 
                     <p>Telefone</p>
-                    <input type="number" placeholder="(xx) xxxx-xxxx" name="telefone">
+                    <input type="number" placeholder="(xx) xxxx-xxxx" name="phone">
 
     				<p>Sente Dor ?</p>
-        			<input type="checkbox" name="check3" onclick="Checked_Y(this)" value="sim">
+        			<input type="checkbox" name="pain_choice" onclick="Checked2(this)" value="sim">
                     <label for="sim">Sim</label>
-        			<input type="checkbox" name="check4" onclick="Checked_N(this)" value="nao">
+        			<input type="checkbox" name="pain_choice" onclick="Checked2(this)" value="nao">
                     <label for="nao">Não</label>
 
                     <br>

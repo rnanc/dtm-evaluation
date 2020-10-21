@@ -15,7 +15,7 @@
 				</div>
 				<div class="links">
 					<a href="/dashboard" class="active">Pacientes</a>
-					<a href="/register_patient">Cadastrar Pacientes</a>
+					<a href="/show_register">Cadastrar Pacientes</a>
 					<label onclick="logout()">Sair</label>
 				</div>
 			</div>
@@ -46,25 +46,18 @@
 								<td>11/11/1111</td>
 								<td>300mm</td>
 							</tr>
+							{% for e in patients %}
+							<tr>
+								<td>{{e.name}}</td>
+								<td>Dr.</td>
+								<td>11/11/1111</td>
+								<td>300mm</td>
+							</tr>
+							{% endfor %}
 					</tbody>
 				</table>
 			</div>
 		</div>
-
-		<table>
-			<tbody>
-				{% for e in pacientes %}
-				<tr>
-					<td>{{e.nome}}</td>
-					<td>{{e.idade}}</td>
-					<td>
-						<a href="/edit/{{e.id}}">Editar</a>
-						<a href="/delete/{{e.id}}">Excluir</a>
-					</td>
-				</tr>
-				{% endfor %}
-			</tbody>
-		</table>
 
 		<script src="{{ url_for('static', filename='js/dashboard.js') }}"></script>
   <script src="{{ url_for('static', filename='js/navbar.js') }}"></script>
