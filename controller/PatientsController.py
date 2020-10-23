@@ -9,16 +9,6 @@ from flask import current_app
 
 patients_blueprint = Blueprint('patients', __name__, template_folder='templates', static_folder='static')
 
-# @patients_blueprint.route("/add", methods=['GET', 'POST'])
-# def add():
-# 	if request.method == 'POST':
-# 		patient = Patient(request.form['name'], request.form['age'], request.form['email'], request.form['phone'])
-# 		db.session.add(patient)
-# 		db.session.commit()
-# 		return redirect(url_for('dashboard'))
-# 	return render_template('register_patient.html')
-
-
 @patients_blueprint.route('/dashboard')
 def dashboard():
   patients = Patient.query.all()
@@ -52,3 +42,7 @@ def edit(id):
     current_app.db.session.commit()
     return redirect(url_for('index'))
   return render_template('edit.html', patient = patient)
+
+@patients_blueprint.route('/edit_patient')
+def edit_patient():
+  return render_template('edit_patient.html')

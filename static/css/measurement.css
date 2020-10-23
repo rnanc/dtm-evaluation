@@ -1,165 +1,270 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
-/*Estilizando o header*/
-*{
-    margin: 0;
-    padding: 0;
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  border: none;
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
-body{
-    font-family: 'Roboto', sans-serif;
-    background-color: #96a4ff;
+:root {
+  --primary-color: #6b7adb;
+  --secondary-color: #96a4ff;
+  --font-color: #3e414f;
 }
 
-header{
-    background-color: #6B7ADB;
-    padding: 28px;
+body {
+  background-color: #96a4ff;
 }
 
-.header{
-    max-width: 95%;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 0 auto;
+header {
+  height: 90px;
+  background-color: var(--primary-color);
+  padding: 0 30px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  color: #ffffff;
+  display: flex;
 }
 
-.header .logo div{
-    line-height: 0.75em;
-    color: #fff;
+.header-area {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0;
 }
 
-.header .logo div:nth-child(1){
-    font-size: 40px;
-    font-weight: bold;
+.header-area .logo div {
+  line-height: 0.75em;
+  color: #fff;
 }
 
-.header .logo div:nth-child(2){
-    font-size: 14px;
-    font-weight: normal;
-    margin-left: 40px;
+.logo_top {
 }
 
-.header .links a{
-    text-decoration: none;
-    color: #fff;
-    font-size: 16px;
-    position: relative;
+.logo_bottom {
+  padding-left: 40px;
+  margin-top: -10px;
 }
 
-.header .links a::after {
-    content: "";
-    width: 0;
-    height: 2px;
-    position: absolute;
-    background-color: #fff;
-    left: 0;
-    bottom: -2px;
-    transition: all 250ms ease-in-out;
+.header-area .logo div:nth-child(1) {
+  font-weight: bold;
 }
 
-.header .links a:hover::after {
-    width: 100%;
-    transition: all 250ms ease-in-out;
+.header-area .logo div:nth-child(2) {
+  font-weight: normal;
+  margin-left: 40px;
 }
 
-.header .links a:hover::after {
-    width: 100%;
-    transition: all 250ms ease-in-out;
+.header-area .links {
+  width: 300px;
+  margin-right: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
-.header .links a + a {
-    margin-left: 28px;
+.header-area .links a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 16px;
+  position: relative;
 }
 
-.card{
-    border: 1px solid white;
-    width: 409px;
-    height: 470px;
-    position:absolute;
-    left: 50%;
-    top:50%;
-    margin-left:-200px;
-    margin-top: -250px;
-    background-color: white;
-    border-radius: 15px;
+.header-area .links a::after {
+  content: "";
+  width: 0;
+  height: 2px;
+  position: absolute;
+  background-color: #fff;
+  left: 0;
+  bottom: -2px;
+  transition: all 250ms ease-in-out;
 }
 
-h2{
-    position:absolute;
-    left:48%;
-    top:20%;
-    color: white;
+.header-area .links a:hover::after {
+  width: 100%;
+  transition: all 250ms ease-in-out;
 }
 
-.card p{
-    padding-top: 35px;
-    text-align: center;
-    padding-bottom: 30px;
+.header-area .links a:active {
+  font-weight: bold;
 }
 
-.open_mouth, .closed_mouth{
-    border: 1px solid #6B7ADB;
-    width: 70px;
-    height: 30px;
-    border-radius: 20px;
-    position: relative;
-    top: -6.5%;
-    left: 50%;
-    margin-left: 20px;
+.header-area .links label {
+  cursor: pointer;
+  text-decoration: none;
+  color: #fff;
+  font-size: 16px;
+  position: relative;
 }
 
-.btn{
-    width: 70px;
-    height: 35px;
-    border-radius: 20px;
-    color: white;
-    background-color: #6B7ADB;
-    border: none;
-    box-shadow: 2px 2px 0 black;
-    font-family: 'Roboto', sans-serif;
-    box-shadow: 5px 5px 5px rgba(50, 50, 50, 0.77);
-}
-.btn:hover{
-    font-size: 15px;
+.header-area .links label::after {
+  content: "";
+  width: 0;
+  height: 2px;
+  position: absolute;
+  background-color: #fff;
+  left: 0;
+  bottom: -2px;
+  transition: all 250ms ease-in-out;
 }
 
-.btn{
-    position: relative;
-    top: 0.5%;
-    left: 30%;
+.header-area .links label:hover::after {
+  width: 100%;
+  transition: all 250ms ease-in-out;
 }
 
-h4{
-    margin-top: 20px;
-    position: relative;
-    text-align: center;
+.header-area .links label:active {
+  font-weight: bold;
 }
 
-.result{
-    border: 1px solid #6B7ADB;
-    width: 150px;
-    height: 30px;
-    border-radius: 20px;
-    position: relative;
-    top: 5%;
-    left: 31.5%;
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.submit{
-    border: none;
-    color: white;
-    font-family: 'Roboto',sans-serif;
-    width: 70%;
-    height: 30px;
-    margin-top: 20px;
-    position: relative;
-    left: 16%;
-    box-shadow: rgba(0, 0, 0, 1.5);
-    border-radius: 20px;
-    background-color: #6B7ADB;
-    margin-bottom: 15px;
-    box-shadow: 5px 5px 5px rgba(50, 50, 50, 0.77);
+.card {
+  border: 1px solid white;
+  background-color: white;
+  width: 472px;
+  border-radius: 10px;
+  height: 551px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+
+.card_content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h2 {
+  font-weight: bold;
+  font-size: 30px;
+  line-height: 41px;
+  margin-top: 50px;
+  margin-bottom: 20px;
+  font-family: "Roboto";
+  color: white;
+}
+
+.card p {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.button_container {
+  display: flex;
+  flex-direction: row;
+  margin-top: 20px;
+  width: 300px;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  margin-bottom: 16px;
+  padding-bottom: 16px;
+  font-weight: bold;
+}
+
+.button_container_final {
+  display: flex;
+  flex-direction: row;
+  margin-top: 20px;
+  width: 300px;
+  justify-content: center;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  margin-bottom: 16px;
+  padding-bottom: 16px;
+}
+
+.button {
+  outline: none;
+  border: none;
+  width: 140px;
+  height: 43px;
+  background-color: #6b7adb;
+  border-radius: 16px;
+  font-family: "Roboto";
+  color: white;
+  transition: background-color 250ms ease-in-out;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: #5366e0;
+}
+
+h4 {
+  margin-top: 50px;
+  text-align: center;
+  font-family: "Roboto";
+}
+
+.submit {
+  outline: none;
+  margin-top: 50px;
+  width: 368px;
+  height: 43px;
+  border: none;
+  border-radius: 16px;
+  height: 40px;
+  background-color: #6b7adb;
+  color: white;
+  font-family: "Roboto";
+  font-size: 15px;
+  transition: background-color 250ms ease-in-out;
+  cursor: pointer;
+}
+
+.submit:hover {
+  background-color: #5366e0;
+}
+
+.result_measurement_open_mouth {
+  font-family: "Roboto";
+  border: 1px solid #6b7adb;
+  width: 140px;
+  height: 43px;
+  text-align: center;
+  border-radius: 20px;
+  font-size: 24px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.result_measurement_mouth_shut {
+  font-family: "Roboto";
+  border: 1px solid #6b7adb;
+  width: 140px;
+  height: 43px;
+  text-align: center;
+  border-radius: 20px;
+  font-size: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.resultado2 {
+  font-family: "Roboto";
+  position: relative;
+  left: 35%;
+  top: 5%;
+  border: 1px solid #6b7adb;
+  border-radius: 10px;
+  height: 30px;
+  width: 120px;
+  text-align: center;
 }
 
 .submit:hover{
@@ -167,7 +272,7 @@ h4{
 }
 
 .line{
-   border: 0.5px solid black; 
+   border: 0.5px solid black;
    opacity: 0.3;
    width: 52%;
    position: relative;

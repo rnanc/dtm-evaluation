@@ -19,3 +19,7 @@ def create_exam():
   exam = exam_sc.load(exam_info)
   current_app.db.session.add(exam)
   return "Oi"
+
+@exam_blueprint.route('/exam_data')
+def examData():
+  return render_template('exam_data.html')
