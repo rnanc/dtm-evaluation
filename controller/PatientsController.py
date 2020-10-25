@@ -21,10 +21,8 @@ def register():
   if request.method == "POST":
     patient = PatientSchema()
     patients_info = request.form.to_dict()
-    user_query = Users.query.filter(Users.id==int(request.cookies.get("user_id"))).first()
     patients_load = patient.load(patients_info)
     current_app.db.session.add(patients_load)
-    user_query.patients.append(patients_load)
     current_app.db.session.commit()
     return redirect(url_for('patients.dashboard'))
 
