@@ -15,7 +15,6 @@ class Users(db.Model):
   registered_number = db.Column(db.String(150))
   password = db.Column(db.String(150))
   exams = db.relationship("Exam", backref="users", lazy="select")
-  patients = db.relationship("Patient", backref="users", lazy="select")
 
   def gen_hash(self):
       self.password = pbkdf2_sha512.hash(self.password)
@@ -30,7 +29,7 @@ class Users(db.Model):
     self.password = password
 
 class Patient(db.Model):
-  __name__ = "patient"
+  __name__ = "patients"
   id = db.Column(db.Integer, primary_key=True)
   name = db.Column(db.String(100))
   email = db.Column(db.String(100))
@@ -39,7 +38,6 @@ class Patient(db.Model):
   gender = db.Column(db.String(100))
   pain_choice = db.Column(db.String(100))
   exams = db.relationship("Exam", backref="patient", lazy="select")
-  user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
 
   def __init__(self, name, email, phone, age, gender, pain_choice):
     self.name = name
@@ -50,7 +48,7 @@ class Patient(db.Model):
     self.pain_choice = pain_choice
 
 class Exam(db.Model):
-  __name__ = "exam"
+  __name__ = "exams"
   id = db.Column(db.Integer, primary_key=True)
   date = db.Column(db.Integer, nullable=False)
   initial_measurement = db.Column(db.Float, nullable=False)

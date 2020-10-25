@@ -12,13 +12,13 @@ def detailsPage():
   return render_template('measurement.html')
 
 @exam_blueprint.route("/create_exam", methods=["POST"])
+@jwt_required
 def create_exam():
   exam_sc = ExamSchema()
   exam_info = request.form.to_dict()
-  exam_info["date"] = 21102020
   exam = exam_sc.load(exam_info)
   current_app.db.session.add(exam)
-  return "Oi"
+  return render_template('details.html')
 
 @exam_blueprint.route('/exam_data')
 def examData():
