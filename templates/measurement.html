@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/static/css/measurement.css" />
+    <title>Medição</title>
+  </head>
+  <body>
+    <header>
+      <div class="header-area">
+        <div class="logo">
+          <h1 class="logo_top">DTM</h1>
+          <p class="logo_bottom">evaluation</p>
+        </div>
+        <div class="links">
+          <a href="/dashboard" class="active">Pacientes</a>
+          <a href="/register_patient">Cadastrar Pacientes</a>
+          <label onclick="logout()">Sair</label>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <div>
+        <h2>Exame</h2>
+        <form action="final">
+          <div class="card">
+            <div class="card_content">
+              <div>
+                <p>Medição com Boca Aberta</p>
+                <div class="button_container">
+                  <button class="button">INICIAR</button>
+                  <div class="result_measurement_open_mouth">40mm</div>
+                </div>
+              </div>
+              <div>
+                <p>Medição com Boca Fechada</p>
+                <div class="button_container">
+                  <button class="button">INICIAR</button>
+                  <div class="result_measurement_open_mouth">30mm</div>
+                </div>
+              </div>
+              <p>Resultado</p>
+              <div class="button_container_final">
+                <div class="result_measurement_mouth_shut">10mm</div>
+              </div>
+              <button class="submit">FINALIZAR</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </main>
+  </body>
+</html>
