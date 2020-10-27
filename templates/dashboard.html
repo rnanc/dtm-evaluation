@@ -36,22 +36,22 @@
         </div>
       </div>
       <div class="table-area">
-        <table>
+        <table >
           <thead>
             <tr>
               <th>Nome</th>
-              <th>Fisioterapeuta</th>
-              <th>Dia do exame</th>
-              <th>Medição</th>
+              <th>Email</th>
+              <th>Data de nascimento</th>
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>Nome teste</td>
-              <td>Dr. sem nome</td>
-              <td>11/11/1111</td>
-              <td>300mm</td>
-            </tr>
+            {% for patient in patients %}
+              <tr id="{{patient.id}}">
+                <td>{{patient.name}}</td>
+                <td>{{patient.email}}</td>
+                <td>{{patient.age}}</td>
+              </tr>
+            {% endfor %}
           </tbody>
         </table>
       </div>

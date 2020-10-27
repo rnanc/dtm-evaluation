@@ -50,15 +50,15 @@ class Patient(db.Model):
 class Exam(db.Model):
   __name__ = "exams"
   id = db.Column(db.Integer, primary_key=True)
-  date = db.Column(db.Integer, nullable=False)
-  initial_measurement = db.Column(db.Float, nullable=False)
-  final_measurement = db.Column(db.Float, nullable=False)
-  result = db.Column(db.Float, nullable=False)
+  date = db.Column(db.String(100), nullable=False)
+  open_measurement = db.Column(db.Float, nullable=False)
+  shut_measurement = db.Column(db.Float, nullable=False)
+  result_measurement = db.Column(db.Float, nullable=False)
   user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
   patient_id = db.Column(db.Integer, db.ForeignKey('patient.id'))
 
-  def __init__(self, date, initial_measurement, final_measurement, result):
+  def __init__(self, date, open_measurement, shut_measurement, result_measurement):
     self.date = date
-    self.initial_measurement = initial_measurement
-    self.final_measurement = final_measurement
-    self.result = result
+    self.open_measurement = open_measurement
+    self.shut_measurement = shut_measurement
+    self.result_measurement = result_measurement

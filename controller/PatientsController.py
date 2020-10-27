@@ -12,6 +12,7 @@ patients_blueprint = Blueprint('patients', __name__, template_folder='templates'
 @patients_blueprint.route('/dashboard')
 @jwt_required
 def dashboard():
+  ps = PatientSchema(many=True)
   patients = Patient.query.all()
   return render_template('dashboard.html', patients=patients)
 

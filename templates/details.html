@@ -21,7 +21,7 @@
         </div>
         <div class="links">
           <a href="/dashboard" class="active">Pacientes</a>
-          <a href="/register_patient">Cadastrar Pacientes</a>
+          <a href="/show_register">Cadastrar Pacientes</a>
           <label onclick="logout()">Sair</label>
         </div>
       </div>
@@ -34,27 +34,27 @@
         <div class="card-details">
           <div class="item">
             <div>Nome</div>
-            <div>Rodrigo Silva</div>
+            <div>{{patient.name}}</div>
           </div>
           <div class="item">
             <div>Idade</div>
-            <div>18</div>
+            <div>{{age}}</div>
           </div>
           <div class="item">
             <div>Gênero</div>
-            <div class="gender">masculino</div>
+            <div class="gender">{{patient.gender}}</div>
           </div>
           <div class="item">
             <div>E-mail</div>
-            <div>rodrigo.silva123@gmail.com</div>
+            <div>{{patient.email}}</div>
           </div>
           <div class="item">
             <div>Telefone</div>
-            <div>(91)1234-5678</div>
+            <div>{{patient.phone}}</div>
           </div>
           <div class="item">
             <div>Sente dor?</div>
-            <div>Sim</div>
+            <div>{{patient.pain_choice}}</div>
           </div>
           <div class="item">
             <a href="/edit_patient" class="button">editar</a>
@@ -64,7 +64,7 @@
       <div class="exams">
         <div class="exams-header">
           <h2>Exames Realizados e Gráfico</h2>
-          <a href="/measurement" class="button">Novo Exame</a>
+          <a href="/measurement_open_mouth" class="button">Novo Exame</a>
         </div>
         <div class="table-area">
           <table>
@@ -76,11 +76,13 @@
               </tr>
             </thead>
             <tbody>
-              <tr id="patient-result">
-                <td>Dr. John Doe</td>
-                <td>22/10/2021</td>
-                <td>300mm</td>
-              </tr>
+                {% for exam in exams %}
+                  <tr id="{{exam.id}}">
+                    <td>{{exam.doctor}}</td>
+                    <td>{{exam.date}}</td>
+                    <td>{{exam.result_measurement}}</td>
+                  </tr>
+                {% endfor %}
             </tbody>
           </table>
         </div>

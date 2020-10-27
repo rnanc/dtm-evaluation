@@ -28,23 +28,27 @@
           <form>
             <div class="card_name">
               <p>Nome</p>
-              <span>Rodrigo Silva</span>
+              <span>{{patient.name}}</span>
             </div>
             <div class="card_doctor">
               <p>Médico</p>
-              <span>Dr. Manoel Pereira dos Santos</span>
+              <span>Dr. {{doctor.name}}</span>
             </div>
             <div class="card_measurement">
               <p>Medição com a boca aberta</p>
-              <div>100 mm</div>
+              <div>{{exam.open_measurement}} mm</div>
             </div>
             <div class="card_measurement">
               <p>Medição com a boca fechada</p>
-              <div>90 mm</div>
+              <div>{{exam.shut_measurement}} mm</div>
+            </div>
+            <div class="card_measurement">
+              <p>Resultado da medição</p>
+              <div>{{exam.result_measurement}} mm</div>
             </div>
             <div class="card_data">
-              <p>Data e Hora do Exame Feito</p>
-              <span>Dia 25/07/2050 às 16:30</span>
+              <p>Data do Exame</p>
+              <span>{{exam.date}}</span>
             </div>
           </form>
         </div>
