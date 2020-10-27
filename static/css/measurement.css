@@ -266,3 +266,15 @@ h4 {
   width: 120px;
   text-align: center;
 }
+
+.submit:hover{
+    font-size: 15px;
+}
+
+.line{
+   border: 0.5px solid black;
+   opacity: 0.3;
+   width: 52%;
+   position: relative;
+   left: 24%;
+}
