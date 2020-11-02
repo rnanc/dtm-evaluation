@@ -41,8 +41,7 @@ header {
   color: #fff;
 }
 
-.logo_top {
-}
+.logo_top {}
 
 .logo_bottom {
   padding-left: 40px;
@@ -131,13 +130,12 @@ main {
   border: 1px solid white;
   background-color: white;
   width: 472px;
-  border-radius: 10px;
+  border-radius: 16px;
   height: 551px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-bottom: 50px;
 }
 
 .card_content {
@@ -150,7 +148,7 @@ h2 {
   font-weight: bold;
   font-size: 30px;
   line-height: 41px;
-  margin-top: 50px;
+  margin-top: 60px;
   margin-bottom: 20px;
   font-family: "Roboto";
   color: white;
@@ -198,6 +196,25 @@ h2 {
   color: white;
   transition: background-color 250ms ease-in-out;
   cursor: pointer;
+  text-decoration: none;
+}
+
+a.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  outline: none;
+  border: none;
+  width: 140px;
+  height: 43px;
+  margin-right: 15px;
+  background-color: #6b7adb;
+  border-radius: 16px;
+  font-family: "Roboto";
+  color: white;
+  transition: background-color 250ms ease-in-out;
+  cursor: pointer;
+  text-decoration: none;
 }
 
 .button:hover {
@@ -208,7 +225,6 @@ h2 {
   transform: scale(0.95);
   transition: 0.2;
 }
-
 
 h4 {
   margin-top: 50px;
@@ -234,6 +250,23 @@ h4 {
 
 .submit:hover {
   background-color: #5366e0;
+}
+
+.submit:disabled,
+.submit[disabled] {
+  outline: none;
+  margin-top: 50px;
+  width: 368px;
+  height: 43px;
+  border: none;
+  border-radius: 16px;
+  height: 40px;
+  background-color: #96a4ff;
+  color: white;
+  font-family: "Roboto";
+  font-size: 15px;
+  transition: background-color 250ms ease-in-out;
+  cursor: auto;
 }
 
 .result_measurement_open_mouth {
@@ -275,30 +308,56 @@ h4 {
   text-align: center;
 }
 
-.submit:hover{
-    font-size: 15px;
+.submit:hover {
+  font-size: 15px;
 }
 
-.line{
-   border: 0.5px solid black;
-   opacity: 0.3;
-   width: 52%;
-   position: relative;
-   left: 24%;
+.line {
+  border: 0.5px solid black;
+  opacity: 0.3;
+  width: 52%;
+  position: relative;
+  left: 24%;
+}
+
+.outer_container {
+  display: flex;
+  flex-direction: row;
+  width: fit-content;
+  margin-bottom: 50px;
 }
 
 .container-camera {
-  flex: 1;
   display: flex;
   align-items: center;
   justify-content: center;
-
   box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
-  border-radius: 15px;
-
+  border-radius: 16px;
   background: #fff;
-  height: 245px;
-  max-width: 50%;
+  height: inherit;
+  width: 735px;
+  margin-left: 50px;
+  padding: 15px;
 }
 
-.
+.container-camera img {
+  width: 100%;
+  height: 100%;
+  border-radius: 16px;
+}
+
+@media (max-width: 1350px) {
+  .outer_container {
+    display: flex;
+    flex-direction: column-reverse;
+    width: fit-content;
+    margin-bottom: 50px;
+  }
+
+  .container-camera {
+    margin-left: 0;
+    margin-bottom: 50px;
+    height: 472px;
+    width: 100%;
+  }
+}

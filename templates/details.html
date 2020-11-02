@@ -1,95 +1,92 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <title>Patient details</title>
-    <link
-      rel="stylesheet"
-      href="{{ url_for('static', filename='css/details.css') }}"
-    />
-    <link
-      href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet"
-    />
-  </head>
-  <body>
-    <header>
-      <div class="header-area">
-        <div class="logo">
-          <h1 class="logo_top">DTM</h1>
-          <p class="logo_bottom">evaluation</p>
-        </div>
-        <div class="links">
-          <a href="/dashboard" class="active">Pacientes</a>
-          <a href="/show_register">Cadastrar Pacientes</a>
-          <label onclick="logout()">Sair</label>
-        </div>
+
+<head>
+  <meta charset="utf-8" />
+  <title>Patient details</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/details.css') }}" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+</head>
+
+<body>
+  <header>
+    <div class="header-area">
+      <div class="logo">
+        <h1 class="logo_top">DTM</h1>
+        <p class="logo_bottom">evaluation</p>
       </div>
-    </header>
-    <div class="patient-container">
-      <div class="details">
-        <div class="details-header">
-          <h2>Perfil do Paciente</h2>
-        </div>
-        <div class="card-details">
-          <div class="item">
-            <div>Nome</div>
-            <div>{{patient.name}}</div>
-          </div>
-          <div class="item">
-            <div>Idade</div>
-            <div>{{age}}</div>
-          </div>
-          <div class="item">
-            <div>Gênero</div>
-            <div class="gender">{{patient.gender}}</div>
-          </div>
-          <div class="item">
-            <div>E-mail</div>
-            <div>{{patient.email}}</div>
-          </div>
-          <div class="item">
-            <div>Telefone</div>
-            <div>{{patient.phone}}</div>
-          </div>
-          <div class="item">
-            <div>Sente dor?</div>
-            <div>{{patient.pain_choice}}</div>
-          </div>
-          <div class="item">
-            <a href="/edit_patient" class="button">editar</a>
-          </div>
-        </div>
-      </div>
-      <div class="exams">
-        <div class="exams-header">
-          <h2>Exames Realizados e Gráfico</h2>
-          <a href="/measurement_open_mouth" class="button">Novo Exame</a>
-        </div>
-        <div class="table-area">
-          <table>
-            <thead>
-              <tr>
-                <th>Fisioterapeuta</th>
-                <th>Dia do exame</th>
-                <th>Medição</th>
-              </tr>
-            </thead>
-            <tbody>
-                {% for exam in exams %}
-                  <tr id="{{exam.id}}">
-                    <td>{{exam.doctor}}</td>
-                    <td>{{exam.date}}</td>
-                    <td>{{exam.result_measurement}}</td>
-                  </tr>
-                {% endfor %}
-            </tbody>
-          </table>
-        </div>
-        <div class="graph"></div>
+      <div class="links">
+        <a href="/dashboard" class="active">Pacientes</a>
+        <a href="/show_register">Cadastrar Pacientes</a>
+        <label onclick="logout()">Sair</label>
       </div>
     </div>
+  </header>
+  <div class="patient-container">
+    <div class="details">
+      <div class="details-header">
+        <h2>Perfil do Paciente</h2>
+      </div>
+      <div class="card-details">
+        <div class="item">
+          <div>Nome</div>
+          <div>{{patient.name}}</div>
+        </div>
+        <div class="item">
+          <div>Idade</div>
+          <div>{{age}}</div>
+        </div>
+        <div class="item">
+          <div>Gênero</div>
+          <div class="gender">{{patient.gender}}</div>
+        </div>
+        <div class="item">
+          <div>E-mail</div>
+          <div>{{patient.email}}</div>
+        </div>
+        <div class="item">
+          <div>Telefone</div>
+          <div>{{patient.phone}}</div>
+        </div>
+        <div class="item">
+          <div>Sente dor?</div>
+          <div>{{patient.pain_choice}}</div>
+        </div>
+        <div class="item">
+          <a href="/edit_patient" class="button">editar</a>
+        </div>
+      </div>
+    </div>
+    <div class="exams">
+      <div class="exams-header">
+        <h2>Exames Realizados e Gráfico</h2>
+        <a href="/measurement_open_mouth" class="button">Novo Exame</a>
+      </div>
+      <div class="table-area">
+        <table>
+          <thead>
+            <tr>
+              <th>Fisioterapeuta</th>
+              <th>Dia do exame</th>
+              <th>Medição</th>
+            </tr>
+          </thead>
+          <tbody class="table-body">
+            {% for exam in exams %}
+            <tr id="{{exam.id}}">
+              <td>{{exam.doctor}}</td>
+              <td>{{exam.date}}</td>
+              <td>{{exam.result_measurement}}</td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+      <div class="graph"></div>
+    </div>
+  </div>
 
-    <script src="{{ url_for('static', filename='js/details.js') }}"></script>
-  </body>
+  <script src="{{ url_for('static', filename='js/details.js') }}"></script>
+</body>
+
 </html>

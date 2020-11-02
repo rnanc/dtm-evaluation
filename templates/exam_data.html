@@ -1,61 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dados do Exame</title>
-    <!-- <link rel="stylesheet" href="{{ url_for('static', filename='css/register_patients.css') }}"> -->
-    <link rel="stylesheet" href="/static/css/exam_data.css" />
-  </head>
-  <body>
-    <header>
-      <div class="header-area">
-        <div class="logo">
-          <h1 class="logo_top">DTM</h1>
-          <p class="logo_bottom">evaluation</p>
-        </div>
-        <div class="links">
-          <a href="/dashboard" class="active">Pacientes</a>
-          <a href="/register_patient">Cadastrar Pacientes</a>
-          <label onclick="logout()">Sair</label>
-        </div>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dados do Exame</title>
+  <!-- <link rel="stylesheet" href="{{ url_for('static', filename='css/register_patients.css') }}"> -->
+  <link rel="stylesheet" href="/static/css/exam_data.css" />
+</head>
+
+<body>
+  <header>
+    <div class="header-area">
+      <div class="logo">
+        <h1 class="logo_top">DTM</h1>
+        <p class="logo_bottom">evaluation</p>
       </div>
-    </header>
-    <main>
-      <div class="card_overlay">
-        <h2>Dados do Exame</h2>
-        <div class="card">
-          <form>
-            <div class="card_name">
-              <p>Nome</p>
-              <span>{{patient.name}}</span>
-            </div>
-            <div class="card_doctor">
-              <p>Médico</p>
-              <span>Dr. {{doctor.name}}</span>
-            </div>
-            <div class="card_measurement">
-              <p>Medição com a boca aberta</p>
-              <div>{{exam.open_measurement}} mm</div>
-            </div>
-            <div class="card_measurement">
-              <p>Medição com a boca fechada</p>
-              <div>{{exam.shut_measurement}} mm</div>
-            </div>
-            <div class="card_measurement">
-              <p>Resultado da medição</p>
-              <div>{{exam.result_measurement}} mm</div>
-            </div>
-            <div class="card_data">
-              <p>Data do Exame</p>
-              <span>{{exam.date}}</span>
-            </div>
-          </form>
-        </div>
+      <div class="links">
+        <a href="/dashboard" class="active">Pacientes</a>
+        <a href="/register_patient">Cadastrar Pacientes</a>
+        <label onclick="logout()">Sair</label>
       </div>
-    </main>
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.maskedinput/1.4.1/jquery.maskedinput.min.js"></script>
-    <script src="../static/js/phone-mask.js"></script>
-  </body>
+    </div>
+  </header>
+  <main>
+    <div class="card_overlay">
+      <h2>Dados do Exame</h2>
+      <div class="card">
+        <form>
+          <div class="card_name">
+            <p>Nome</p>
+            <span>{{patient.name}}</span>
+          </div>
+          <div class="card_doctor">
+            <p>Médico</p>
+            <span>Dr. {{doctor.name}}</span>
+          </div>
+          <div class="card_measurement">
+            <p>Medição com a boca aberta</p>
+            <div>{{exam.open_measurement}} mm</div>
+          </div>
+          <div class="card_measurement">
+            <p>Medição com a boca fechada</p>
+            <div>{{exam.shut_measurement}} mm</div>
+          </div>
+          <div class="card_measurement">
+            <p>Resultado da medição</p>
+            <div>{{exam.result_measurement}} mm</div>
+          </div>
+          <div class="card_data">
+            <p>Data do Exame</p>
+            <span>{{exam.date}}</span>
+          </div>
+        </form>
+      </div>
+    </div>
+  </main>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.maskedinput/1.4.1/jquery.maskedinput.min.js"></script>
+  <script src="../static/js/phone-mask.js"></script>
+</body>
+
 </html>
