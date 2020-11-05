@@ -44,7 +44,7 @@
                     {% endif %}
                     <input name="type" value="1" hidden />
                     <div class="result_measurement_open_mouth">
-                      {{ measurement_open_mouth }}mm
+                      {{ measurement_open_mouth }}
                     </div>
                   </div>
                 </div>
@@ -61,7 +61,7 @@
                     <a class="button" href="measurement_result">FINALIZAR</a>
                     {% endif %}
                     <div class="result_measurement_open_mouth">
-                      {{ measurement_shut_mouth }}mm
+                      {{ measurement_shut_mouth }}
                     </div>
                   </div>
                 </div>
@@ -70,11 +70,11 @@
                 <div class="card_content">
                   <p>Resultado</p>
                   <div class="button_container_final">
-                    <input name="open_measurement" value="{{ measurement_open_mouth }}" hidden />
-                    <input name="shut_measurement" value="{{ measurement_shut_mouth }}" hidden />
-                    <input name="result_measurement" value="{{ measurement_result }}" hidden />
+                    <input name="open_measurement_px" value="{{ measurement_open_mouth }}" hidden />
+                    <input name="shut_measurement_px" value="{{ measurement_shut_mouth }}" hidden />
+                    <input name="result_measurement_cm" value="{{ measurement_result }}" hidden />
                     <div class="result_measurement_mouth_shut">
-                      {{ measurement_result }}mm
+                      {{ measurement_result }} cm
                     </div>
                   </div>
                 </div>
