@@ -40,14 +40,14 @@ class Patient(db.Model):
   initial_distance_cm = db.Column(db.Float, nullable=False)
   exams = db.relationship("Exam", backref="patient", lazy="select")
 
-  def __init__(self, name, email, phone, age, gender, pain_choice):
+  def __init__(self, name, email, phone, age, gender, pain_choice, initial_distance_cm):
     self.name = name
     self.email = email
     self.phone = phone
     self.age = age
     self.gender = gender
     self.pain_choice = pain_choice
-
+    self.initial_distance_cm = initial_distance_cm
 class Exam(db.Model):
   __name__ = "exams"
   id = db.Column(db.Integer, primary_key=True)
