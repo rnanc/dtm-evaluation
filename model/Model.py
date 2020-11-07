@@ -58,8 +58,8 @@ class Exam(db.Model):
   user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
   patient_id = db.Column(db.Integer, db.ForeignKey('patient.id'))
 
-  def __init__(self, date, open_measurement, shut_measurement, result_measurement):
+  def __init__(self, date, open_measurement_px, shut_measurement_px, result_measurement_cm):
     self.date = date
-    self.open_measurement_px = open_measurement
-    self.shut_measurement_px = shut_measurement
-    self.result_measurement_cm = result_measurement
+    self.open_measurement_px = open_measurement_px
+    self.shut_measurement_px = shut_measurement_px
+    self.result_measurement_cm = result_measurement_cm
