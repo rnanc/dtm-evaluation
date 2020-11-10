@@ -14,7 +14,6 @@ from controller.ServicesController import services_blueprint
 
 app = Flask(__name__)
 
-
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql+psycopg2://postgres:postgres@localhost/DTM'
 app.config['SECRET_KEY'] = 'e7c0596d00d6d1d17e64d6547cd732cf'

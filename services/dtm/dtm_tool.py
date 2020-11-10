@@ -1,5 +1,4 @@
 import cv2
-import requests
 import dlib
 import numpy as np
 
