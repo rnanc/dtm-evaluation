@@ -47,9 +47,6 @@ header {
   color: #fff;
 }
 
-.logo_top {
-}
-
 .logo_bottom {
   padding-left: 40px;
   margin-top: -10px;
@@ -149,7 +146,7 @@ h2 {
   font-family: "Roboto";
   color: white;
   font-size: 30px;
-  margin-top: 50px;
+  margin-top: 60px;
   margin-bottom: 10px;
 }
 
@@ -216,7 +213,7 @@ h2 {
   display: none;
 }
 
-.checkbox + label:before {
+.checkbox+label:before {
   content: "";
   display: inline-block;
   width: 0.6em;
@@ -241,7 +238,7 @@ main label {
   cursor: pointer;
 }
 
-.checkbox:checked + label:before {
+.checkbox:checked+label:before {
   background: grey;
 }
 

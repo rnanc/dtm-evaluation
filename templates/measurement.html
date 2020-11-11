@@ -1,116 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/static/css/measurement.css" />
-    <title>Medição</title>
-  </head>
-  <body>
-    <header>
-      <div class="header-area">
-        <div class="logo">
-          <h1 class="logo_top">DTM</h1>
-          <p class="logo_bottom">evaluation</p>
-        </div>
-        <div class="links">
-          <a href="/dashboard" class="active">Pacientes</a>
-          <a href="/register_patient">Cadastrar Pacientes</a>
-          <label onclick="logout()">Sair</label>
-        </div>
-      </div>
-    </header>
 
-    <main>
-      <div style="flex: 1">
-        <div>
-          <h2>Exame</h2>
-          <!--<form action="measurement" method="post">-->
-          <div class="outer_container">
-            <div class="card">
-              <div class="card_content">
-                <form action="measurement_open_mouth" method="post">
-                  <div class="card_content">
-                    <p>Medição com Boca Aberta</p>
-                    <div class="button_container">
-                      {% if "false" in finalizar_open and "1" in step %}
-                      <button class="button">INICIAR</button>
-                      {% elif "2" in step or "3" in step %}
-                      <button class="button" hidden>INICIAR</button>
-                      {% else %}
-                      <a class="button" href="/measurement_mouth_shut"
-                        >FINALIZAR</a
-                      >
-                      {% endif %}
-                      <input name="type" value="1" hidden />
-                      <div class="result_measurement_open_mouth">
-                        {{ measurement_open_mouth }}mm
-                      </div>
-                    </div>
-                  </div>
-                </form>
-                <form action="measurement_mouth_shut" method="post">
-                  <div class="card_content">
-                    <p>Medição com Boca Fechada</p>
-                    <div class="button_container">
-                      {% if "false" in finalizar_shut and "2" in step%}
-                      <button class="button">INICIAR</button>
-                      {% elif "3" in step or "1" in step %}
-                      <button class="button" hidden>INICIAR</button>
-                      {% else %}
-                      <a class="button" href="measurement_result">FINALIZAR</a>
-                      {% endif %}
-                      <div class="result_measurement_open_mouth">
-                        {{ measurement_shut_mouth }}mm
-                      </div>
-                    </div>
-                  </div>
-                </form>
-                <form
-                  action="create_exam"
-                  method="POST"
-                  enctype="multipart/form-data"
-                >
-                  <div class="card_content">
-                    <p>Resultado</p>
-                    <div class="button_container_final">
-                      <input
-                        name="open_measurement"
-                        value="{{ measurement_open_mouth }}"
-                        hidden
-                      />
-                      <input
-                        name="shut_measurement"
-                        value="{{ measurement_shut_mouth }}"
-                        hidden
-                      />
-                      <input
-                        name="result_measurement"
-                        value="{{ measurement_result }}"
-                        hidden
-                      />
-                      <div class="result_measurement_mouth_shut">
-                        {{ measurement_result }}mm
-                      </div>
-                    </div>
-                  </div>
-                  {% if "true" in measurement %}
-                  <button class="submit" disabled>FINALIZAR</button>
-                  {% else %}
-                  <button class="submit">FINALIZAR</button>
-                  {% endif %}
-                </form>
-              </div>
-            </div>
-            {% if "true" in measurement %}
-            <div class="container-camera">
-              <img src="{{ url_for('services.dtm') }}" />
-            </div>
-            {% endif %}
-          </div>
-          <!--</form>-->
-        </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/static/css/measurement.css" />
+  <title>Medição</title>
+</head>
+
+<body>
+  <header>
+    <div class="header-area">
+      <div class="logo">
+        <h1 class="logo_top">DTM</h1>
+        <p class="logo_bottom">evaluation</p>
       </div>
-    </main>
-  </body>
+      <div class="links">
+        <a href="/dashboard" class="active">Pacientes</a>
+        <a href="/register_patient">Cadastrar Pacientes</a>
+        <label onclick="logout()">Sair</label>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div style="flex: 1">
+      <div>
+        <h2>Exame</h2>
+        <!--<form action="measurement" method="post">-->
+        <div class="outer_container">
+          <div class="card">
+            <div class="card_content">
+              <form action="measurement_open_mouth" method="post">
+                <div class="card_content">
+                  <p>Medição com Boca Aberta</p>
+                  <div class="button_container">
+                    {% if "false" in finalizar_open and "1" in step %}
+                    <button class="button">INICIAR</button>
+                    {% elif "2" in step or "3" in step %}
+                    <button class="button" hidden>INICIAR</button>
+                    {% else %}
+                    <a class="button" href="/measurement_mouth_shut">FINALIZAR</a>
+                    {% endif %}
+                    <input name="type" value="1" hidden />
+                    <div class="result_measurement_open_mouth">
+                      {{ measurement_open_mouth }}
+                    </div>
+                  </div>
+                </div>
+              </form>
+              <form action="measurement_mouth_shut" method="post">
+                <div class="card_content">
+                  <p>Medição com Boca Fechada</p>
+                  <div class="button_container">
+                    {% if "false" in finalizar_shut and "2" in step%}
+                    <button class="button">INICIAR</button>
+                    {% elif "3" in step or "1" in step %}
+                    <button class="button" hidden>INICIAR</button>
+                    {% else %}
+                    <a class="button" href="measurement_result">FINALIZAR</a>
+                    {% endif %}
+                    <div class="result_measurement_open_mouth">
+                      {{ measurement_shut_mouth }}
+                    </div>
+                  </div>
+                </div>
+              </form>
+              <form action="create_exam" method="POST" enctype="multipart/form-data">
+                <div class="card_content">
+                  <p>Resultado</p>
+                  <div class="button_container_final">
+                    <input name="open_measurement_px" value="{{ measurement_open_mouth }}" hidden />
+                    <input name="shut_measurement_px" value="{{ measurement_shut_mouth }}" hidden />
+                    <input name="result_measurement_cm" value="{{ measurement_result }}" hidden />
+                    <div class="result_measurement_mouth_shut">
+                      {{ measurement_result }} cm
+                    </div>
+                  </div>
+                </div>
+                {% if "true" in measurement %}
+                <button class="submit" disabled>FINALIZAR</button>
+                {% else %}
+                <button class="submit">FINALIZAR</button>
+                {% endif %}
+              </form>
+            </div>
+          </div>
+          {% if "true" in measurement %}
+          <div class="container-camera">
+            <img src="{{ url_for('services.dtm') }}" />
+          </div>
+          {% endif %}
+        </div>
+
+        <!--</form>-->
+      </div>
+    </div>
+  </main>
+</body>
+
 </html>

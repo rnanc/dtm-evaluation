@@ -47,8 +47,7 @@ header {
   color: #fff;
 }
 
-.logo_top {
-}
+.logo_top {}
 
 .logo_bottom {
   padding-left: 40px;
@@ -149,7 +148,7 @@ h2 {
   font-family: "Roboto";
   color: white;
   font-size: 30px;
-  margin-top: 50px;
+  margin-top: 60px;
   margin-bottom: 10px;
 }
 
@@ -171,6 +170,7 @@ h2 {
 }
 
 .card input[type="text"] {
+  font-family: 'Roboto', sans-serif;
   padding: 0 1px;
   border: none;
   border-bottom: 1px solid black;
@@ -191,42 +191,48 @@ h2 {
   border-bottom: 1px solid black;
   padding-bottom: 15px;
 }
+
 /*.intern p:nth-child(1){
     padding-top: 10px;
 }*/
 
-<<<<<<< HEAD
-.intern input{
-    margin-left: 110px;
-    margin-top: 10px;
+<<<<<<< HEAD .intern input {
+  margin-left: 110px;
+  margin-top: 10px;
 }
 
-.intern input[type="text"], input[type="email"], input[type="number"], input[type="date"]{
-    font-family: 'Roboto', sans-serif;
-    width: 57%;
-    border: none;
-    border-bottom: 1px solid black;
-    outline: none;
-    height: none;
-    color: #3e414f;
-    font-size: 15px;
+.intern input[type="text"],
+input[type="email"],
+input[type="number"],
+input[type="date"] {
+  padding: 0 1px;
+  padding-bottom: 5px;
+  font-family: 'Roboto', sans-serif;
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid black;
+  outline: none;
+  height: none;
+  color: #3e414f;
+  font-size: 15px;
 }
 
-.intern input[type="submit"]{
-    border: none;
-    width: 60%;
-    height: 30px;
-    border-radius: 12px;
-    background-color: #6B7ADB;
-    color: white;
-    font-family: 'Roboto', sans-serif;
-    box-shadow: 5px 5px 5px rgba(50, 50, 50, 0.77);
+.intern input[type="submit"] {
+  border: none;
+  width: 60%;
+  height: 30px;
+  border-radius: 12px;
+  background-color: #6B7ADB;
+  color: white;
+  font-family: 'Roboto', sans-serif;
+  box-shadow: 5px 5px 5px rgba(50, 50, 50, 0.77);
 }
-.intern input[type="submit"]:hover{
-    font-size: 17px;
+
+.intern input[type="submit"]:hover {
+  font-size: 17px;
 }
-=======
-.card input[type="email"] {
+
+=======.card input[type="email"] {
   width: 100%;
   padding: 0 1px;
   border: none;
@@ -250,7 +256,7 @@ h2 {
   display: none;
 }
 
-.checkbox + label:before {
+.checkbox+label:before {
   content: "";
   display: inline-block;
   width: 0.6em;
@@ -275,7 +281,7 @@ main label {
   cursor: pointer;
 }
 
-.checkbox:checked + label:before {
+.checkbox:checked+label:before {
   background: grey;
 }
 
@@ -302,4 +308,5 @@ main label:hover {
 .card input[type="submit"]:hover {
   background-color: #5366e0;
 }
->>>>>>> 53bb9d8609eedc6d878580cacea3287f731c4b85
+
+>>>>>>>53bb9d8609eedc6d878580cacea3287f731c4b85

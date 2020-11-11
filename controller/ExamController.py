@@ -40,11 +40,13 @@ def measurement_mouth_shut():
 def measurement_result():
   if request.method == 'GET':
     file = open("services/dtm/output/distance.txt")
-    distance = file.read()
+    measurement_shut_mouth = file.read()
     file.close()
     measurement_open_mouth = request.cookies.get("measurement_open_mouth")
-    result = round(float(measurement_open_mouth) - float(distance), 2)
-    return render_template('measurement.html', measurement_open_mouth=measurement_open_mouth, measurement_shut_mouth=distance, measurement_result=result, finalizar_shut="false", finalizar_open="false", step="3")
+    id_patient = request.cookies.get("patient_id")
+    initial_distance = Patient.query.get(id_patient).initial_distance_cm
+    final_distance = round((float(initial_distance) * float(measurement_shut_mouth)) / float(measurement_open_mouth), 2)
+    return render_template('measurement.html', measurement_open_mouth=measurement_open_mouth, measurement_shut_mouth=measurement_shut_mouth, measurement_result=final_distance, finalizar_shut="false", finalizar_open="false", step="3")
 
 @exam_blueprint.route("/create_exam", methods=["POST"])
 @jwt_required
