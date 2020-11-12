@@ -6,7 +6,7 @@ for (let row of rows) {
   });
 }
 
-//Função para procurar paciente.
+//Function to research patients in table.
 let search_box = document.getElementById("search_box");
 function getListPatients(){
   patients_names = []
