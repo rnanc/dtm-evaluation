@@ -9,7 +9,7 @@ from controller.PatientsController import patients_blueprint
 from controller.DetailsController import details_blueprint
 from controller.ExamController import exam_blueprint
 from controller.ServicesController import services_blueprint
-
+from services.dtm.dtm_tool import DTM
 app = Flask(__name__)
 
 
@@ -23,12 +23,15 @@ app.config['JWT_COOKIE_CSRF_PROTECT'] = False
 
 
 db = SQLAlchemy(app)
+
+dtm = DTM()
+
 db_config(app)
 se_config(app)
 
 Migrate(app, app.db)
 jwt_config(app)
-
+dtm.init_app(app)
 app.register_blueprint(home_blueprint)
 app.register_blueprint(patients_blueprint)
 app.register_blueprint(details_blueprint)
