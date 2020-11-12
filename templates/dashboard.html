@@ -6,6 +6,7 @@
   <title>Dashboard</title>
   <link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css') }}" />
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+
 </head>
 
 <body>
@@ -27,7 +28,7 @@
     <div class="table-header">
       <h2>Lista de Pacientes</h2>
       <div class="search-box">
-        <input type="text" placeholder="Nome do paciente ou data do exame" />
+        <input type="text" id="search_box" placeholder="Nome do paciente ou data do exame" />
         <button><span class="material-icons">search</span></button>
       </div>
     </div>
@@ -40,7 +41,7 @@
             <th>Data de nascimento</th>
           </tr>
         </thead>
-        <tbody class="table-body">
+        <tbody class="table-body" id="table_body">
           {% for patient in patients %}
           <tr id="{{patient.id}}">
             <td>{{patient.name}}</td>
@@ -52,7 +53,7 @@
       </table>
     </div>
   </div>
-
+  <script src="{{ url_for('static', filename='js/fuzzymatch.js') }}"></script>
   <script src="{{ url_for('static', filename='js/dashboard.js') }}"></script>
   <script src="{{ url_for('static', filename='js/navbar.js') }}"></script>
 </body>
