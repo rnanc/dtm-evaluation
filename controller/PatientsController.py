@@ -2,7 +2,7 @@ from flask import Blueprint, render_template, url_for, make_response, redirect, 
 from flask_jwt_extended import jwt_required
 from config.serializer import PatientSchema
 from model.Model import Patient
-from model.Model import Users
+from model.Model import Exam
 
 from flask import current_app
 
@@ -39,3 +39,17 @@ def edit_patient():
     patient.update(request.form.to_dict())
     current_app.db.session.commit()
     return redirect(url_for('patients.dashboard'))
+
+
+
+@patients_blueprint.route('/delete_patient', methods=["POST"])
+@jwt_required
+def delete_patient():
+  id = request.cookies.get("patient_id")
+  exams = Patient.query.get(id).exams
+  for e in exams:
+    Exam.query.filter(Exam.id == e.id).delete()
+  Patient.query.filter(Patient.id == id).delete()
+  current_app.db.session.commit()
+  return redirect(url_for('patients.dashboard'))
+

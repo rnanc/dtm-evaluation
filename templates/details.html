@@ -53,7 +53,10 @@
           <div>{{patient.pain_choice}}</div>
         </div>
         <div class="item">
-          <a href="/edit_patient" class="button">editar</a>
+          <a href="/edit_patient" class="button">Editar</a>
+          <form action="/delete_patient" method="POST" enctype="multipart/form-data">
+            <button class="button">Delete</button>
+          </form>
         </div>
       </div>
     </div>
