@@ -47,8 +47,6 @@ header {
   color: #fff;
 }
 
-.logo_top {}
-
 .logo_bottom {
   padding-left: 40px;
   margin-top: -10px;
@@ -196,7 +194,7 @@ h2 {
     padding-top: 10px;
 }*/
 
-<<<<<<< HEAD .intern input {
+.intern input {
   margin-left: 110px;
   margin-top: 10px;
 }
@@ -232,7 +230,7 @@ input[type="date"] {
   font-size: 17px;
 }
 
-=======.card input[type="email"] {
+.card input[type="email"] {
   width: 100%;
   padding: 0 1px;
   border: none;
@@ -309,4 +307,12 @@ main label:hover {
   background-color: #5366e0;
 }
 
->>>>>>>53bb9d8609eedc6d878580cacea3287f731c4b85
+.card_name input::-webkit-outer-spin-button,
+.card_name input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.card_name input[type=number] {
+  -moz-appearance: textfield;
+}

@@ -31,7 +31,7 @@
         <form method="post" action="/register_patient">
           <div class="card_name">
             <p>Nome</p>
-            <input type="text" name="name" placeholder="Nome e Sobrenome" id="nome" />
+            <input type="text" name="name" placeholder="Nome e Sobrenome" id="nome" required/>
           </div>
           <div class="card_date">
             <p>Data de Nascimento</p>
@@ -39,29 +39,29 @@
           </div>
           <div class="card_gender">
             <p>Gênero</p>
-            <input type="radio" name="gender" class="checkbox" id="checkbox3" value="Masculino" />
+            <input type="radio" name="gender" class="checkbox" id="checkbox3" value="Masculino" required/>
             <label for="checkbox3">Masculino</label>
-            <input type="radio" name="gender" class="checkbox" id="checkbox4" value="Feminino" />
+            <input type="radio" name="gender" class="checkbox" id="checkbox4" value="Feminino" required/>
             <label for="checkbox4">Feminino</label>
           </div>
           <div class="card_mail">
             <p>Email</p>
-            <input type="email" placeholder="exemplo@gmail.com" name="email" />
+            <input type="email" placeholder="exemplo@gmail.com" name="email" required/>
           </div>
           <div class="card_tel">
             <p>Telefone</p>
-            <input id="card_tel" type="text" placeholder="(xx) xxxx-xxxx" name="phone" />
+            <input id="card_tel" type="text" placeholder="(xx) xxxx-xxxx" name="phone" required/>
           </div>
           <div class="card_pain">
             <p>Sente Dor ?</p>
-            <input type="radio" name="pain_choice" id="checkbox1" class="checkbox" value="sim" />
+            <input type="radio" name="pain_choice" id="checkbox1" class="checkbox" value="sim" required/>
             <label for="checkbox1">Sim</label>
-            <input type="radio" name="pain_choice" id="checkbox2" class="checkbox" value="nao" />
+            <input type="radio" name="pain_choice" id="checkbox2" class="checkbox" value="nao" required/>
             <label for="checkbox2">Não</label>
           </div>
           <div class="card_name">
             <p>Distância inicial</p>
-            <input type="number" name="initial_distance_cm" placeholder="Exemplo: 15"/>
+            <input type="number" name="initial_distance_cm" placeholder="Exemplo: 15" min="1" required/>
           </div>
           <input type="submit"/>
         </form>
