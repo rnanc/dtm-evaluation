@@ -25,19 +25,19 @@
       <div>
         <h2>Editar Paciente</h2>
         <div class="card">
-          <form>
+          <form action="edit_patient" method="POST" enctype="multipart/form-data">
             <div class="card_name">
               <p>Nome</p>
               <input
                 type="text"
-                name="Nome"
+                name="name"
                 placeholder="Nome e Sobrenome"
                 id="nome"
               />
             </div>
             <div class="card_date">
               <p>Data de Nascimento</p>
-              <input type="date" id="idade" name="idade" />
+              <input type="date" id="idade" name="age" />
             </div>
             <div class="card_gender">
               <p>Gênero</p>
@@ -58,20 +58,20 @@
             </div>
             <div class="card_mail">
               <p>Email</p>
-              <input type="email" placeholder="exemplo@gmail.com" />
+              <input type="email" name="email" placeholder="exemplo@gmail.com" />
             </div>
             <div class="card_tel">
               <p>Telefone</p>
-              <input id="card_tel" type="text" placeholder="(xx) xxxx-xxxx" />
+              <input id="card_tel" name="phone" type="text" placeholder="(xx) xxxx-xxxx" />
             </div>
             <div class="card_pain">
               <p>Sente Dor ?</p>
-              <input type="radio" name="pain" id="checkbox1" class="checkbox" />
+              <input type="radio" name="pain_choice" id="checkbox1" class="checkbox" />
               <label for="checkbox1">Sim</label>
-              <input type="radio" name="pain" id="checkbox2" class="checkbox" />
+              <input type="radio" name="pain_choice" id="checkbox2" class="checkbox" />
               <label for="checkbox2">Não</label>
             </div>
-            <input type="submit" name="" value="Salvar" />
+            <input type="submit" value="Salvar" />
           </form>
         </div>
       </div>

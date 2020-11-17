@@ -48,6 +48,7 @@ class Patient(db.Model):
     self.gender = gender
     self.pain_choice = pain_choice
     self.initial_distance_cm = initial_distance_cm
+
 class Exam(db.Model):
   __name__ = "exams"
   id = db.Column(db.Integer, primary_key=True)

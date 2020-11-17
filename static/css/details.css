@@ -13,6 +13,7 @@
   --primary-color: #6b7adb;
   --secondary-color: #96a4ff;
   --font-color: #3e414f;
+  --danger-color: #ff0000;
 }
 
 html,
@@ -318,6 +319,13 @@ td {
 
 .button {
   transition: background-color 250ms ease-in-out;
+  margin-top: 10px;
+  padding: 12px 146px;
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+  border-radius: 16px;
+  background-color: var(--danger-color);
 }
 
 .button:hover {
@@ -400,4 +408,8 @@ td {
     display: flex;
     flex-direction: column;
   }
+}
+
+.button {
+
 }
