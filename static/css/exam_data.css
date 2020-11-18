@@ -47,9 +47,6 @@ header {
   color: #fff;
 }
 
-.logo_top {
-}
-
 .logo_bottom {
   padding-left: 40px;
   margin-top: -10px;
@@ -124,7 +121,7 @@ main {
   align-items: center;
 }
 
-.card_overlay{
+.card_overlay {
   margin-left: 15px;
   margin-right: 15px;
 }

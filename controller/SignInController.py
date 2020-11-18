@@ -38,7 +38,6 @@ def signUp():
 @home_blueprint.route('/login', methods=["POST"])
 def login_user():
   user = request.form.to_dict()
-  print(user)
   user_query = Users.query.filter_by(email=user["email"]).first()
   if user_query != None:
     verify = user_query.verify_password(user['password'])
@@ -49,7 +48,6 @@ def login_user():
     response.set_cookie('access_token_cookie', access_token)
     response.set_cookie('username', user_query.name)
     response.set_cookie('user_id', str(user_query.id))
-    print(access_token)
     return response
   else:
     flash("Senha ou email erradas!", "danger")
