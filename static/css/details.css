@@ -48,8 +48,6 @@ header {
   color: #fff;
 }
 
-.logo_top {}
-
 .logo_bottom {
   padding-left: 40px;
   margin-top: -10px;
@@ -132,8 +130,7 @@ header {
   margin-top: 20px;
   border-radius: 16px;
   box-shadow: 3px 3px 6px -2px rgba(0, 0, 0, 0.4);
-  min-height: 300px;
-  max-height: 44%;
+  min-height: 342px;
   overflow: auto;
 }
 
@@ -169,7 +166,8 @@ table tbody {
 }
 
 .table-body {
-  max-height: 228px;
+  max-height: 263px;
+
 }
 
 table tbody::-webkit-scrollbar {
@@ -212,7 +210,6 @@ td {
   color: var(--font-color);
 }
 
-/* DETAILS PAGE */
 .patient-container {
   max-width: 78%;
   width: 100%;
@@ -274,6 +271,18 @@ td {
   cursor: pointer;
 }
 
+.item form button{
+  font-size: 16px;
+  padding: 12px 0;
+  width: 100%;
+  cursor: pointer;
+  transition: backgroud-color 250ms ease-in-out;
+}
+
+.item form buttom :hover{
+  background-color: #bf0000;
+}
+
 .item div.gender {
   padding: 8px 16px;
   border-radius: 16px;
@@ -304,6 +313,7 @@ td {
   font-weight: bold;
   border-radius: 16px;
   background-color: var(--primary-color);
+  margin: 0;
 }
 
 .exams-header h2,
@@ -338,9 +348,11 @@ td {
   height: 295px;
   border-radius: 16px;
   box-shadow: 3px 3px 6px -2px rgba(0, 0, 0, 0.4);
-  background: url("https://ak.picdn.net/shutterstock/videos/33700576/thumb/1.jpg") no-repeat center center / cover;
-  min-height: 300px;
+  background: white;
+  min-height: 342px;
   height: 308.44px;
+  padding: 0 10px;
+  padding-top: 15px;
 }
 
 @media (max-width: 1200px) {
@@ -410,6 +422,4 @@ td {
   }
 }
 
-.button {
-
-}
+.button {}

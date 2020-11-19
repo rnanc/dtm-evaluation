@@ -22,8 +22,7 @@ body {
   padding-left: 30px;
 }
 
-.logo_top {
-}
+.logo_top {}
 
 .logo_bottom {
   padding-left: 40px;
@@ -184,8 +183,8 @@ label {
 }
 
 /* active state */
-input:focus ~ label,
-input:valid ~ label {
+input:focus~label,
+input:valid~label {
   top: -20px;
   font-size: 14px;
   color: #5264ae;
@@ -196,6 +195,7 @@ input:valid ~ label {
   position: relative;
   display: block;
 }
+
 .bar:before,
 .bar:after {
   content: "";
@@ -218,8 +218,8 @@ input:valid ~ label {
 }
 
 /* active state */
-input:focus ~ .bar:before,
-input:focus ~ .bar:after {
+input:focus~.bar:before,
+input:focus~.bar:after {
   width: 50%;
 }
 
@@ -235,7 +235,7 @@ input:focus ~ .bar:after {
 }
 
 /* active state */
-input:focus ~ .highlight {
+input:focus~.highlight {
   -webkit-animation: inputHighlighter 0.3s ease;
   -moz-animation: inputHighlighter 0.3s ease;
   animation: inputHighlighter 0.3s ease;
@@ -246,6 +246,7 @@ input:focus ~ .highlight {
   from {
     background: #5264ae;
   }
+
   to {
     width: 0;
     background: transparent;
@@ -256,6 +257,7 @@ input:focus ~ .highlight {
   from {
     background: #5264ae;
   }
+
   to {
     width: 0;
     background: transparent;
@@ -266,11 +268,13 @@ input:focus ~ .highlight {
   from {
     background: #5264ae;
   }
+
   to {
     width: 0;
     background: transparent;
   }
 }
+
 /*MODAL DE CADASTRO*/
 .modal {
   position: fixed;
@@ -292,7 +296,7 @@ input:focus ~ .highlight {
   pointer-events: auto;
 }
 
-.modal > div {
+.modal>div {
   margin-top: 50px;
   width: 500px;
   height: 450px;

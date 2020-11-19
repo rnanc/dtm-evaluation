@@ -85,11 +85,14 @@
           </tbody>
         </table>
       </div>
-      <div class="graph"></div>
+      <div class="graph">
+        <canvas class="chart"></canvas>
+      </div>
     </div>
   </div>
-
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>
   <script src="{{ url_for('static', filename='js/details.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/chart.js') }}"></script>
 </body>
 
 </html>
