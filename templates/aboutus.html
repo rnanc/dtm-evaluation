@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>About Us</title>
+    <meta charset="utf-8">    
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/aboutus.css') }}"/>
+</head>
+<body>
+	<header>
+      <div class="header-area">
+        <div class="logo">
+          <h1 class="logo_top">DTM</h1>
+          <p class="logo_bottom">evaluation</p>
+        </div>
+        <div class="links">
+          <a href="/dashboard">Pacientes</a>
+          <a href="/show_register">Cadastrar Pacientes</a>
+          <a href="#">Sobre Nós</a>
+          <label onclick="logout()">Sair</label>
+        </div>
+      </div>
+    </header>
+
+    <body>
+    	<h3>Sobre nós</h3>
+    	<div class="container">
+    	<div class="card">
+    		<p>Este projeto foi desenvolvido com o intuito de servir como uma alternativa avaliativa para tratamento e acompanhamento de pacientes sintomáticos de DTM (Disfunção Temporomandibular), utlizando um script em python para auxiliar o tratamento, junto de uma interface web para que médicos possam ter acesso aos dados gerados por cada paciente.</p>
+    		<p>Plataforma desenvolvida por GETA<br>
+			(Grupo de Estudos de Tecnologia Assistiva)</p>
+			<p>www.sitedogeta.com.br</p>
+    	</div>
+    	</div>
+    </body>
+</body>
+</html>
