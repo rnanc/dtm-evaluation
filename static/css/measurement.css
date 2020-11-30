@@ -350,6 +350,8 @@ h4 {
     flex-direction: column-reverse;
     width: fit-content;
     margin-bottom: 50px;
+    align-items: center;
+    justify-content: center;
   }
 
   .container-camera {

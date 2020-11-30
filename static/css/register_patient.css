@@ -313,6 +313,6 @@ main label:hover {
   margin: 0;
 }
 
-.card_name input[type=number] {
+.card_name input[type="number"] {
   -moz-appearance: textfield;
 }

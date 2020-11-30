@@ -131,7 +131,6 @@ header {
   border-radius: 16px;
   box-shadow: 3px 3px 6px -2px rgba(0, 0, 0, 0.4);
   min-height: 342px;
-  max-height: 44%;
   overflow: auto;
 }
 
@@ -167,7 +166,7 @@ table tbody {
 }
 
 .table-body {
-  max-height: 400px;
+  max-height: 263px;
 }
 
 table tbody::-webkit-scrollbar {
@@ -272,7 +271,7 @@ td {
   cursor: pointer;
 }
 
-.item form button{
+.item form button {
   font-size: 16px;
   padding: 12px 0;
   width: 100%;
@@ -280,8 +279,8 @@ td {
   transition: background-color 250ms ease-in-out;
 }
 
-.item form button:hover{
-  background-color: #BF0000;
+.item form button:hover {
+  background-color: #bf0000;
 }
 
 .item div.gender {
@@ -349,9 +348,31 @@ td {
   height: 295px;
   border-radius: 16px;
   box-shadow: 3px 3px 6px -2px rgba(0, 0, 0, 0.4);
-  background: url("https://ak.picdn.net/shutterstock/videos/33700576/thumb/1.jpg") no-repeat center center / cover;
+  background: white;
   min-height: 342px;
   height: 308.44px;
+  padding: 15px 10px 0px 5px;
+  position: relative;
+}
+
+.toggleLineChart {
+  background-color: transparent;
+  position: absolute;
+  top: 6%;
+  right: 2%;
+  border-radius: 8px;
+  background-color: var(--primary-color);
+  color: white;
+  padding: 0 2px;
+  transition: all 250ms;
+}
+
+.toggleLineChart:focus{
+  outline: none;
+}
+
+.toggleLineChart:hover{
+  background-color: #5366e0;
 }
 
 @media (max-width: 1200px) {
@@ -366,6 +387,10 @@ td {
   .exams-header {
     margin-top: 10px;
     flex-direction: row;
+  }
+
+  .graph{
+    margin-bottom: 50px;
   }
 }
 
@@ -404,6 +429,10 @@ td {
   td {
     font-size: 14px;
   }
+
+  .graph{
+    margin-bottom: 50px;
+  }
 }
 
 @media (max-width: 540px) {
@@ -419,8 +448,9 @@ td {
     display: flex;
     flex-direction: column;
   }
-}
 
-.button {
-
+  .graph{
+    padding-bottom: 5px;
+    margin-bottom: 50px;
+  }
 }
