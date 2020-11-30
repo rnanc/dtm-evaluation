@@ -167,6 +167,7 @@ table tbody {
 
 .table-body {
   max-height: 263px;
+
 }
 
 table tbody::-webkit-scrollbar {
@@ -209,7 +210,6 @@ td {
   color: var(--font-color);
 }
 
-/* DETAILS PAGE */
 .patient-container {
   max-width: 78%;
   width: 100%;
@@ -271,15 +271,15 @@ td {
   cursor: pointer;
 }
 
-.item form button {
+.item form button{
   font-size: 16px;
   padding: 12px 0;
   width: 100%;
   cursor: pointer;
-  transition: background-color 250ms ease-in-out;
+  transition: backgroud-color 250ms ease-in-out;
 }
 
-.item form button:hover {
+.item form buttom :hover{
   background-color: #bf0000;
 }
 
@@ -307,13 +307,13 @@ td {
 }
 
 .exams-header a {
-  margin: 0;
   padding: 12px 32px;
   text-decoration: none;
   color: #fff;
   font-weight: bold;
   border-radius: 16px;
   background-color: var(--primary-color);
+  margin: 0;
 }
 
 .exams-header h2,
@@ -351,28 +351,8 @@ td {
   background: white;
   min-height: 342px;
   height: 308.44px;
-  padding: 15px 10px 0px 5px;
-  position: relative;
-}
-
-.toggleLineChart {
-  background-color: transparent;
-  position: absolute;
-  top: 6%;
-  right: 2%;
-  border-radius: 8px;
-  background-color: var(--primary-color);
-  color: white;
-  padding: 0 2px;
-  transition: all 250ms;
-}
-
-.toggleLineChart:focus{
-  outline: none;
-}
-
-.toggleLineChart:hover{
-  background-color: #5366e0;
+  padding: 0 10px;
+  padding-top: 15px;
 }
 
 @media (max-width: 1200px) {
@@ -387,10 +367,6 @@ td {
   .exams-header {
     margin-top: 10px;
     flex-direction: row;
-  }
-
-  .graph{
-    margin-bottom: 50px;
   }
 }
 
@@ -429,10 +405,6 @@ td {
   td {
     font-size: 14px;
   }
-
-  .graph{
-    margin-bottom: 50px;
-  }
 }
 
 @media (max-width: 540px) {
@@ -448,9 +420,6 @@ td {
     display: flex;
     flex-direction: column;
   }
-
-  .graph{
-    padding-bottom: 5px;
-    margin-bottom: 50px;
-  }
 }
+
+.button {}

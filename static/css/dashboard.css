@@ -47,6 +47,8 @@ header {
   color: #fff;
 }
 
+.logo_top {}
+
 .logo_bottom {
   padding-left: 40px;
   margin-top: -10px;
@@ -192,7 +194,6 @@ header {
 .table-container .table-header .search-box button span:focus {
   outline: none;
 }
-
 .table-area {
   background-color: #fff;
   margin-top: 20px;

@@ -12,7 +12,6 @@ from controller.ServicesController import services_blueprint
 from services.dtm.dtm_tool import DTM
 app = Flask(__name__)
 
-
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:postgres@localhost:5432/DTM?gssencmode=disable'
 app.config['SECRET_KEY'] = 'e7c0596d00d6d1d17e64d6547cd732cf'
