@@ -279,7 +279,7 @@ td {
   transition: backgroud-color 250ms ease-in-out;
 }
 
-.item form buttom :hover{
+.item form button:hover{
   background-color: #bf0000;
 }
 
@@ -353,6 +353,26 @@ td {
   height: 308.44px;
   padding: 0 10px;
   padding-top: 15px;
+  position: relative;
+}
+
+.toggleLineChart{
+  position: absolute;
+  top: 14px;
+  right: 12px;
+  background-color: var(--primary-color);
+  color: white;
+  border-radius: 6px;
+  padding: 0 1px;
+  transition: background-color 250ms ease-in-out;
+}
+
+.toggleLineChart:hover{
+  background-color: #5366e0;
+}
+
+.toggleLineChart:focus{
+  outline: none;
 }
 
 @media (max-width: 1200px) {
@@ -367,6 +387,10 @@ td {
   .exams-header {
     margin-top: 10px;
     flex-direction: row;
+  }
+
+  .graph{
+    margin-bottom: 30px;
   }
 }
 
@@ -421,5 +445,3 @@ td {
     flex-direction: column;
   }
 }
-
-.button {}
