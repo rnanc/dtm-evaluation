@@ -9,6 +9,7 @@ from controller.PatientsController import patients_blueprint
 from controller.DetailsController import details_blueprint
 from controller.ExamController import exam_blueprint
 from controller.ServicesController import services_blueprint
+from controller.UsersController import users_blueprint
 from services.dtm.dtm_tool import DTM
 app = Flask(__name__)
 
@@ -36,7 +37,7 @@ app.register_blueprint(patients_blueprint)
 app.register_blueprint(details_blueprint)
 app.register_blueprint(exam_blueprint)
 app.register_blueprint(services_blueprint)
-
+app.register_blueprint(users_blueprint)
 
 
 if __name__ == '__main__':
