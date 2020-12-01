@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Perfil</title>
+  <link rel="stylesheet" href="/static/css/profile.css" />
+</head>
+<body>
+  <header>
+    <div class="header-area">
+      <div class="logo">
+        <h1 class="logo_top">DTM</h1>
+        <p class="logo_bottom">evaluation</p>
+      </div>
+      <div class="links">
+        <a href="/dashboard" class="active">Pacientes</a>
+        <a href="/register_patient">Cadastrar Pacientes</a>
+        <a href="/profile">Perfil</a>
+        <label onclick="logout()">Sair</label>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="details">
+      <div class="details-header">
+        <h2>Perfil do Usuário</h2>
+      </div>
+      <div class="card-details">
+        <div class="item">
+          <div>Nome</div>
+          <div>{{user.name}}</div>
+        </div>
+        <div class="item">
+          <div>Matricula</div>
+          <div>{{user.registered_number}}</div>
+        </div>
+        <div class="item">
+          <div>Telefone</div>
+          <div>{{user.email}}</div>
+        </div>
+        <div class="item">
+          <a href="/edit_profile" class="button">Editar</a>
+        </div>
+      </div>
+    </div>
+  </main>
+</body>
+</html>
