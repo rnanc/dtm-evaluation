@@ -62,7 +62,7 @@ header {
 }
 
 .header-area .links {
-  width: 300px;
+  width: 350px;
   margin-right: 10px;
   display: flex;
   flex-direction: row;
@@ -192,14 +192,12 @@ header {
 .table-container .table-header .search-box button span:focus {
   outline: none;
 }
-
 .table-area {
   background-color: #fff;
   margin-top: 20px;
   border-radius: 16px;
   box-shadow: 3px 3px 6px -2px rgba(0, 0, 0, 0.4);
   min-height: max-content;
-  max-height: 44%;
   overflow: auto;
 }
 

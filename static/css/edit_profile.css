@@ -155,19 +155,12 @@ h2 {
   margin-bottom: 10px;
 }
 
-.card input[type="date"] {
-  padding: 0 1px;
-  border: none;
-  border-bottom: 1px solid black;
-  outline: none;
-  height: none;
-  color: #3e414f;
-  font-size: 15px;
-  padding-bottom: 5px;
+.card input[type="text"],
+.card input[type="number"],
+.card input[type="email"],
+.card input[type="password"]
+{
   width: 100%;
-}
-
-.card input[type="text"] {
   padding: 0 1px;
   border: none;
   border-bottom: 1px solid black;
@@ -175,6 +168,7 @@ h2 {
   height: none;
   color: #3e414f;
   font-size: 15px;
+  font-weight: bold;
   padding-bottom: 5px;
   width: 100%;
 }
@@ -189,16 +183,10 @@ h2 {
   padding-bottom: 15px;
 }
 
-.card input[type="email"] {
-  width: 100%;
-  padding: 0 1px;
-  border: none;
-  border-bottom: 1px solid black;
-  outline: none;
-  height: none;
-  color: #3e414f;
-  font-size: 15px;
-  padding-bottom: 5px;
+.card input[type="number"]::-webkit-outer-spin-button,
+.card input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 .card_gender p {
@@ -206,6 +194,14 @@ h2 {
 }
 
 .card_pain p {
+  margin-bottom: 15px;
+}
+
+.card_matricula p {
+  margin-bottom: 15px;
+}
+
+.card_password p {
   margin-bottom: 15px;
 }
 

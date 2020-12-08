@@ -17,7 +17,8 @@
       </div>
       <div class="links">
         <a href="/dashboard" class="active">Pacientes</a>
-        <a href="/show_register">Cadastrar Pacientes</a>
+        <a href="/register_patient">Cadastrar Pacientes</a>
+        <a href="/profile">Perfil</a>
         <label onclick="logout()">Sair</label>
       </div>
     </div>
@@ -85,11 +86,16 @@
           </tbody>
         </table>
       </div>
-      <div class="graph"></div>
+      <div class="graph">
+        <canvas class="chart"></canvas>
+        <button class="toggleLineChart" onclick="toggleHandler()"><span class="material-icons">show_chart</span></button>
+      </div>
     </div>
   </div>
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>
   <script src="{{ url_for('static', filename='js/details.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/chart.js') }}"></script>
 </body>
 
 </html>

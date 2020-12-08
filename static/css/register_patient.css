@@ -53,7 +53,7 @@ header {
 }
 
 .header-area .links {
-  width: 300px;
+  width: 350px;
   margin-right: 10px;
   display: flex;
   flex-direction: row;
@@ -313,6 +313,6 @@ main label:hover {
   margin: 0;
 }
 
-.card_name input[type=number] {
+.card_name input[type="number"] {
   -moz-appearance: textfield;
 }
