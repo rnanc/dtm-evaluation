@@ -33,12 +33,13 @@
                 name="name"
                 placeholder="Nome e Sobrenome"
                 id="nome"
+                value="{{user.name}}"
                 required
               />
             </div>
             <div class="card_mail">
               <p>Email</p>
-              <input type="email" name="email" placeholder="exemplo@gmail.com" required />
+              <input type="email" name="email" placeholder="exemplo@gmail.com" value="{{user.email}}" required />
             </div>
             <div class="card_mail">
               <p>Confirmação do Email</p>
@@ -46,7 +47,7 @@
             </div>
             <div class="card_matricula">
               <p>Matricula</p>
-              <input type="number" name="registered_number" placeholder="00000000" required />
+              <input type="number" name="registered_number" placeholder="00000000" value="{{user.registered_number}}" required />
             </div>
             <div class="card_password">
               <p>Senha</p>
