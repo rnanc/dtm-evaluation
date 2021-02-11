@@ -25,6 +25,9 @@ def signUp():
       if u.email == user.email:
         flash("Email já cadastrado! Tente novamente.", "danger")
         return redirect(url_for("home.home"))
+      if u.registered_number == user.registered_number:
+        flash("Matricula já cadastrada! Tente novamente.", "danger")
+        return redirect(url_for("home.home"))
     if "@aluno.cesupa.br" not in user.email and "@prof.cesupa.br" not in user.email:
       flash("Email precisa ser do domínio CESUPA! Tente novamente cadastrando seu email do CESUPA. ", "danger")
       return render_template("signIn.html"), 400

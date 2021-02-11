@@ -26,7 +26,7 @@ def edit_profile():
     us = UserSchema()
     user_form = request.form.to_dict()
     if user_form != None:
-      if "@aluno.cesupa.br" in user_form["email"] and "@prof.cesupa.br" in user_form["email"]:
+      if "@aluno.cesupa.br" in user_form["email"] or "@prof.cesupa.br" in user_form["email"]:
         if user_form["email"] == user_form["email_confirm"] and user_form["password"] == user_form["password_confirm"]:
           del user_form["email_confirm"]
           del user_form["password_confirm"]

@@ -32,7 +32,9 @@ def register_patient():
 @jwt_required
 def edit_patient():
   if request.method == "GET":
-    return render_template("edit_patient.html")
+    id = request.cookies.get("patient_id")
+    patient = Patient.query.get(id)
+    return render_template("edit_patient.html", patient=patient)
   else:
     id = request.cookies.get("patient_id")
     patient = Patient.query.filter(Patient.id == id)

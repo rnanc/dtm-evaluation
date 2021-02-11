@@ -34,19 +34,23 @@
                 name="name"
                 placeholder="Nome e Sobrenome"
                 id="nome"
+                value="{{patient.name}}"
               />
             </div>
             <div class="card_date">
               <p>Data de Nascimento</p>
-              <input type="date" id="idade" name="age" />
+              <input type="date" id="idade" name="age" value="{{patient.age}}"/>
             </div>
             <div class="card_gender">
               <p>Gênero</p>
+              {% if "Masculino" in patient.gender %}
               <input
                 type="radio"
                 name="gender"
                 class="checkbox"
                 id="checkbox3"
+                value="Masculino"
+                checked
               />
               <label for="checkbox3">Masculino</label>
               <input
@@ -54,23 +58,52 @@
                 name="gender"
                 class="checkbox"
                 id="checkbox4"
+                value="Feminino"
               />
               <label for="checkbox4">Feminino</label>
+              {% else %}
+              <input
+                type="radio"
+                name="gender"
+                class="checkbox"
+                id="checkbox3"
+                value="Masculino"
+
+              />
+              <label for="checkbox3">Masculino</label>
+              <input
+                type="radio"
+                name="gender"
+                class="checkbox"
+                id="checkbox4"
+                value="Feminino"
+                checked
+              />
+              <label for="checkbox4">Feminino</label>
+              {% endif %}
+
             </div>
             <div class="card_mail">
               <p>Email</p>
-              <input type="email" name="email" placeholder="exemplo@gmail.com" />
+              <input type="email" name="email" placeholder="exemplo@gmail.com" value="{{patient.email}}" />
             </div>
             <div class="card_tel">
               <p>Telefone</p>
-              <input id="card_tel" name="phone" type="text" placeholder="(xx) xxxx-xxxx" />
+              <input id="card_tel" name="phone" type="text" placeholder="(xx) xxxx-xxxx" value="{{patient.phone}}"/>
             </div>
             <div class="card_pain">
               <p>Sente Dor ?</p>
-              <input type="radio" name="pain_choice" id="checkbox1" class="checkbox" />
+              {% if "sim" in patient.pain_choice %}
+              <input type="radio" name="pain_choice" id="checkbox1" class="checkbox" value="sim" checked/>
               <label for="checkbox1">Sim</label>
-              <input type="radio" name="pain_choice" id="checkbox2" class="checkbox" />
+              <input type="radio" name="pain_choice" id="checkbox2" class="checkbox" value="nao" />
               <label for="checkbox2">Não</label>
+              {% else %}
+              <input type="radio" name="pain_choice" id="checkbox1" class="checkbox" value="sim" />
+              <label for="checkbox1">Sim</label>
+              <input type="radio" name="pain_choice" id="checkbox2" class="checkbox" value="nao" checked/>
+              <label for="checkbox2">Não</label>
+              {% endif %}
             </div>
             <input type="submit" value="Salvar" />
           </form>
