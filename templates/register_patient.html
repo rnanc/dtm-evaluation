@@ -34,6 +34,10 @@
             <p>Nome</p>
             <input type="text" name="name" placeholder="Nome e Sobrenome" id="nome" required />
           </div>
+          <div class="card_doc">
+            <p>RG ou CPF</p>
+            <input type="text" name="doc_number" placeholder="RG ou CPF" id="document" required />
+          </div>
           <div class="card_date">
             <p>Data de Nascimento</p>
             <input type="date" id="idade" name="age" required />
@@ -64,14 +68,13 @@
             <p>Distância inicial</p>
             <input type="number" name="initial_distance_cm" placeholder="Exemplo: 15" min="1" required />
           </div>
-          <input type="submit" />
+          <input type="submit" value="CADASTRAR"/>
         </form>
       </div>
     </div>
   </main>
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.maskedinput/1.4.1/jquery.maskedinput.min.js"></script>
-  <script src="../static/js/phone-mask.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-masker/1.1.0/vanilla-masker.min.js"></script>
+  <script src="../static/js/input-masks.js"></script>
   <script src="../static/js/date-handler.js"></script>
 </body>
 

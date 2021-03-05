@@ -8,11 +8,13 @@ from flask import current_app
 
 patients_blueprint = Blueprint('patients', __name__, template_folder='templates', static_folder='static')
 
+
 @patients_blueprint.route('/dashboard')
 @jwt_required
 def dashboard():
   patients = Patient.query.all()
   return render_template('dashboard.html', patients=patients)
+
 
 @patients_blueprint.route('/register_patient', methods=['GET', 'POST'])
 @jwt_required
@@ -43,7 +45,6 @@ def edit_patient():
     return redirect(url_for('patients.dashboard'))
 
 
-
 @patients_blueprint.route('/delete_patient', methods=["POST"])
 @jwt_required
 def delete_patient():
@@ -54,4 +55,3 @@ def delete_patient():
   Patient.query.filter(Patient.id == id).delete()
   current_app.db.session.commit()
   return redirect(url_for('patients.dashboard'))
-

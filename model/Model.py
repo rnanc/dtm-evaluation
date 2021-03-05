@@ -32,6 +32,7 @@ class Patient(db.Model):
   __name__ = "patients"
   id = db.Column(db.Integer, primary_key=True)
   name = db.Column(db.String(100))
+  doc_number = db.Column(db.String(100))
   email = db.Column(db.String(100))
   phone = db.Column(db.String(100))
   age = db.Column(db.String(100))
@@ -40,8 +41,9 @@ class Patient(db.Model):
   initial_distance_cm = db.Column(db.Float, nullable=False)
   exams = db.relationship("Exam", backref="patient", lazy="select")
 
-  def __init__(self, name, email, phone, age, gender, pain_choice, initial_distance_cm):
+  def __init__(self, name, doc_number, email, phone, age, gender, pain_choice, initial_distance_cm):
     self.name = name
+    self.doc_number = doc_number
     self.email = email
     self.phone = phone
     self.age = age
