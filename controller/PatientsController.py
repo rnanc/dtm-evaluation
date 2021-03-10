@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, url_for, make_response, redirect, request, redirect
+from flask import Blueprint, render_template, url_for, make_response, redirect, request, redirect, flash
 from flask_jwt_extended import jwt_required
 from config.serializer import PatientSchema
 from model.Model import Patient
@@ -22,8 +22,19 @@ def register_patient():
   if request.method == "GET":
     return render_template('register_patient.html')
   else:
+    patients = Patient.query.all()
     patient = PatientSchema()
     patients_info = request.form.to_dict()
+    for p in patients:
+      if p.doc_number == patients_info['doc_number']:
+        flash("Documento já cadastrado! Tente novamente.", "danger")
+        return redirect(url_for("patients.register_patient"))
+      if p.email == patients_info['email']:
+        flash("Email já cadastrado! Tente novamente.", "danger")
+        return redirect(url_for("patients.register_patient"))
+      if p.phone == patients_info['phone']:
+        flash("Numero já cadastrado! Tente novamente.", "danger")
+        return redirect(url_for("patients.register_patient"))
     patients_load = patient.load(patients_info)
     current_app.db.session.add(patients_load)
     current_app.db.session.commit()

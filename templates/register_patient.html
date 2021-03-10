@@ -69,6 +69,23 @@
             <input type="number" name="initial_distance_cm" placeholder="Exemplo: 15" min="1" required />
           </div>
           <input type="submit" value="CADASTRAR"/>
+
+           {% with messages = get_flashed_messages(category_filter=['danger']) %}
+          {% if messages %}
+          {% for message in messages %}
+          <p style="color:red; margin: 15px 0 -25px 0">{{ message }}</p>
+          {% endfor %}
+          {% endif %}
+          {% endwith %}
+
+          {% with messages = get_flashed_messages(category_filter=['success']) %}
+          {% if messages %}
+          {% for message in messages %}
+          <p style="color:green; margin: 15px 0 -25px 0">{{ message }}</p>
+          {% endfor %}
+          {% endif %}
+          {% endwith %}
+
         </form>
       </div>
     </div>
