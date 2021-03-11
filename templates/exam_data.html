@@ -11,10 +11,10 @@
 <body>
   <header>
     <div class="header-area">
-      <div class="logo">
+      <a href="/dashboard" class="logo">
         <h1 class="logo_top">DTM</h1>
         <p class="logo_bottom">evaluation</p>
-      </div>
+      </a>
       <div class="links">
         <a href="/dashboard" class="active">Pacientes</a>
         <a href="/register_patient">Cadastrar Pacientes</a>
@@ -59,6 +59,7 @@
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.maskedinput/1.4.1/jquery.maskedinput.min.js"></script>
   <script src="../static/js/phone-mask.js"></script>
+  <script src="{{ url_for('static', filename='js/navbar.js') }}"></script>
 </body>
 
 </html>

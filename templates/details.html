@@ -2,128 +2,132 @@
 <html xmlns="http://www.w3.org/1999/html">
 
 <head>
-  <meta charset="utf-8"/>
+  <meta charset="utf-8" />
   <title>Patient details</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/details.css') }}"/>
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
-
-
+    integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/details.css') }}" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
 </head>
 
 <body>
-<header>
-  <div class="header-area">
-    <div class="logo">
-      <h1 class="logo_top">DTM</h1>
-      <p class="logo_bottom">evaluation</p>
-    </div>
-    <div class="links">
-      <a href="/dashboard" class="active">Pacientes</a>
-      <a href="/register_patient">Cadastrar Pacientes</a>
-      <a href="/profile">Perfil</a>
-      <label onclick="logout()">Sair</label>
-    </div>
-  </div>
-</header>
-<div class="patient-container">
-  <div class="details">
-    <div class="details-header">
-      <h2>Perfil do Paciente</h2>
-    </div>
-    <div class="card-details">
-      <div class="item">
-        <div>Nome</div>
-        <div>{{patient.name}}</div>
-      </div>
-      <div class="item">
-        <div>Idade</div>
-        <div>{{age}}</div>
-      </div>
-      <div class="item">
-        <div>Gênero</div>
-        <div class="gender">{{patient.gender}}</div>
-      </div>
-      <div class="item">
-        <div>E-mail</div>
-        <div>{{patient.email}}</div>
-      </div>
-      <div class="item">
-        <div>Telefone</div>
-        <div>{{patient.phone}}</div>
-      </div>
-      <div class="item">
-        <div>Sente dor?</div>
-        <div>{{patient.pain_choice}}</div>
-      </div>
-      <div class="item">
-        <a href="/edit_patient" class="button">Editar</a>
 
-        <button class="button" data-bs-toggle="modal" data-bs-target="#exampleModal">DELETAR</button>
-        <!-- Button trigger modal -->
-        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
-             aria-hidden="true">
-          <form action="/delete_patient" method="POST" enctype="multipart/form-data">
-            <div class="modal-dialog modal-dialog-centered">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalLabel">Deletar Paciente</h5>
-                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                  Tem certeza que deseja deletar este paciente?
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+  <header>
+    <div class="header-area">
+      <a href="/dashboard" class="logo">
+        <h1 class="logo_top">DTM</h1>
+        <p class="logo_bottom">evaluation</p>
+      </a>
+      <div class="links">
+        <a href="/dashboard" class="active">Pacientes</a>
+        <a href="/register_patient">Cadastrar Pacientes</a>
+        <a href="/profile">Perfil</a>
+        <label onclick="logout()">Sair</label>
+      </div>
+    </div>
+  </header>
 
-                  <button type="submit" class="btn btn-danger">Confirmar</button>
+  <div class="patient-container">
+    <div class="details">
+      <div class="details-header">
+        <h2>Perfil do Paciente</h2>
+      </div>
+      <div class="card-details">
+        <div class="item">
+          <div>Nome</div>
+          <div>{{patient.name}}</div>
+        </div>
+        <div class="item">
+          <div>Idade</div>
+          <div>{{age}}</div>
+        </div>
+        <div class="item">
+          <div>Gênero</div>
+          <div class="gender">{{patient.gender}}</div>
+        </div>
+        <div class="item">
+          <div>E-mail</div>
+          <div>{{patient.email}}</div>
+        </div>
+        <div class="item">
+          <div>Telefone</div>
+          <div>{{patient.phone}}</div>
+        </div>
+        <div class="item">
+          <div>Sente dor?</div>
+          <div>{{patient.pain_choice}}</div>
+        </div>
+        <div class="item">
+          <a href="/edit_patient" class="button_edit">Editar</a>
+          <button class="button_del" data-bs-toggle="modal" data-bs-target="#exampleModal">DELETAR</button>
+
+          <!-- Modal -->
+          <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <form action="/delete_patient" method="POST" enctype="multipart/form-data">
+              <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Deletar Paciente</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    Tem certeza que deseja deletar este paciente?
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+
+                    <button type="submit" class="btn btn-danger">Confirmar</button>
+                  </div>
                 </div>
               </div>
-            </div>
+          </div>
+          <!-- Modal -->
+
         </div>
       </div>
+      </form>
     </div>
-    </form>
+    <div class="exams">
+      <div class="exams-header">
+        <h2>Exames Realizados e Gráfico</h2>
+        <a href="/measurement_open_mouth" class="button_exam">Novo Exame</a>
+      </div>
+      <div class="table-area">
+        <table>
+          <thead>
+            <tr>
+              <th>Fisioterapeuta</th>
+              <th>Dia do exame</th>
+              <th>Medição</th>
+            </tr>
+          </thead>
+          <tbody class="table-body">
+            {% for exam in exams %}
+            <tr id="{{exam.id}}">
+              <td>{{exam.doctor}}</td>
+              <td>{{exam.date}}</td>
+              <td>{{exam.result_measurement_cm}}</td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+      <div class="graph">
+        <canvas class="chart"></canvas>
+        <button class="toggleLineChart" onclick="toggleHandler()"><span
+            class="material-icons">show_chart</span></button>
+      </div>
+    </div>
   </div>
-  <div class="exams">
-    <div class="exams-header">
-      <h2>Exames Realizados e Gráfico</h2>
-      <a href="/measurement_open_mouth" class="button_exam">Novo Exame</a>
-    </div>
-    <div class="table-area">
-      <table>
-        <thead>
-        <tr>
-          <th>Fisioterapeuta</th>
-          <th>Dia do exame</th>
-          <th>Medição</th>
-        </tr>
-        </thead>
-        <tbody class="table-body">
-        {% for exam in exams %}
-        <tr id="{{exam.id}}">
-          <td>{{exam.doctor}}</td>
-          <td>{{exam.date}}</td>
-          <td>{{exam.result_measurement_cm}}</td>
-        </tr>
-        {% endfor %}
-        </tbody>
-      </table>
-    </div>
-    <div class="graph">
-      <canvas class="chart"></canvas>
-      <button class="toggleLineChart" onclick="toggleHandler()"><span class="material-icons">show_chart</span></button>
-    </div>
-  </div>
-</div>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
-        crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>
-<script src="{{ url_for('static', filename='js/details.js') }}"></script>
-<script src="{{ url_for('static', filename='js/chart.js') }}"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous">
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>
+  <script src="{{ url_for('static', filename='js/details.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/chart.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/navbar.js') }}"></script>
 </body>
 
 </html>

@@ -42,6 +42,11 @@ header {
   margin: 0;
 }
 
+.header-area .logo {
+  text-decoration: none;
+  color: #fff;
+}
+
 .header-area .logo div {
   line-height: 0.75em;
   color: #fff;

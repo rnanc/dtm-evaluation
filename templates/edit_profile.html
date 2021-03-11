@@ -1,18 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Editar Perfil</title>
   <link rel="stylesheet" href="/static/css/edit_profile.css" />
 </head>
+
 <body>
+
   <header>
     <div class="header-area">
-      <div class="logo">
+      <a href="/dashboard" class="logo">
         <h1 class="logo_top">DTM</h1>
         <p class="logo_bottom">evaluation</p>
-      </div>
+      </a>
       <div class="links">
         <a href="/dashboard" class="active">Pacientes</a>
         <a href="/register_patient">Cadastrar Pacientes</a>
@@ -21,55 +24,54 @@
       </div>
     </div>
   </header>
+
   <main>
     <div>
-        <h2>Editar Perfil</h2>
-        <div class="card">
-          <form action="edit_profile" method="POST" enctype="multipart/form-data">
-            <div class="card_name">
-              <p>Nome</p>
-              <input
-                type="text"
-                name="name"
-                placeholder="Nome e Sobrenome"
-                id="nome"
-                value="{{user.name}}"
-                required
-              />
-            </div>
-            <div class="card_mail">
-              <p>Email</p>
-              <input type="email" name="email" placeholder="exemplo@gmail.com" value="{{user.email}}" required />
-            </div>
-            <div class="card_mail">
-              <p>Confirmação do Email</p>
-              <input type="email" name="email_confirm" placeholder="exemplo@gmail.com" required />
-            </div>
-            <div class="card_matricula">
-              <p>Matricula</p>
-              <input type="number" name="registered_number" placeholder="00000000" value="{{user.registered_number}}" required />
-            </div>
-            <div class="card_password">
-              <p>Senha</p>
-              <input type="password" name="password" placeholder="********" minlength="6" required />
-            </div>
-            <div class="card_password">
-              <p>Confirmação de Senha</p>
-              <input type="password" name="password_confirm" placeholder="********" required />
-            </div>
-            <button type="submit" value="Salvar"  />
+      <h2>Editar Perfil</h2>
+      <div class="card">
+        <form action="edit_profile" method="POST" enctype="multipart/form-data">
+          <div class="card_name">
+            <p>Nome</p>
+            <input type="text" name="name" placeholder="Nome e Sobrenome" id="nome" value="{{user.name}}" required />
+          </div>
+          <div class="card_mail">
+            <p>Email</p>
+            <input type="email" name="email" placeholder="exemplo@gmail.com" value="{{user.email}}" required />
+          </div>
+          <div class="card_mail">
+            <p>Confirmação do Email</p>
+            <input type="email" name="email_confirm" placeholder="exemplo@gmail.com" required />
+          </div>
+          <div class="card_matricula">
+            <p>Matricula</p>
+            <input type="number" name="registered_number" placeholder="00000000" value="{{user.registered_number}}"
+              required />
+          </div>
+          <div class="card_password">
+            <p>Senha</p>
+            <input type="password" name="password" placeholder="********" minlength="6" required />
+          </div>
+          <div class="card_password">
+            <p>Confirmação de Senha</p>
+            <input type="password" name="password_confirm" placeholder="********" required />
+          </div>
+          <button type="submit">Salvar</button>
 
-            {% with messages = get_flashed_messages(category_filter=['danger']) %}
-            {% if messages %}
-            {% for message in messages %}
-            <p style="color:red; margin: 15px 0 -15px 0">{{ message }}</p>
-            {% endfor %}
-            {% endif %}
-            {% endwith %}
+          {% with messages = get_flashed_messages(category_filter=['danger']) %}
+          {% if messages %}
+          {% for message in messages %}
+          <p style="color:red; margin: 15px 0 -15px 0">{{ message }}</p>
+          {% endfor %}
+          {% endif %}
+          {% endwith %}
 
-          </form>
-        </div>
+        </form>
       </div>
+    </div>
   </main>
+
+  <script src="{{ url_for('static', filename='js/navbar.js') }}"></script>
+
 </body>
+
 </html>

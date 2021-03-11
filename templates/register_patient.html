@@ -10,12 +10,13 @@
 </head>
 
 <body>
+
   <header>
     <div class="header-area">
-      <div class="logo">
+      <a href="/dashboard" class="logo">
         <h1 class="logo_top">DTM</h1>
         <p class="logo_bottom">evaluation</p>
-      </div>
+      </a>
       <div class="links">
         <a href="/dashboard" class="active">Pacientes</a>
         <a href="/register_patient">Cadastrar Pacientes</a>
@@ -24,6 +25,7 @@
       </div>
     </div>
   </header>
+
   </div>
   <main>
     <div>
@@ -68,9 +70,9 @@
             <p>Distância inicial</p>
             <input type="number" name="initial_distance_cm" placeholder="Exemplo: 15" min="1" required />
           </div>
-          <input type="submit" value="CADASTRAR"/>
+          <input type="submit" value="CADASTRAR" />
 
-           {% with messages = get_flashed_messages(category_filter=['danger']) %}
+          {% with messages = get_flashed_messages(category_filter=['danger']) %}
           {% if messages %}
           {% for message in messages %}
           <p style="color:red; margin: 15px 0 -25px 0">{{ message }}</p>
@@ -93,6 +95,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-masker/1.1.0/vanilla-masker.min.js"></script>
   <script src="../static/js/input-masks.js"></script>
   <script src="../static/js/date-handler.js"></script>
+  <script src="{{ url_for('static', filename='js/navbar.js') }}"></script>
 </body>
 
 </html>

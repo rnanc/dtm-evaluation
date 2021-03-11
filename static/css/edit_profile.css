@@ -42,6 +42,11 @@ header {
   margin: 0;
 }
 
+.header-area .logo {
+  text-decoration: none;
+  color: #fff;
+}
+
 .header-area .logo div {
   line-height: 0.75em;
   color: #fff;
@@ -158,8 +163,7 @@ h2 {
 .card input[type="text"],
 .card input[type="number"],
 .card input[type="email"],
-.card input[type="password"]
-{
+.card input[type="password"] {
   width: 100%;
   padding: 0 1px;
   border: none;
@@ -242,7 +246,7 @@ main label:hover {
   background-color: #5366e0;
 }
 
-.card input[type="submit"] {
+.card button[type="submit"] {
   outline: none;
   width: 100%;
   font-family: "Roboto";
@@ -258,6 +262,6 @@ main label:hover {
   cursor: pointer;
 }
 
-.card input[type="submit"]:hover {
+.card button[type="submit"]:hover {
   background-color: #5366e0;
 }

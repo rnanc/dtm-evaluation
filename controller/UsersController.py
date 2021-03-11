@@ -5,12 +5,14 @@ from model.Model import Users
 
 users_blueprint = Blueprint('users', __name__, template_folder='templates', static_folder='static')
 
+
 @users_blueprint.route('/profile')
 @jwt_required
 def profile():
   id = request.cookies.get("user_id")
   user = Users.query.get(id)
   return render_template('profile.html', user=user)
+
 
 @users_blueprint.route('/edit_profile', methods=["GET", "POST"])
 @jwt_required
@@ -48,3 +50,18 @@ def edit_profile():
       else:
         flash("Email precisa ser do domínio CESUPA! Tente novamente cadastrando seu email do CESUPA. ", "danger")
         return redirect(url_for('users.edit_profile'))
+
+
+@users_blueprint.route('/delete_user', methods=["POST"])
+@jwt_required
+def delete_user():
+  id = request.cookies.get("user_id")
+  user = Users.query.get(id)
+  user_form = request.form.to_dict()
+  if user_form["registered_number"] == user.registered_number:
+    Users.query.filter(Users.id == id).delete()
+    current_app.db.session.commit()
+    return redirect(url_for('home.home'))
+  else:
+    flash("Campo de confirmação errado!", "danger")
+    return redirect(url_for('users.profile'))

@@ -6,7 +6,35 @@
   border: none;
   box-sizing: border-box;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif !important;
+}
+
+h1 {
+
+  font-size: 2em;
+  font-weight: bold;
+  padding: 0;
+  margin: 0;
+  margin-top: 5px;
+  border: none;
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif !important;
+
+}
+
+h2 {
+  font-size: 1.5em;
+  padding: 0;
+  margin: 0;
+  border: none;
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif !important;
+}
+
+p {
+  margin-bottom: 0;
 }
 
 :root {
@@ -43,6 +71,11 @@ header {
   margin: 0;
 }
 
+.header-area .logo {
+  text-decoration: none;
+  color: #fff;
+}
+
 .header-area .logo div {
   line-height: 0.75em;
   color: #fff;
@@ -50,7 +83,7 @@ header {
 
 .logo_bottom {
   padding-left: 40px;
-  margin-top: -10px;
+  margin-top: -9px;
 }
 
 .header-area .logo div:nth-child(1) {
@@ -228,7 +261,7 @@ td {
 }
 
 .item {
-  padding: 16px 0;
+  padding: 14px 0;
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 }
 
@@ -256,7 +289,7 @@ td {
   color: #333;
 }
 
-.item a {
+.item .button_edit {
   color: #fff;
   font-size: 16px;
   font-weight: bold;
@@ -271,11 +304,11 @@ td {
   cursor: pointer;
 }
 
-
-
-.item form button:hover{
-  background-color: #bf0000;
+.item .button_edit:hover {
+  background-color: #5366e0;
+  transition: background-color 250ms ease-in-out;
 }
+
 
 .item div.gender {
   padding: 8px 16px;
@@ -321,7 +354,7 @@ td {
   margin-top: 16px;
 }
 
-.button {
+.button_del {
   transition: background-color 250ms ease-in-out;
   margin-top: 10px;
   padding: 12px 146px;
@@ -336,22 +369,14 @@ td {
   cursor: pointer;
   transition: backgroud-color 250ms ease-in-out;
 }
-.button_exam{
-transition: background-color 250ms ease-in-out;
-  margin-top: 10px;
-  padding: 12px 146px;
-  text-decoration: none;
-  color: #fff;
-  font-weight: bold;
-  border-radius: 16px;
-  background-color: var(--danger-color);
-  font-size: 16px;
-  padding: 12px 0;
-  cursor: pointer;
-  transition: backgroud-color 250ms ease-in-out;
+
+
+.item .button_del:hover {
+  background-color: #bf0000;
+  transition: background-color 250ms ease-in-out;
 }
 
-.button:hover {
+.button_exam:hover {
   background-color: #5366e0;
   transition: background-color 250ms ease-in-out;
 }
@@ -369,7 +394,7 @@ transition: background-color 250ms ease-in-out;
   position: relative;
 }
 
-.toggleLineChart{
+.toggleLineChart {
   position: absolute;
   top: 14px;
   right: 12px;
@@ -378,13 +403,14 @@ transition: background-color 250ms ease-in-out;
   border-radius: 6px;
   padding: 0 1px;
   transition: background-color 250ms ease-in-out;
+  cursor: pointer;
 }
 
-.toggleLineChart:hover{
+.toggleLineChart:hover {
   background-color: #5366e0;
 }
 
-.toggleLineChart:focus{
+.toggleLineChart:focus {
   outline: none;
 }
 
@@ -402,7 +428,7 @@ transition: background-color 250ms ease-in-out;
     flex-direction: row;
   }
 
-  .graph{
+  .graph {
     margin-bottom: 30px;
   }
 }

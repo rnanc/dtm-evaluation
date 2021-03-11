@@ -42,6 +42,11 @@ header {
   margin: 0;
 }
 
+.header-area .logo {
+  text-decoration: none;
+  color: #fff;
+}
+
 .header-area .logo div {
   line-height: 0.75em;
   color: #fff;
@@ -192,6 +197,7 @@ header {
 .table-container .table-header .search-box button span:focus {
   outline: none;
 }
+
 .table-area {
   background-color: #fff;
   margin-top: 20px;
