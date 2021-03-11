@@ -130,6 +130,17 @@ main {
   margin-bottom: 50px;
 }
 
+submit-button{
+  border: none;
+  width: 60%;
+  height: 30px;
+  border-radius: 12px;
+  background-color: #6B7ADB;
+  color: white;
+  font-family: 'Roboto', sans-serif;
+  box-shadow: 5px 5px 5px rgba(50, 50, 50, 0.77);
+}
+
 form {
   display: flex;
   flex-direction: column;
