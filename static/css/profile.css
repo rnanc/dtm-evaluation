@@ -188,6 +188,26 @@ main {
   transition: background-color 250ms ease-in-out;
 }
 
+.item button{
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+  width: 100%;
+  padding: 12px 0;
+  background-color: var(--primary-color);
+  border-radius: 16px;
+  cursor: pointer;
+  transition: background-color 250ms ease-in-out;
+  margin: 10px;
+}
+.item button:hover{
+ background-color: #5366e0;
+}
+
 .item a:hover {
   background-color: #5366e0;
 }

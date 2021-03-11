@@ -246,7 +246,7 @@ main label:hover {
   background-color: #5366e0;
 }
 
-.card input[type="submit"] {
+.submit-button{
   outline: none;
   width: 100%;
   font-family: "Roboto";
@@ -262,6 +262,6 @@ main label:hover {
   cursor: pointer;
 }
 
-.card input[type="submit"]:hover {
+.submit-button:hover {
   background-color: #5366e0;
 }

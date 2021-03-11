@@ -271,13 +271,7 @@ td {
   cursor: pointer;
 }
 
-.item form button{
-  font-size: 16px;
-  padding: 12px 0;
-  width: 100%;
-  cursor: pointer;
-  transition: backgroud-color 250ms ease-in-out;
-}
+
 
 .item form button:hover{
   background-color: #bf0000;
@@ -336,6 +330,25 @@ td {
   font-weight: bold;
   border-radius: 16px;
   background-color: var(--danger-color);
+  font-size: 16px;
+  padding: 12px 0;
+  width: 100%;
+  cursor: pointer;
+  transition: backgroud-color 250ms ease-in-out;
+}
+.button_exam{
+transition: background-color 250ms ease-in-out;
+  margin-top: 10px;
+  padding: 12px 146px;
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+  border-radius: 16px;
+  background-color: var(--danger-color);
+  font-size: 16px;
+  padding: 12px 0;
+  cursor: pointer;
+  transition: backgroud-color 250ms ease-in-out;
 }
 
 .button:hover {
