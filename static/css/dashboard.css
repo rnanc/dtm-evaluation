@@ -9,6 +9,8 @@
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
+
+
 :root {
   --primary-color: #6b7adb;
   --secondary-color: #96a4ff;
@@ -101,15 +103,15 @@ header {
   font-weight: bold;
 }
 
-.header-area .links label {
+.header-area .links button {
   cursor: pointer;
-  text-decoration: none;
-  color: #fff;
   font-size: 16px;
   position: relative;
+  background: none;
+  color: #fff;
 }
 
-.header-area .links label::after {
+.header-area .links button::after {
   content: "";
   width: 0;
   height: 2px;
@@ -120,12 +122,12 @@ header {
   transition: all 250ms ease-in-out;
 }
 
-.header-area .links label:hover::after {
+.header-area .links button:hover::after {
   width: 100%;
   transition: all 250ms ease-in-out;
 }
 
-.header-area .links label:active {
+.header-area .links button:active {
   font-weight: bold;
 }
 

@@ -5,8 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Novo Paciente</title>
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/register_patients.css') }}">
-  <link rel="stylesheet" href="/static/css/register_patient.css" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/register_patient.css') }}">
 </head>
 
 <body>
@@ -21,7 +20,9 @@
         <a href="/dashboard" class="active">Pacientes</a>
         <a href="/register_patient">Cadastrar Pacientes</a>
         <a href="/profile">Perfil</a>
-        <label onclick="logout()">Sair</label>
+        <form action="/logoff" method="POST" enctype="multipart/form-data">
+          <button type="submit">Sair</button>
+        </form>
       </div>
     </div>
   </header>
@@ -93,7 +94,6 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-masker/1.1.0/vanilla-masker.min.js"></script>
   <script src="../static/js/input-masks.js"></script>
   <script src="../static/js/date-handler.js"></script>
-  <script src="{{ url_for('static', filename='js/navbar.js') }}"></script>
 </body>
 
 </html>
