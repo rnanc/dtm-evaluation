@@ -20,7 +20,9 @@
         <a href="/dashboard" class="active">Pacientes</a>
         <a href="/register_patient">Cadastrar Pacientes</a>
         <a href="/profile">Perfil</a>
-        <label onclick="logout()">Sair</label>
+        <form action="/logoff" method="POST" enctype="multipart/form-data">
+          <button type="submit">Sair</button>
+        </form>
       </div>
     </div>
   </header>
