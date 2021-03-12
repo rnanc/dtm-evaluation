@@ -1,7 +1,7 @@
 import datetime
 
 from flask import Blueprint, render_template, url_for, request, current_app, redirect, make_response, flash
-from flask_jwt_extended import create_access_token, create_refresh_token, jwt_required, set_access_cookies, jwt_optional
+from flask_jwt_extended import create_access_token, create_refresh_token, unset_jwt_cookies, set_access_cookies
 
 from model.Model import Users
 from config.serializer import UserSchema
@@ -42,16 +42,29 @@ def signUp():
 def login_user():
   user = request.form.to_dict()
   user_query = Users.query.filter_by(email=user["email"]).first()
+  verify = False
   if user_query != None:
     verify = user_query.verify_password(user['password'])
   if user_query != None and verify:
-    access_token = create_access_token(identity=user_query.id, expires_delta=datetime.timedelta(hours=12))
-    # refresh_token = create_refresh_token(identity=user_query.id)
+    access_token = create_access_token(identity=user_query.id)
+    refresh_token = create_refresh_token(identity=user_query.id)
     response = make_response(redirect(url_for('patients.dashboard')))
-    response.set_cookie('access_token_cookie', access_token)
+    response.set_cookie('refresh_token_cookie', refresh_token)
     response.set_cookie('username', user_query.name)
     response.set_cookie('user_id', str(user_query.id))
+    set_access_cookies(response, access_token)
     return response
   else:
     flash("Senha ou email erradas!", "danger")
   return redirect(url_for("home.home"))
+
+
+@home_blueprint.route('/logoff', methods=["POST"])
+def logoff_user():
+  response = make_response(redirect(url_for('home.home')))
+  response.set_cookie('username', '', expires=0)
+  response.set_cookie('user_id', '', expires=0)
+  response.set_cookie('access_token_cookie', '', expires=0)
+  response.set_cookie('refresh_token_cookie', '', expires=0)
+  response.set_cookie('patient_id', '', expires=0)
+  return response

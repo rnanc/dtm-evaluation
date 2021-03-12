@@ -12,9 +12,13 @@ class DTM:
     self.open = 0
     self.shut = 0
     self.final = 0
-
+    self.running = False
   def init_app(self, app):
     app.dtm = DTM()
+
+  def setRunning(self, value):
+    self.running = value
+
   def Run(self):
     capture = cv2.VideoCapture(0)
     facial_feature_coordinates = {}
@@ -71,7 +75,7 @@ class DTM:
       # print(facial_feature_coordinates)
       return (output, distance)
 
-    while True:
+    while self.running:
       ret, image = capture.read()
       dlib.shape_predictor()
       gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)

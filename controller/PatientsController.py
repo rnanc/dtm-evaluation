@@ -13,6 +13,7 @@ patients_blueprint = Blueprint('patients', __name__, template_folder='templates'
 @jwt_required
 def dashboard():
   patients = Patient.query.all()
+  print(request.cookies.get("access_token_cookie"))
   return render_template('dashboard.html', patients=patients)
 
 

@@ -13,7 +13,7 @@ exam_blueprint = Blueprint('exam', __name__, template_folder='templates', static
 @jwt_required
 def measurement_open_mouth():
   if request.method == 'GET':
-
+    current_app.dtm.setRunning(True)
     return render_template('measurement.html', measurement_open_mouth="0", measurement_shut_mouth="0", measurement_result="0", finalizar_open="false", finalizar_shut="false", step="1", measurement="false")
   else:
     return render_template('measurement.html', measurement_open_mouth="0", measurement_shut_mouth="0", measurement_result="0", finalizar_open="true", finalizar_shut="false", measurement="true", step="1")
@@ -40,6 +40,7 @@ def measurement_result():
     initial_distance = Patient.query.get(id_patient).initial_distance_cm
     final_distance = round((float(initial_distance) * float(measurement_shut_mouth)) / float(measurement_open_mouth), 2)
     current_app.dtm.final = final_distance
+    current_app.dtm.setRunning(False)
     return render_template('measurement.html', measurement_open_mouth=measurement_open_mouth, measurement_shut_mouth=measurement_shut_mouth, measurement_result=final_distance, finalizar_shut="false", finalizar_open="false", step="3")
 
 @exam_blueprint.route("/create_exam", methods=["POST"])

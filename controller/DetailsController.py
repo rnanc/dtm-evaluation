@@ -1,5 +1,5 @@
 from flask import Blueprint, render_template, url_for, make_response
-from flask_jwt_extended import jwt_required
+from flask_jwt_extended import jwt_required, jwt_optional
 from model.Model import Patient
 from model.Model import Users
 from datetime import date

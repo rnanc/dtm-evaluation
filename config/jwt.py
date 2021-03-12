@@ -10,6 +10,4 @@ def configure(app):
     @jwt.unauthorized_loader
     def my_expired_token_callback(expired_token):
         resp = make_response(redirect(url_for("home.home")))
-        resp.set_cookie('access_token_cookie', "")
-        resp.set_cookie('username', "")
         return resp
