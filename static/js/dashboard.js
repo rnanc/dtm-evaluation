@@ -42,7 +42,6 @@ search_box.addEventListener("change", getListPatients);
 function changePatientBirthdate(){
   for (let row of rows) {
     var res = row.lastElementChild.innerHTML.replace(/\d{4}-\d{2}-\d{2}/g, replacer)
-    console.log(res)
     row.lastElementChild.innerHTML = res;
   }
   function replacer(match) {

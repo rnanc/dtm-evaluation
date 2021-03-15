@@ -7,8 +7,7 @@
   <title>Perfil</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
-  <link rel="stylesheet" href="/static/css/edit_patient.css" />
-  <link rel="stylesheet" href="/static/css/profile.css" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/profile.css') }}" />
 </head>
 
 <body>
@@ -73,7 +72,8 @@
                 </div>
                 <div class="modal-body">
                   <p>Para deletar o seu perfil digite sua matricula</p>
-                  <input type="number" class="confirmation_num" placeholder="Matricula" name="registered_number" style="width: 100%;" maxlength="7" required>
+                  <input type="number" class="confirmation_num" placeholder="Matricula" name="registered_number"
+                    style="width: 100%;" maxlength="7" required>
                 </div>
                 <div class="modal-footer">
                   <button class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>

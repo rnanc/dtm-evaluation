@@ -118,16 +118,16 @@ header {
   font-weight: bold;
 }
 
-.header-area .links form button {
+.header-area .links button {
   cursor: pointer;
-  text-decoration: none;
   font-size: 16px;
   position: relative;
+  background: none;
   color: #fff;
-  background-color: none;
+
 }
 
-.header-area .links form button::after {
+.header-area .links button::after {
   content: "";
   width: 0;
   height: 2px;
@@ -138,12 +138,12 @@ header {
   transition: all 250ms ease-in-out;
 }
 
-.header-area .links form button:hover::after {
+.header-area .links button:hover::after {
   width: 100%;
   transition: all 250ms ease-in-out;
 }
 
-.header-area .links form button:active {
+.header-area .links button:active {
   font-weight: bold;
 }
 
@@ -173,7 +173,7 @@ submit-button {
   box-shadow: 5px 5px 5px rgba(50, 50, 50, 0.77);
 }
 
-form {
+.card form {
   display: flex;
   flex-direction: column;
   align-items: center;
