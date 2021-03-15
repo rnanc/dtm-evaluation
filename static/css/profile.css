@@ -37,8 +37,9 @@ p {
 }
 
 :root {
-  --primary-color: #6b7adb;
-  --secondary-color: #96a4ff;
+  --header-color:#A12B44 ;
+  --primary-color: #009F93;
+  --secondary-color: #102E4A;
   --font-color: #3e414f;
   --danger-color: #ff0000;
 }
@@ -55,7 +56,7 @@ body {
 
 header {
   height: 90px;
-  background-color: var(--primary-color);
+  background-color: var(--header-color);
   padding: 0 30px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   color: #ffffff;
@@ -240,7 +241,7 @@ main {
 }
 
 .item a:hover {
-  background-color: #5366e0;
+  background-color: #006B62;
 }
 
 .item p {
@@ -264,4 +265,8 @@ main {
 .confirmation_num::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
+}
+
+.modal-body input {
+  margin: 10px 0;
 }

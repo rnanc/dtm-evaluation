@@ -55,7 +55,7 @@ body {
 
 header {
   height: 90px;
-  background-color: var(--primary-color);
+  background-color: var(--header-color);
   padding: 0 30px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   color: #ffffff;
