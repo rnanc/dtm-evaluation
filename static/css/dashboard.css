@@ -212,7 +212,7 @@ header {
 }
 
 .table-container .table-header .search-box button span {
-  color: white;
+  color: #F1AE02;
   font-size: 32px;
   transition: opacity 200ms ease-in-out;
 }

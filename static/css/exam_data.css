@@ -38,8 +38,9 @@ p {
 }
 
 :root {
-  --primary-color: #6b7adb;
-  --secondary-color: #96a4ff;
+  --header-color: #A12B44;
+  --primary-color: #009F93;
+  --secondary-color: #102E4A;
   --font-color: #3e414f;
 }
 

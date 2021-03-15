@@ -38,8 +38,9 @@ p {
 }
 
 :root {
-  --primary-color: #6b7adb;
-  --secondary-color: #96a4ff;
+  --header-color: #A12B44;
+  --primary-color: #009F93;
+  --secondary-color: #102E4A;
   --font-color: #3e414f;
 }
 
@@ -55,7 +56,7 @@ body {
 
 header {
   height: 90px;
-  background-color: var(--primary-color);
+  background-color: var(--header-color);
   padding: 0 30px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   color: #ffffff;
@@ -284,7 +285,7 @@ main label:hover {
   height: 30px;
   border: none;
   color: white;
-  background-color: #6b7adb;
+  background-color: #F1AE02;
   margin-top: 15px;
   height: 40px;
   transition: background-color 250ms ease-in-out;
