@@ -1,8 +1,8 @@
 ## 🎨 Design
 
-<img src="./readme-imgs/login-page.png" width="65%">
-<img src="./readme-imgs/new-patient.png" width="65%">
-<img src="./readme-imgs/patient list.png" width="65%">
+<img src="./readme-imgs/patient_dashboard.png" width="65%">
+<img src="./readme-imgs/exam.png" width="65%">
+<img src="./readme-imgs/patient_list.png" width="65%">
 
 ## Sobre o Projeto
 
