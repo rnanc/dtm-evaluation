@@ -19,7 +19,7 @@ O projeto foi desenvolvido utilizando:
 ## Requisitos
 
 - Python 3.6 ou maior
-- PostgresSQL
+- PostgresSQL com um banco chamado "DTM"
 - Git
 
 ## 📥 Executar esse projeto no seu computador
@@ -28,7 +28,7 @@ Para rodar o projeto, siga os passos abaixo:
 
 1 - Clone o Repositório: `$ git clone https://github.com/rnanc/dtm-evaluation.git`
 
-2 - Entre na pasta do projeto e execute o comando `$ pip install -r requirements.txt`
+2 - Entre na pasta do projeto e execute o comando `$ pip install -r pip_requirements.txt`
 
 3 - Após ìsso, crie o banco de dados local com os seguintes comandos:
 
