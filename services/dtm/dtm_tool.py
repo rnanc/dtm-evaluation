@@ -20,7 +20,17 @@ class DTM:
     self.running = value
 
   def Run(self):
-    capture = cv2.VideoCapture(0)
+    try:
+      capture = cv2.VideoCapture(0)
+      ret, image = capture.read()
+      dlib.shape_predictor()
+      gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+    except:
+      capture = cv2.VideoCapture(1)
+      ret, image = capture.read()
+      dlib.shape_predictor()
+      gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+
     facial_feature_coordinates = {}
     width = 639
     height = 479
