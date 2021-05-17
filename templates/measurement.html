@@ -4,22 +4,24 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="/static/css/measurement.css" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/measurement.css') }}" />
   <title>Medição</title>
 </head>
 
 <body>
   <header>
     <div class="header-area">
-      <div class="logo">
+      <a href="/dashboard" class="logo">
         <h1 class="logo_top">DTM</h1>
         <p class="logo_bottom">evaluation</p>
-      </div>
+      </a>
       <div class="links">
         <a href="/dashboard" class="active">Pacientes</a>
         <a href="/register_patient">Cadastrar Pacientes</a>
         <a href="/profile">Perfil</a>
-        <label onclick="logout()">Sair</label>
+        <form action="/logoff" method="POST" enctype="multipart/form-data">
+          <button type="submit">Sair</button>
+        </form>
       </div>
     </div>
   </header>
@@ -98,6 +100,8 @@
       </div>
     </div>
   </main>
+
+
 </body>
 
 </html>

@@ -5,26 +5,27 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Novo Paciente</title>
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/register_patients.css') }}">
-  <link rel="stylesheet" href="/static/css/register_patient.css" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/register_patient.css') }}">
 </head>
 
 <body>
+
   <header>
     <div class="header-area">
-      <div class="logo">
+      <a href="/dashboard" class="logo">
         <h1 class="logo_top">DTM</h1>
         <p class="logo_bottom">evaluation</p>
-      </div>
+      </a>
       <div class="links">
         <a href="/dashboard" class="active">Pacientes</a>
         <a href="/register_patient">Cadastrar Pacientes</a>
         <a href="/profile">Perfil</a>
-        <label onclick="logout()">Sair</label>
+        <form action="/logoff" method="POST" enctype="multipart/form-data">
+          <button type="submit">Sair</button>
+        </form>
       </div>
     </div>
   </header>
-  </div>
   <main>
     <div>
       <h2>Novo Paciente</h2>
@@ -34,9 +35,13 @@
             <p>Nome</p>
             <input type="text" name="name" placeholder="Nome e Sobrenome" id="nome" required />
           </div>
+          <div class="card_doc">
+            <p>RG ou CPF</p>
+            <input type="text" name="doc_number" placeholder="RG ou CPF" id="document" required />
+          </div>
           <div class="card_date">
             <p>Data de Nascimento</p>
-            <input type="date" id="idade" name="age" />
+            <input type="date" id="idade" name="age" required />
           </div>
           <div class="card_gender">
             <p>Gênero</p>
@@ -64,14 +69,31 @@
             <p>Distância inicial</p>
             <input type="number" name="initial_distance_cm" placeholder="Exemplo: 15" min="1" required />
           </div>
-          <input type="submit" />
+          <input type="submit" value="CADASTRAR" />
+
+          {% with messages = get_flashed_messages(category_filter=['danger']) %}
+          {% if messages %}
+          {% for message in messages %}
+          <p style="color:red; margin: 15px 0 -25px 0">{{ message }}</p>
+          {% endfor %}
+          {% endif %}
+          {% endwith %}
+
+          {% with messages = get_flashed_messages(category_filter=['success']) %}
+          {% if messages %}
+          {% for message in messages %}
+          <p style="color:green; margin: 15px 0 -25px 0">{{ message }}</p>
+          {% endfor %}
+          {% endif %}
+          {% endwith %}
+
         </form>
       </div>
     </div>
   </main>
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.maskedinput/1.4.1/jquery.maskedinput.min.js"></script>
-  <script src="../static/js/phone-mask.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-masker/1.1.0/vanilla-masker.min.js"></script>
+  <script src="../static/js/input-masks.js"></script>
+  <script src="../static/js/date-handler.js"></script>
 </body>
 
 </html>

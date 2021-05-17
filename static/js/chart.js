@@ -6,8 +6,8 @@ let opts = {
     datasets: [
       {
         label: " Medição",
-        backgroundColor: "#6b7adb",
-        hoverBackgroundColor: "#5366e0",
+        backgroundColor: "#009F93",
+        hoverBackgroundColor: "#006B62",
         fill: true,
         pointRadius: 6,
         pointHoverRadius: 5,
@@ -34,10 +34,8 @@ let opts = {
         {
           gridLines: {
             drawOnChartArea: false,
-            //drawTicks: false,
           },
           ticks: {
-            //display: false,
             suggestedMin: 0,
             stepsize: 10,
           },

@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" type="text/css" href="/static/css/signIn.css">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/signIn.css') }}" />
   <title>DTM Evaluation</title>
 </head>
 
@@ -106,7 +106,7 @@
                 <label>Email</label>
               </div>
               <div class="group">
-                <input type="password" name="password" required style="width: 100%;">
+                <input type="password" name="password" minlength="6" required style="width: 100%;">
                 <span class="highlight"></span>
                 <span class="bar"></span>
                 <label>Senha</label>

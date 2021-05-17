@@ -12,11 +12,27 @@ class DTM:
     self.open = 0
     self.shut = 0
     self.final = 0
-
+    self.running = False
   def init_app(self, app):
     app.dtm = DTM()
+
+  def setRunning(self, value):
+    self.running = value
+
   def Run(self):
-    capture = cv2.VideoCapture(0)
+    cam_index = 0
+    try:
+      for x in range(0,5):
+        try:
+          capture = cv2.VideoCapture(x)
+          ret, image = capture.read()
+          dlib.shape_predictor()
+          gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+          break
+        except:
+          print("Index da camera não é válido!")
+    except:
+      print("Nenhum Index de 0 a 5 foi válido!")
     facial_feature_coordinates = {}
     width = 639
     height = 479
@@ -71,7 +87,7 @@ class DTM:
       # print(facial_feature_coordinates)
       return (output, distance)
 
-    while True:
+    while self.running:
       ret, image = capture.read()
       dlib.shape_predictor()
       gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)

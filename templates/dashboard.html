@@ -4,23 +4,26 @@
 <head>
   <meta charset="utf-8" />
   <title>Dashboard</title>
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css') }}" />
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css') }}" />
+
 
 </head>
 
 <body>
   <header>
     <div class="header-area">
-      <div class="logo">
+      <a href="/dashboard" class="logo">
         <h1 class="logo_top">DTM</h1>
         <p class="logo_bottom">evaluation</p>
-      </div>
+      </a>
       <div class="links">
         <a href="/dashboard" class="active">Pacientes</a>
         <a href="/register_patient">Cadastrar Pacientes</a>
         <a href="/profile">Perfil</a>
-        <label onclick="logout()">Sair</label>
+        <form action="/logoff" method="POST" enctype="multipart/form-data">
+          <button type="submit">Sair</button>
+        </form>
       </div>
     </div>
   </header>
@@ -29,7 +32,7 @@
     <div class="table-header">
       <h2>Lista de Pacientes</h2>
       <div class="search-box">
-        <input type="text" id="search_box" placeholder="Nome do paciente ou data do exame" />
+        <input type="text" id="search_box" placeholder="Nome do paciente" />
         <button><span class="material-icons">search</span></button>
       </div>
     </div>
@@ -55,7 +58,6 @@
     </div>
   </div>
   <script src="{{ url_for('static', filename='js/dashboard.js') }}"></script>
-  <script src="{{ url_for('static', filename='js/navbar.js') }}"></script>
 </body>
 
 </html>

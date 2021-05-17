@@ -1,28 +1,34 @@
 <!DOCTYPE html>
-<html>
+<html xmlns="http://www.w3.org/1999/html">
 
 <head>
   <meta charset="utf-8" />
   <title>Patient details</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
   <link rel="stylesheet" href="{{ url_for('static', filename='css/details.css') }}" />
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
 </head>
 
 <body>
+
   <header>
     <div class="header-area">
-      <div class="logo">
+      <a href="/dashboard" class="logo">
         <h1 class="logo_top">DTM</h1>
         <p class="logo_bottom">evaluation</p>
-      </div>
+      </a>
       <div class="links">
         <a href="/dashboard" class="active">Pacientes</a>
         <a href="/register_patient">Cadastrar Pacientes</a>
         <a href="/profile">Perfil</a>
-        <label onclick="logout()">Sair</label>
+        <form action="/logoff" method="POST" enctype="multipart/form-data">
+          <button type="submit">Sair</button>
+        </form>
       </div>
     </div>
   </header>
+
   <div class="patient-container">
     <div class="details">
       <div class="details-header">
@@ -54,17 +60,38 @@
           <div>{{patient.pain_choice}}</div>
         </div>
         <div class="item">
-          <a href="/edit_patient" class="button">Editar</a>
-          <form action="/delete_patient" method="POST" enctype="multipart/form-data">
-            <button class="button">DELETAR</button>
-          </form>
+          <a href="/edit_patient" class="button_edit">Editar</a>
+          <button class="button_del" data-bs-toggle="modal" data-bs-target="#exampleModal">DELETAR</button>
         </div>
+        <!-- Modal -->
+          <div class="modal fade " id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <form action="/delete_patient" method="POST" enctype="multipart/form-data">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Deletar Paciente</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    Tem certeza que deseja deletar este paciente?
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+
+                    <button type="submit" class="btn btn-danger">Confirmar</button>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+          <!-- Modal -->
       </div>
     </div>
     <div class="exams">
       <div class="exams-header">
         <h2>Exames Realizados e Gráfico</h2>
-        <a href="/measurement_open_mouth" class="button">Novo Exame</a>
+        <a href="/measurement_open_mouth" class="button_exam">Novo Exame</a>
       </div>
       <div class="table-area">
         <table>
@@ -88,11 +115,15 @@
       </div>
       <div class="graph">
         <canvas class="chart"></canvas>
-        <button class="toggleLineChart" onclick="toggleHandler()"><span class="material-icons">show_chart</span></button>
+        <button class="toggleLineChart" onclick="toggleHandler()"><span
+            class="material-icons">show_chart</span></button>
       </div>
     </div>
   </div>
 
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous">
+  </script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>
   <script src="{{ url_for('static', filename='js/details.js') }}"></script>
   <script src="{{ url_for('static', filename='js/chart.js') }}"></script>

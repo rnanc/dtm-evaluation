@@ -6,14 +6,43 @@
   border: none;
   box-sizing: border-box;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif !important;
+}
+
+h1 {
+  font-size: 2em;
+  font-weight: bold;
+  padding: 0;
+  margin: 0;
+  margin-top: 5px;
+  border: none;
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif !important;
+
+}
+
+h2 {
+  font-size: 1.5em;
+  padding: 0;
+  margin: 0;
+  border: none;
+  box-sizing: border-box;
+  font-weight: bold;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif !important;
+}
+
+p {
+  margin-bottom: 0;
 }
 
 :root {
-  --primary-color: #6b7adb;
-  --secondary-color: #96a4ff;
+  --header-color: #A12B44;
+  --primary-color: #009F93;
+  --secondary-color: #102E4A;
   --font-color: #3e414f;
-  --danger-color: #ff0000;
+  --danger-color: #FF0000;
 }
 
 html,
@@ -28,7 +57,7 @@ body {
 
 header {
   height: 90px;
-  background-color: var(--primary-color);
+  background-color: var(--header-color);
   padding: 0 30px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   color: #ffffff;
@@ -43,6 +72,11 @@ header {
   margin: 0;
 }
 
+.header-area .logo {
+  text-decoration: none;
+  color: #fff;
+}
+
 .header-area .logo div {
   line-height: 0.75em;
   color: #fff;
@@ -50,7 +84,7 @@ header {
 
 .logo_bottom {
   padding-left: 40px;
-  margin-top: -10px;
+  margin-top: -9px;
 }
 
 .header-area .logo div:nth-child(1) {
@@ -97,15 +131,15 @@ header {
   font-weight: bold;
 }
 
-.header-area .links label {
+.header-area .links button {
   cursor: pointer;
-  text-decoration: none;
-  color: #fff;
   font-size: 16px;
   position: relative;
+  background: none;
+  color: #fff;
 }
 
-.header-area .links label::after {
+.header-area .links button::after {
   content: "";
   width: 0;
   height: 2px;
@@ -116,18 +150,17 @@ header {
   transition: all 250ms ease-in-out;
 }
 
-.header-area .links label:hover::after {
+.header-area .links button:hover::after {
   width: 100%;
   transition: all 250ms ease-in-out;
 }
 
-.header-area .links label:active {
+.header-area .links button:active {
   font-weight: bold;
 }
 
 .table-area {
   background-color: #fff;
-  margin-top: 20px;
   border-radius: 16px;
   box-shadow: 3px 3px 6px -2px rgba(0, 0, 0, 0.4);
   min-height: 342px;
@@ -225,11 +258,17 @@ td {
   margin-top: 16px;
   border-radius: 16px;
   box-shadow: 3px 3px 6px -2px rgba(0, 0, 0, 0.4);
+  height: inherit;
 }
 
 .item {
-  padding: 16px 0;
+  padding: 14px 0;
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.item:nth-child(7){
+  padding: 16px 0;
+  border: none;
 }
 
 .item:first-child {
@@ -256,8 +295,8 @@ td {
   color: #333;
 }
 
-.item a {
-  color: #fff;
+.item .button_edit {
+  color: #FFF;
   font-size: 16px;
   font-weight: bold;
   text-transform: uppercase;
@@ -271,17 +310,11 @@ td {
   cursor: pointer;
 }
 
-.item form button{
-  font-size: 16px;
-  padding: 12px 0;
-  width: 100%;
-  cursor: pointer;
-  transition: backgroud-color 250ms ease-in-out;
+.item .button_edit:hover {
+  background-color: #006B62;
+  transition: background-color 250ms ease-in-out;
 }
 
-.item form button:hover{
-  background-color: #bf0000;
-}
 
 .item div.gender {
   padding: 8px 16px;
@@ -302,7 +335,7 @@ td {
 }
 
 .details-header {
-  height: 43px;
+  height: 48px;
   display: flex;
 }
 
@@ -327,7 +360,7 @@ td {
   margin-top: 16px;
 }
 
-.button {
+.button_del {
   transition: background-color 250ms ease-in-out;
   margin-top: 10px;
   padding: 12px 146px;
@@ -336,10 +369,20 @@ td {
   font-weight: bold;
   border-radius: 16px;
   background-color: var(--danger-color);
+  font-size: 16px;
+  padding: 12px 0;
+  width: 100%;
+  cursor: pointer;
+  transition: backgroud-color 250ms ease-in-out;
 }
 
-.button:hover {
-  background-color: #5366e0;
+.item .button_del:hover {
+  background-color: #bf0000;
+  transition: background-color 250ms ease-in-out;
+}
+
+.button_exam:hover {
+  background-color: #006B62;
   transition: background-color 250ms ease-in-out;
 }
 
@@ -356,7 +399,7 @@ td {
   position: relative;
 }
 
-.toggleLineChart{
+.toggleLineChart {
   position: absolute;
   top: 14px;
   right: 12px;
@@ -365,13 +408,14 @@ td {
   border-radius: 6px;
   padding: 0 1px;
   transition: background-color 250ms ease-in-out;
+  cursor: pointer;
 }
 
-.toggleLineChart:hover{
-  background-color: #5366e0;
+.toggleLineChart:hover {
+  background-color: #006B62;
 }
 
-.toggleLineChart:focus{
+.toggleLineChart:focus {
   outline: none;
 }
 
@@ -389,7 +433,7 @@ td {
     flex-direction: row;
   }
 
-  .graph{
+  .graph {
     margin-bottom: 30px;
   }
 }
@@ -444,4 +488,43 @@ td {
     display: flex;
     flex-direction: column;
   }
+}
+
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Support for IE. */
+  font-feature-settings: 'liga';
+}
+
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://example.com/MaterialIcons-Regular.eot);
+  /* For IE6-8 */
+  src: local('Material Icons'),
+    local('MaterialIcons-Regular'),
+    url(https://example.com/MaterialIcons-Regular.woff2) format('woff2'),
+    url(https://example.com/MaterialIcons-Regular.woff) format('woff'),
+    url(https://example.com/MaterialIcons-Regular.ttf) format('truetype');
 }
