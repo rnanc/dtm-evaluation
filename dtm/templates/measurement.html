@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/measurement.css') }}" />
+  <title>Medição</title>
+</head>
+
+<body>
+  <header>
+    <div class="header-area">
+      <a href="/dashboard" class="logo">
+        <h1 class="logo_top">DTM</h1>
+        <p class="logo_bottom">evaluation</p>
+      </a>
+      <div class="links">
+        <a href="/dashboard" class="active">Pacientes</a>
+        <a href="/register_patient">Cadastrar Pacientes</a>
+        <a href="/profile">Perfil</a>
+        <form action="/logoff" method="POST" enctype="multipart/form-data">
+          <button type="submit">Sair</button>
+        </form>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div style="flex: 1">
+      <div>
+        <h2>Exame</h2>
+        <!--<form action="measurement" method="post">-->
+        <div class="outer_container">
+          <div class="card">
+            <div class="card_content">
+                <div class="card_content">
+                  <p>Medição com Boca Aberta</p>
+                  <div class="button_container">
+                    <button class="button" id="iniciar_open">INICIAR</button>
+                    <button class="button"  id="finalizar_open" hidden>FINALIZAR</button>
+                    <input name="type" value="1" hidden />
+                    <div class="result_measurement_open_mouth" id="boca_aberta">
+                      0
+                    </div>
+                  </div>
+                </div>
+                <div class="card_content">
+                  <p>Medição com Boca Fechada</p>
+                  <div class="button_container">
+                    <button class="button" id="finalizar_shut" hidden>FINALIZAR</button>
+                    <div class="result_measurement_open_mouth" id="boca_fechada">
+                      0
+                    </div>
+                  </div>
+                </div>
+              <form action="create_exam" method="POST" enctype="multipart/form-data">
+                <div class="card_content">
+                  <p>Resultado</p>
+                  <div class="button_container_final">
+                    <input id="open_measurement_px" name="open_measurement_px" value="0" hidden />
+                    <input id="shut_measurement_px"  name="shut_measurement_px" value="0" hidden />
+                    <input id="result_measurement_cm" name="result_measurement_cm" value="0" hidden />
+                    <input id="report_open" name="report_open" value="0" hidden />
+                    <input id="report_shut" name="report_shut" value="0" hidden />
+                    <div class="result_measurement_mouth_shut" id="resultado">
+                      0 cm
+                    </div>
+                  </div>
+                </div>
+                <button class="submit" disabled id="enviar_form">FINALIZAR</button>
+              </form>
+            </div>
+          </div>
+			      <div id="camera_div" class="container-camera" hidden>
+              <video autoplay="true" id="webCamera"></video>
+            </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g=" crossorigin="anonymous"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js" integrity="sha256-yr4fRk/GU1ehYJPAs8P4JlTgu0Hdsp4ZKrx8bDEDC3I=" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.3/socket.io.js"></script>
+  <script src="{{ url_for('static', filename='js/measurement.js') }}"></script>
+</body>
+
+</html>

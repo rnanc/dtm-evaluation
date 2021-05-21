@@ -1,20 +1,17 @@
-import datetime
-
 from flask import Blueprint, render_template, url_for, request, current_app, redirect, make_response, flash
-from flask_jwt_extended import create_access_token, create_refresh_token, unset_jwt_cookies, set_access_cookies
+from flask_jwt_extended import create_access_token, create_refresh_token, set_access_cookies
+from dtm.extensions.database import Users
+from dtm.extensions.serializer import UserSchema
 
-from model.Model import Users
-from config.serializer import UserSchema
-
-home_blueprint = Blueprint('home', __name__, template_folder='templates', static_folder="static")
+bp = Blueprint('home', __name__, template_folder='templates', static_folder="static")
 
 
-@home_blueprint.route('/')
+@bp.route('/')
 def home():
   return render_template("signIn.html")
 
 
-@home_blueprint.route('/signUp', methods=['GET', 'POST'])
+@bp.route('/signUp', methods=['GET', 'POST'])
 def signUp():
   if request.method == 'POST':
     us = UserSchema()
@@ -38,7 +35,7 @@ def signUp():
   return redirect(url_for("home.home"))
 
 
-@home_blueprint.route('/login', methods=["POST"])
+@bp.route('/login', methods=["POST"])
 def login_user():
   user = request.form.to_dict()
   user_query = Users.query.filter_by(email=user["email"]).first()
@@ -59,7 +56,7 @@ def login_user():
   return redirect(url_for("home.home"))
 
 
-@home_blueprint.route('/logoff', methods=["POST"])
+@bp.route('/logoff', methods=["POST"])
 def logoff_user():
   response = make_response(redirect(url_for('home.home')))
   response.set_cookie('username', '', expires=0)
@@ -68,3 +65,6 @@ def logoff_user():
   response.set_cookie('refresh_token_cookie', '', expires=0)
   response.set_cookie('patient_id', '', expires=0)
   return response
+
+def init_app(app):
+  app.register_blueprint(bp)

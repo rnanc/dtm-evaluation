@@ -1,14 +1,13 @@
 from flask import Blueprint, render_template, url_for, make_response
 from flask_jwt_extended import jwt_required, jwt_optional
-from model.Model import Patient
-from model.Model import Users
+from dtm.extensions.database import Patient
+from dtm.extensions.database import Users
 from datetime import date
-
 Date = date
-details_blueprint = Blueprint('details', __name__, template_folder='templates', static_folder='static')
+bp = Blueprint('details', __name__, template_folder='templates', static_folder='static')
 
 
-@details_blueprint.route('/details/<id>')
+@bp.route('/details/<id>')
 @jwt_required
 def detailsPage(id):
   patient = Patient.query.get(id)
@@ -24,3 +23,6 @@ def detailsPage(id):
   res = make_response(render_template('details.html', patient=patient, age=age, exams=exams))
   res.set_cookie("patient_id", str(id))
   return res
+
+def init_app(app):
+  app.register_blueprint(bp)

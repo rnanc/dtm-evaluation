@@ -1,15 +1,15 @@
 from flask import Blueprint, render_template, url_for, make_response, redirect, request, redirect, flash
 from flask_jwt_extended import jwt_required
-from config.serializer import PatientSchema
-from model.Model import Patient
-from model.Model import Exam
+from dtm.extensions.serializer import PatientSchema
+from dtm.extensions.database import Patient
+from dtm.extensions.database import Exam
 
 from flask import current_app
 
-patients_blueprint = Blueprint('patients', __name__, template_folder='templates', static_folder='static')
+bp = Blueprint('patients', __name__, template_folder='templates', static_folder='static')
 
 
-@patients_blueprint.route('/dashboard')
+@bp.route('/dashboard')
 @jwt_required
 def dashboard():
   patients = Patient.query.all()
@@ -17,7 +17,7 @@ def dashboard():
   return render_template('dashboard.html', patients=patients)
 
 
-@patients_blueprint.route('/register_patient', methods=['GET', 'POST'])
+@bp.route('/register_patient', methods=['GET', 'POST'])
 @jwt_required
 def register_patient():
   if request.method == "GET":
@@ -42,7 +42,7 @@ def register_patient():
     return redirect(url_for('patients.dashboard'))
 
 
-@patients_blueprint.route('/edit_patient', methods=["GET", "POST"])
+@bp.route('/edit_patient', methods=["GET", "POST"])
 @jwt_required
 def edit_patient():
   if request.method == "GET":
@@ -57,7 +57,7 @@ def edit_patient():
     return redirect(url_for('patients.dashboard'))
 
 
-@patients_blueprint.route('/delete_patient', methods=["POST"])
+@bp.route('/delete_patient', methods=["POST"])
 @jwt_required
 def delete_patient():
   id = request.cookies.get("patient_id")
@@ -67,3 +67,6 @@ def delete_patient():
   Patient.query.filter(Patient.id == id).delete()
   current_app.db.session.commit()
   return redirect(url_for('patients.dashboard'))
+
+def init_app(app):
+  app.register_blueprint(bp)
