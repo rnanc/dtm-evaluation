@@ -54,6 +54,10 @@
             <p>Data do Exame</p>
             <span>{{exam.date}}</span>
           </div>
+          <div>
+            <img width="400" height="250" src="{{ url_for('exam.report_open', id=exam.id) }}"/>
+            <img width="400" height="250" src="{{ url_for('exam.report_shut', id=exam.id) }}"/>
+          </div>
         </form>
       </div>
     </div>
