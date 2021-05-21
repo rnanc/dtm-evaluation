@@ -1,0 +1,20 @@
+[default]
+SQLALCHEMY_TRACK_MODIFICATIONS = 0
+SECRET_KEY = 'e7c0596d00d6d1d17e64d6547cd732cf'
+JWT_SECRET_KEY = '1cca2a86e499bc8f16a75000cea3fbc5'
+JWT_TOKEN_LOCATION = 'cookies'
+JWT_COOKIE_CSRF_PROTECT = 0
+JWT_COOKIE_SECURE = 0
+EXTENSIONS = [
+  'dtm.config.jwt',
+  'dtm.config.serializer',
+  'dtm.controller.DetailsController',
+  'dtm.controller.ExamController',
+  'dtm.controller.PatientsController',
+  'dtm.controller.ServicesController',
+  'dtm.controller.SignInController',
+  'dtm.controller.UsersController',
+  'dtm.model.Model',
+  'dtm.services.exam_values',
+  'dtm.services.socketio'
+]
