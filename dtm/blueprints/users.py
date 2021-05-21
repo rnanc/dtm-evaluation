@@ -1,12 +1,12 @@
 from flask import Blueprint, render_template, url_for, make_response, redirect, request, redirect, current_app, flash
 from flask_jwt_extended import jwt_required
-from config.serializer import UserSchema
-from model.Model import Users
+from dtm.extensions.serializer import UserSchema
+from dtm.extensions.database import Users
 
-users_blueprint = Blueprint('users', __name__, template_folder='templates', static_folder='static')
+bp = Blueprint('users', __name__, template_folder='templates', static_folder='static')
 
 
-@users_blueprint.route('/profile')
+@bp.route('/profile')
 @jwt_required
 def profile():
   id = request.cookies.get("user_id")
@@ -14,7 +14,7 @@ def profile():
   return render_template('profile.html', user=user)
 
 
-@users_blueprint.route('/edit_profile', methods=["GET", "POST"])
+@bp.route('/edit_profile', methods=["GET", "POST"])
 @jwt_required
 def edit_profile():
   if request.method == "GET":
@@ -52,7 +52,7 @@ def edit_profile():
         return redirect(url_for('users.edit_profile'))
 
 
-@users_blueprint.route('/delete_user', methods=["POST"])
+@bp.route('/delete_user', methods=["POST"])
 @jwt_required
 def delete_user():
   id = request.cookies.get("user_id")
@@ -65,3 +65,6 @@ def delete_user():
   else:
     flash("Campo de confirmação errado!", "danger")
     return redirect(url_for('users.profile'))
+
+def init_app(app):
+  app.register_blueprint(bp)

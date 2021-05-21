@@ -1,11 +1,12 @@
 from flask_sqlalchemy import SQLAlchemy
 from passlib.hash import pbkdf2_sha512
+from flask.cli import with_appcontext
+from flask_migrate import Migrate
+import click
+
 
 db = SQLAlchemy()
-
-def configure(app):
-    db.init_app(app)
-    app.db = db
+migrate = Migrate()
 
 class Users(db.Model):
   __name__ = "users"
@@ -58,11 +59,34 @@ class Exam(db.Model):
   open_measurement_px = db.Column(db.Float, nullable=False)
   shut_measurement_px = db.Column(db.Float, nullable=False)
   result_measurement_cm = db.Column(db.Float, nullable=False)
+  report_open = db.Column(db.LargeBinary)
+  report_shut = db.Column(db.LargeBinary)
   user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
   patient_id = db.Column(db.Integer, db.ForeignKey('patient.id'))
 
-  def __init__(self, date, open_measurement_px, shut_measurement_px, result_measurement_cm):
+  def __init__(self, date, open_measurement_px, shut_measurement_px, result_measurement_cm, report_open, report_shut):
     self.date = date
     self.open_measurement_px = open_measurement_px
     self.shut_measurement_px = shut_measurement_px
     self.result_measurement_cm = result_measurement_cm
+    self.report_open = report_open
+    self.report_shut = report_shut
+
+
+@click.command(name='create_tables')
+@with_appcontext
+def create_tables():
+  db.create_all()
+
+
+@click.command(name='drop_tables')
+@with_appcontext
+def drop_tables():
+  db.drop_all()
+
+def init_app(app):
+  db.init_app(app)
+  app.db = db
+  migrate.init_app(app, app.db)
+  app.cli.add_command(create_tables)
+  app.cli.add_command(drop_tables)

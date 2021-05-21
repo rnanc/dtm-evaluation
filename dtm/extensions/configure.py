@@ -7,5 +7,6 @@ def load_extensions(app):
     mod = import_module(extension)
     mod.init_app(app)
 
+
 def init_app(app):
   FlaskDynaconf(app)

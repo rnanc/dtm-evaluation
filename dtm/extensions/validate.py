@@ -3,7 +3,7 @@ from flask_jwt_extended import JWTManager
 
 jwt = JWTManager()
 
-def configure(app):
+def init_app(app):
     jwt.init_app(app)
     @jwt.expired_token_loader
     @jwt.invalid_token_loader

@@ -6,15 +6,14 @@ JWT_TOKEN_LOCATION = 'cookies'
 JWT_COOKIE_CSRF_PROTECT = 0
 JWT_COOKIE_SECURE = 0
 EXTENSIONS = [
-  'dtm.config.jwt',
-  'dtm.config.serializer',
-  'dtm.controller.DetailsController',
-  'dtm.controller.ExamController',
-  'dtm.controller.PatientsController',
-  'dtm.controller.ServicesController',
-  'dtm.controller.SignInController',
-  'dtm.controller.UsersController',
-  'dtm.model.Model',
-  'dtm.services.exam_values',
-  'dtm.services.socketio'
+  'dtm.extensions.validate',
+  'dtm.extensions.serializer',
+  'dtm.extensions.database',
+  'dtm.extensions.camera',
+  'dtm.extensions.middleware',
+  'dtm.blueprints.details',
+  'dtm.blueprints.exam',
+  'dtm.blueprints.patients',
+  'dtm.blueprints.signin',
+  'dtm.blueprints.users'
 ]

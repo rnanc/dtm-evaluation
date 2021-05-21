@@ -1,9 +1,7 @@
 from flask_marshmallow import Marshmallow
-from model.Model import Users
-
-from model.Model import Patient
-
-from model.Model import Exam
+from dtm.extensions.database import Users
+from dtm.extensions.database import Patient
+from dtm.extensions.database import Exam
 
 ma = Marshmallow()
 
@@ -21,3 +19,6 @@ class PatientSchema(ma.ModelSchema):
 class ExamSchema(ma.ModelSchema):
     class Meta:
         model = Exam
+
+def init_app(app):
+  ma.init_app(app)
