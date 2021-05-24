@@ -54,11 +54,27 @@
             <p>Data do Exame</p>
             <span>{{exam.date}}</span>
           </div>
+          <!--
           <div>
             <img width="400" height="250" src="{{ url_for('exam.report_open', id=exam.id) }}"/>
             <img width="400" height="250" src="{{ url_for('exam.report_shut', id=exam.id) }}"/>
           </div>
+          -->
         </form>
+      </div>
+    </div>
+    <div class="images_overlay">
+      <div class="image_wrapper">
+        <h2>Foto com boca aberta</h2>
+        <div class="image_box">
+          <img src="{{ url_for('exam.report_open', id=exam.id) }}"/>
+        </div>
+      </div>
+      <div class="image_wrapper">
+        <h2>Foto com boca fechada</h2>
+        <div class="image_box">
+          <img  src="{{ url_for('exam.report_shut', id=exam.id) }}"/>
+        </div>
       </div>
     </div>
   </main>
