@@ -152,13 +152,12 @@ header {
 
 main {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
+  justify-content: center;
 }
 
 .card_overlay {
-  margin-left: 15px;
-  margin-right: 15px;
   width: 400px;
 }
 
@@ -168,7 +167,7 @@ main {
   width: 100%;
   border-radius: 16px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  margin-bottom: 50px;
+  margin-bottom: 100px;
 }
 
 .card form {
@@ -237,4 +236,40 @@ h2 {
   font-style: normal;
   font-weight: bold;
   font-size: 14px;
+}
+
+.images_overlay {
+  margin-left: 90px;
+  margin-bottom: 50px;
+}
+
+.image_box {
+  padding: 10px;
+  border-radius: 16px;
+  background-color: #ffffff;
+  margin: 20px 0 0;
+}
+
+.image_box img {
+  border-radius: 16px;
+  width: 380px;
+  height: 285px;
+}
+
+@media(max-width: 1080px) {
+  .images_overlay {
+    margin-left: 70px;
+  }
+}
+
+@media(max-width: 980px) {
+  main{
+    flex-direction: column;
+  }
+  .card {
+    margin: 0;
+  }
+  .images_overlay {
+    margin-left: 0;
+  }
 }
